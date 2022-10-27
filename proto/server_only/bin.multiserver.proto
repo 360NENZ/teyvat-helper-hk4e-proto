@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/teyvat-helper/hk4e-proto/pb";
