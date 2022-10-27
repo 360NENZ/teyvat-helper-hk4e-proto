@@ -20,788 +20,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type StopServerConfigNotify_CmdId int32
-
-const (
-	StopServerConfigNotify_NONE   StopServerConfigNotify_CmdId = 0
-	StopServerConfigNotify_CMD_ID StopServerConfigNotify_CmdId = 10072
-)
-
-// Enum value maps for StopServerConfigNotify_CmdId.
-var (
-	StopServerConfigNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10072: "CMD_ID",
-	}
-	StopServerConfigNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10072,
-	}
-)
-
-func (x StopServerConfigNotify_CmdId) Enum() *StopServerConfigNotify_CmdId {
-	p := new(StopServerConfigNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x StopServerConfigNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (StopServerConfigNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[0].Descriptor()
-}
-
-func (StopServerConfigNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[0]
-}
-
-func (x StopServerConfigNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use StopServerConfigNotify_CmdId.Descriptor instead.
-func (StopServerConfigNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{0, 0}
-}
-
-type NodeserverConnectedAndRegisteredNotify_CmdId int32
-
-const (
-	NodeserverConnectedAndRegisteredNotify_NONE   NodeserverConnectedAndRegisteredNotify_CmdId = 0
-	NodeserverConnectedAndRegisteredNotify_CMD_ID NodeserverConnectedAndRegisteredNotify_CmdId = 10098
-)
-
-// Enum value maps for NodeserverConnectedAndRegisteredNotify_CmdId.
-var (
-	NodeserverConnectedAndRegisteredNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10098: "CMD_ID",
-	}
-	NodeserverConnectedAndRegisteredNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10098,
-	}
-)
-
-func (x NodeserverConnectedAndRegisteredNotify_CmdId) Enum() *NodeserverConnectedAndRegisteredNotify_CmdId {
-	p := new(NodeserverConnectedAndRegisteredNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x NodeserverConnectedAndRegisteredNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (NodeserverConnectedAndRegisteredNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[1].Descriptor()
-}
-
-func (NodeserverConnectedAndRegisteredNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[1]
-}
-
-func (x NodeserverConnectedAndRegisteredNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use NodeserverConnectedAndRegisteredNotify_CmdId.Descriptor instead.
-func (NodeserverConnectedAndRegisteredNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{1, 0}
-}
-
-type MultiPlayerMsg_CmdId int32
-
-const (
-	MultiPlayerMsg_NONE   MultiPlayerMsg_CmdId = 0
-	MultiPlayerMsg_CMD_ID MultiPlayerMsg_CmdId = 10012
-)
-
-// Enum value maps for MultiPlayerMsg_CmdId.
-var (
-	MultiPlayerMsg_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10012: "CMD_ID",
-	}
-	MultiPlayerMsg_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10012,
-	}
-)
-
-func (x MultiPlayerMsg_CmdId) Enum() *MultiPlayerMsg_CmdId {
-	p := new(MultiPlayerMsg_CmdId)
-	*p = x
-	return p
-}
-
-func (x MultiPlayerMsg_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (MultiPlayerMsg_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[2].Descriptor()
-}
-
-func (MultiPlayerMsg_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[2]
-}
-
-func (x MultiPlayerMsg_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use MultiPlayerMsg_CmdId.Descriptor instead.
-func (MultiPlayerMsg_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{2, 0}
-}
-
-type AddGateserverNotify_CmdId int32
-
-const (
-	AddGateserverNotify_NONE   AddGateserverNotify_CmdId = 0
-	AddGateserverNotify_CMD_ID AddGateserverNotify_CmdId = 10035
-)
-
-// Enum value maps for AddGateserverNotify_CmdId.
-var (
-	AddGateserverNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10035: "CMD_ID",
-	}
-	AddGateserverNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10035,
-	}
-)
-
-func (x AddGateserverNotify_CmdId) Enum() *AddGateserverNotify_CmdId {
-	p := new(AddGateserverNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x AddGateserverNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (AddGateserverNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[3].Descriptor()
-}
-
-func (AddGateserverNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[3]
-}
-
-func (x AddGateserverNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use AddGateserverNotify_CmdId.Descriptor instead.
-func (AddGateserverNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{3, 0}
-}
-
-type RegisterServiceNotify_CmdId int32
-
-const (
-	RegisterServiceNotify_NONE   RegisterServiceNotify_CmdId = 0
-	RegisterServiceNotify_CMD_ID RegisterServiceNotify_CmdId = 10007
-)
-
-// Enum value maps for RegisterServiceNotify_CmdId.
-var (
-	RegisterServiceNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10007: "CMD_ID",
-	}
-	RegisterServiceNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10007,
-	}
-)
-
-func (x RegisterServiceNotify_CmdId) Enum() *RegisterServiceNotify_CmdId {
-	p := new(RegisterServiceNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x RegisterServiceNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (RegisterServiceNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[4].Descriptor()
-}
-
-func (RegisterServiceNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[4]
-}
-
-func (x RegisterServiceNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use RegisterServiceNotify_CmdId.Descriptor instead.
-func (RegisterServiceNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{4, 0}
-}
-
-type PlayerTransferNotify_CmdId int32
-
-const (
-	PlayerTransferNotify_NONE   PlayerTransferNotify_CmdId = 0
-	PlayerTransferNotify_CMD_ID PlayerTransferNotify_CmdId = 10021
-)
-
-// Enum value maps for PlayerTransferNotify_CmdId.
-var (
-	PlayerTransferNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10021: "CMD_ID",
-	}
-	PlayerTransferNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10021,
-	}
-)
-
-func (x PlayerTransferNotify_CmdId) Enum() *PlayerTransferNotify_CmdId {
-	p := new(PlayerTransferNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x PlayerTransferNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (PlayerTransferNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[5].Descriptor()
-}
-
-func (PlayerTransferNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[5]
-}
-
-func (x PlayerTransferNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use PlayerTransferNotify_CmdId.Descriptor instead.
-func (PlayerTransferNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{5, 0}
-}
-
-type PacketFreqencyExceedNotify_CmdId int32
-
-const (
-	PacketFreqencyExceedNotify_NONE   PacketFreqencyExceedNotify_CmdId = 0
-	PacketFreqencyExceedNotify_CMD_ID PacketFreqencyExceedNotify_CmdId = 10003
-)
-
-// Enum value maps for PacketFreqencyExceedNotify_CmdId.
-var (
-	PacketFreqencyExceedNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10003: "CMD_ID",
-	}
-	PacketFreqencyExceedNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10003,
-	}
-)
-
-func (x PacketFreqencyExceedNotify_CmdId) Enum() *PacketFreqencyExceedNotify_CmdId {
-	p := new(PacketFreqencyExceedNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x PacketFreqencyExceedNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (PacketFreqencyExceedNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[6].Descriptor()
-}
-
-func (PacketFreqencyExceedNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[6]
-}
-
-func (x PacketFreqencyExceedNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use PacketFreqencyExceedNotify_CmdId.Descriptor instead.
-func (PacketFreqencyExceedNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{7, 0}
-}
-
-type SceneAsyncLoadGroupBatchNotify_CmdId int32
-
-const (
-	SceneAsyncLoadGroupBatchNotify_NONE   SceneAsyncLoadGroupBatchNotify_CmdId = 0
-	SceneAsyncLoadGroupBatchNotify_CMD_ID SceneAsyncLoadGroupBatchNotify_CmdId = 10090
-)
-
-// Enum value maps for SceneAsyncLoadGroupBatchNotify_CmdId.
-var (
-	SceneAsyncLoadGroupBatchNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10090: "CMD_ID",
-	}
-	SceneAsyncLoadGroupBatchNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10090,
-	}
-)
-
-func (x SceneAsyncLoadGroupBatchNotify_CmdId) Enum() *SceneAsyncLoadGroupBatchNotify_CmdId {
-	p := new(SceneAsyncLoadGroupBatchNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x SceneAsyncLoadGroupBatchNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (SceneAsyncLoadGroupBatchNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[7].Descriptor()
-}
-
-func (SceneAsyncLoadGroupBatchNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[7]
-}
-
-func (x SceneAsyncLoadGroupBatchNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use SceneAsyncLoadGroupBatchNotify_CmdId.Descriptor instead.
-func (SceneAsyncLoadGroupBatchNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{8, 0}
-}
-
-type ClientVersionSyncNotify_CmdId int32
-
-const (
-	ClientVersionSyncNotify_NONE   ClientVersionSyncNotify_CmdId = 0
-	ClientVersionSyncNotify_CMD_ID ClientVersionSyncNotify_CmdId = 10073
-)
-
-// Enum value maps for ClientVersionSyncNotify_CmdId.
-var (
-	ClientVersionSyncNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10073: "CMD_ID",
-	}
-	ClientVersionSyncNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10073,
-	}
-)
-
-func (x ClientVersionSyncNotify_CmdId) Enum() *ClientVersionSyncNotify_CmdId {
-	p := new(ClientVersionSyncNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x ClientVersionSyncNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ClientVersionSyncNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[8].Descriptor()
-}
-
-func (ClientVersionSyncNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[8]
-}
-
-func (x ClientVersionSyncNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ClientVersionSyncNotify_CmdId.Descriptor instead.
-func (ClientVersionSyncNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{10, 0}
-}
-
-type RegisterServiceSuccessNotify_CmdId int32
-
-const (
-	RegisterServiceSuccessNotify_NONE   RegisterServiceSuccessNotify_CmdId = 0
-	RegisterServiceSuccessNotify_CMD_ID RegisterServiceSuccessNotify_CmdId = 10099
-)
-
-// Enum value maps for RegisterServiceSuccessNotify_CmdId.
-var (
-	RegisterServiceSuccessNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10099: "CMD_ID",
-	}
-	RegisterServiceSuccessNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10099,
-	}
-)
-
-func (x RegisterServiceSuccessNotify_CmdId) Enum() *RegisterServiceSuccessNotify_CmdId {
-	p := new(RegisterServiceSuccessNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x RegisterServiceSuccessNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (RegisterServiceSuccessNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[9].Descriptor()
-}
-
-func (RegisterServiceSuccessNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[9]
-}
-
-func (x RegisterServiceSuccessNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use RegisterServiceSuccessNotify_CmdId.Descriptor instead.
-func (RegisterServiceSuccessNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{11, 0}
-}
-
-type ReloadConfigNotify_CmdId int32
-
-const (
-	ReloadConfigNotify_NONE   ReloadConfigNotify_CmdId = 0
-	ReloadConfigNotify_CMD_ID ReloadConfigNotify_CmdId = 10031
-)
-
-// Enum value maps for ReloadConfigNotify_CmdId.
-var (
-	ReloadConfigNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10031: "CMD_ID",
-	}
-	ReloadConfigNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10031,
-	}
-)
-
-func (x ReloadConfigNotify_CmdId) Enum() *ReloadConfigNotify_CmdId {
-	p := new(ReloadConfigNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x ReloadConfigNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ReloadConfigNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[10].Descriptor()
-}
-
-func (ReloadConfigNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[10]
-}
-
-func (x ReloadConfigNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ReloadConfigNotify_CmdId.Descriptor instead.
-func (ReloadConfigNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{12, 0}
-}
-
-type MultiserverServiceTypeNotify_CmdId int32
-
-const (
-	MultiserverServiceTypeNotify_NONE   MultiserverServiceTypeNotify_CmdId = 0
-	MultiserverServiceTypeNotify_CMD_ID MultiserverServiceTypeNotify_CmdId = 10075
-)
-
-// Enum value maps for MultiserverServiceTypeNotify_CmdId.
-var (
-	MultiserverServiceTypeNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10075: "CMD_ID",
-	}
-	MultiserverServiceTypeNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10075,
-	}
-)
-
-func (x MultiserverServiceTypeNotify_CmdId) Enum() *MultiserverServiceTypeNotify_CmdId {
-	p := new(MultiserverServiceTypeNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x MultiserverServiceTypeNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (MultiserverServiceTypeNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[11].Descriptor()
-}
-
-func (MultiserverServiceTypeNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[11]
-}
-
-func (x MultiserverServiceTypeNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use MultiserverServiceTypeNotify_CmdId.Descriptor instead.
-func (MultiserverServiceTypeNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{13, 0}
-}
-
-type MatchServiceStopNotify_CmdId int32
-
-const (
-	MatchServiceStopNotify_NONE   MatchServiceStopNotify_CmdId = 0
-	MatchServiceStopNotify_CMD_ID MatchServiceStopNotify_CmdId = 10048
-)
-
-// Enum value maps for MatchServiceStopNotify_CmdId.
-var (
-	MatchServiceStopNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10048: "CMD_ID",
-	}
-	MatchServiceStopNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10048,
-	}
-)
-
-func (x MatchServiceStopNotify_CmdId) Enum() *MatchServiceStopNotify_CmdId {
-	p := new(MatchServiceStopNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x MatchServiceStopNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (MatchServiceStopNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[12].Descriptor()
-}
-
-func (MatchServiceStopNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[12]
-}
-
-func (x MatchServiceStopNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use MatchServiceStopNotify_CmdId.Descriptor instead.
-func (MatchServiceStopNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{14, 0}
-}
-
-type MatchServiceStopImplementNotify_CmdId int32
-
-const (
-	MatchServiceStopImplementNotify_NONE   MatchServiceStopImplementNotify_CmdId = 0
-	MatchServiceStopImplementNotify_CMD_ID MatchServiceStopImplementNotify_CmdId = 10097
-)
-
-// Enum value maps for MatchServiceStopImplementNotify_CmdId.
-var (
-	MatchServiceStopImplementNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10097: "CMD_ID",
-	}
-	MatchServiceStopImplementNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10097,
-	}
-)
-
-func (x MatchServiceStopImplementNotify_CmdId) Enum() *MatchServiceStopImplementNotify_CmdId {
-	p := new(MatchServiceStopImplementNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x MatchServiceStopImplementNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (MatchServiceStopImplementNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[13].Descriptor()
-}
-
-func (MatchServiceStopImplementNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[13]
-}
-
-func (x MatchServiceStopImplementNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use MatchServiceStopImplementNotify_CmdId.Descriptor instead.
-func (MatchServiceStopImplementNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{15, 0}
-}
-
-type ServerBlockPlayerMpNotify_CmdId int32
-
-const (
-	ServerBlockPlayerMpNotify_NONE   ServerBlockPlayerMpNotify_CmdId = 0
-	ServerBlockPlayerMpNotify_CMD_ID ServerBlockPlayerMpNotify_CmdId = 10081
-)
-
-// Enum value maps for ServerBlockPlayerMpNotify_CmdId.
-var (
-	ServerBlockPlayerMpNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10081: "CMD_ID",
-	}
-	ServerBlockPlayerMpNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10081,
-	}
-)
-
-func (x ServerBlockPlayerMpNotify_CmdId) Enum() *ServerBlockPlayerMpNotify_CmdId {
-	p := new(ServerBlockPlayerMpNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x ServerBlockPlayerMpNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ServerBlockPlayerMpNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[14].Descriptor()
-}
-
-func (ServerBlockPlayerMpNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[14]
-}
-
-func (x ServerBlockPlayerMpNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ServerBlockPlayerMpNotify_CmdId.Descriptor instead.
-func (ServerBlockPlayerMpNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{16, 0}
-}
-
-type ServerBlockPlayerChatNotify_CmdId int32
-
-const (
-	ServerBlockPlayerChatNotify_NONE   ServerBlockPlayerChatNotify_CmdId = 0
-	ServerBlockPlayerChatNotify_CMD_ID ServerBlockPlayerChatNotify_CmdId = 10005
-)
-
-// Enum value maps for ServerBlockPlayerChatNotify_CmdId.
-var (
-	ServerBlockPlayerChatNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10005: "CMD_ID",
-	}
-	ServerBlockPlayerChatNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10005,
-	}
-)
-
-func (x ServerBlockPlayerChatNotify_CmdId) Enum() *ServerBlockPlayerChatNotify_CmdId {
-	p := new(ServerBlockPlayerChatNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x ServerBlockPlayerChatNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ServerBlockPlayerChatNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[15].Descriptor()
-}
-
-func (ServerBlockPlayerChatNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[15]
-}
-
-func (x ServerBlockPlayerChatNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ServerBlockPlayerChatNotify_CmdId.Descriptor instead.
-func (ServerBlockPlayerChatNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{17, 0}
-}
-
-type ServerCheckSegmentCrcNotify_CmdId int32
-
-const (
-	ServerCheckSegmentCrcNotify_NONE   ServerCheckSegmentCrcNotify_CmdId = 0
-	ServerCheckSegmentCrcNotify_CMD_ID ServerCheckSegmentCrcNotify_CmdId = 10082
-)
-
-// Enum value maps for ServerCheckSegmentCrcNotify_CmdId.
-var (
-	ServerCheckSegmentCrcNotify_CmdId_name = map[int32]string{
-		0:     "NONE",
-		10082: "CMD_ID",
-	}
-	ServerCheckSegmentCrcNotify_CmdId_value = map[string]int32{
-		"NONE":   0,
-		"CMD_ID": 10082,
-	}
-)
-
-func (x ServerCheckSegmentCrcNotify_CmdId) Enum() *ServerCheckSegmentCrcNotify_CmdId {
-	p := new(ServerCheckSegmentCrcNotify_CmdId)
-	*p = x
-	return p
-}
-
-func (x ServerCheckSegmentCrcNotify_CmdId) String() string {
-	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
-}
-
-func (ServerCheckSegmentCrcNotify_CmdId) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_only_cmd_misc_server_proto_enumTypes[16].Descriptor()
-}
-
-func (ServerCheckSegmentCrcNotify_CmdId) Type() protoreflect.EnumType {
-	return &file_server_only_cmd_misc_server_proto_enumTypes[16]
-}
-
-func (x ServerCheckSegmentCrcNotify_CmdId) Number() protoreflect.EnumNumber {
-	return protoreflect.EnumNumber(x)
-}
-
-// Deprecated: Use ServerCheckSegmentCrcNotify_CmdId.Descriptor instead.
-func (ServerCheckSegmentCrcNotify_CmdId) EnumDescriptor() ([]byte, []int) {
-	return file_server_only_cmd_misc_server_proto_rawDescGZIP(), []int{18, 0}
-}
-
 type StopServerConfigNotify struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1786,24 +1004,18 @@ var file_server_only_cmd_misc_server_proto_rawDesc = []byte{
 	0x6f, 0x74, 0x6f, 0x12, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x0c, 0x64, 0x65, 0x66, 0x69,
 	0x6e, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1f, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72,
 	0x5f, 0x6f, 0x6e, 0x6c, 0x79, 0x2f, 0x63, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x2e, 0x73, 0x65, 0x72,
-	0x76, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x38, 0x0a, 0x16, 0x53, 0x74, 0x6f,
+	0x76, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x18, 0x0a, 0x16, 0x53, 0x74, 0x6f,
 	0x70, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x4e, 0x6f, 0x74,
-	0x69, 0x66, 0x79, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04,
-	0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44,
-	0x10, 0xd8, 0x4e, 0x22, 0x6d, 0x0a, 0x26, 0x4e, 0x6f, 0x64, 0x65, 0x73, 0x65, 0x72, 0x76, 0x65,
+	0x69, 0x66, 0x79, 0x22, 0x4d, 0x0a, 0x26, 0x4e, 0x6f, 0x64, 0x65, 0x73, 0x65, 0x72, 0x76, 0x65,
 	0x72, 0x43, 0x6f, 0x6e, 0x6e, 0x65, 0x63, 0x74, 0x65, 0x64, 0x41, 0x6e, 0x64, 0x52, 0x65, 0x67,
 	0x69, 0x73, 0x74, 0x65, 0x72, 0x65, 0x64, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x12, 0x23, 0x0a,
 	0x0d, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x0d, 0x52, 0x0c, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72,
-	0x49, 0x64, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e,
-	0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10,
-	0xf2, 0x4e, 0x22, 0x68, 0x0a, 0x0e, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x6c, 0x61, 0x79, 0x65,
+	0x49, 0x64, 0x22, 0x48, 0x0a, 0x0e, 0x4d, 0x75, 0x6c, 0x74, 0x69, 0x50, 0x6c, 0x61, 0x79, 0x65,
 	0x72, 0x4d, 0x73, 0x67, 0x12, 0x19, 0x0a, 0x08, 0x75, 0x69, 0x64, 0x5f, 0x6c, 0x69, 0x73, 0x74,
 	0x18, 0x01, 0x20, 0x03, 0x28, 0x0d, 0x52, 0x07, 0x75, 0x69, 0x64, 0x4c, 0x69, 0x73, 0x74, 0x12,
 	0x1b, 0x0a, 0x09, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x5f, 0x62, 0x69, 0x6e, 0x18, 0x02, 0x20, 0x01,
-	0x28, 0x0c, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x42, 0x69, 0x6e, 0x22, 0x1e, 0x0a, 0x05,
-	0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12,
-	0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0x9c, 0x4e, 0x22, 0xba, 0x01, 0x0a,
+	0x28, 0x0c, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x42, 0x69, 0x6e, 0x22, 0x9a, 0x01, 0x0a,
 	0x13, 0x41, 0x64, 0x64, 0x47, 0x61, 0x74, 0x65, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x4e, 0x6f,
 	0x74, 0x69, 0x66, 0x79, 0x12, 0x1f, 0x0a, 0x0b, 0x6c, 0x69, 0x73, 0x74, 0x65, 0x6e, 0x5f, 0x70,
 	0x6f, 0x72, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0a, 0x6c, 0x69, 0x73, 0x74, 0x65,
@@ -1813,17 +1025,13 @@ var file_server_only_cmd_misc_server_proto_rawDesc = []byte{
 	0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x08, 0x52, 0x0d, 0x75, 0x73, 0x65, 0x44, 0x6f,
 	0x6d, 0x61, 0x69, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x1f, 0x0a, 0x0b, 0x64, 0x6f, 0x6d, 0x61,
 	0x69, 0x6e, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x64,
-	0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64,
-	0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06,
-	0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0xb3, 0x4e, 0x22, 0x77, 0x0a, 0x15, 0x52, 0x65, 0x67,
+	0x6f, 0x6d, 0x61, 0x69, 0x6e, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x57, 0x0a, 0x15, 0x52, 0x65, 0x67,
 	0x69, 0x73, 0x74, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x4e, 0x6f, 0x74, 0x69,
 	0x66, 0x79, 0x12, 0x3e, 0x0a, 0x11, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x5f, 0x74, 0x79,
 	0x70, 0x65, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0e, 0x32, 0x12, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70,
 	0x65, 0x52, 0x0f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x4c, 0x69,
-	0x73, 0x74, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e,
-	0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10,
-	0x97, 0x4e, 0x22, 0x92, 0x02, 0x0a, 0x14, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x54, 0x72, 0x61,
+	0x73, 0x74, 0x22, 0xf2, 0x01, 0x0a, 0x14, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x54, 0x72, 0x61,
 	0x6e, 0x73, 0x66, 0x65, 0x72, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x12, 0x21, 0x0a, 0x0c, 0x74,
 	0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x5f, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x0d, 0x52, 0x0b, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x65, 0x72, 0x55, 0x69, 0x64, 0x12, 0x1d,
@@ -1838,13 +1046,11 @@ var file_server_only_cmd_misc_server_proto_rawDesc = []byte{
 	0x61, 0x6d, 0x65, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x49, 0x64, 0x12, 0x2a, 0x0a, 0x11, 0x74,
 	0x61, 0x72, 0x67, 0x65, 0x74, 0x5f, 0x68, 0x6f, 0x6d, 0x65, 0x5f, 0x70, 0x61, 0x72, 0x61, 0x6d,
 	0x18, 0x05, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0f, 0x74, 0x61, 0x72, 0x67, 0x65, 0x74, 0x48, 0x6f,
-	0x6d, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64,
-	0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d,
-	0x44, 0x5f, 0x49, 0x44, 0x10, 0xa5, 0x4e, 0x22, 0x3e, 0x0a, 0x0f, 0x50, 0x61, 0x63, 0x6b, 0x65,
+	0x6d, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x22, 0x3e, 0x0a, 0x0f, 0x50, 0x61, 0x63, 0x6b, 0x65,
 	0x74, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x12, 0x15, 0x0a, 0x06, 0x63, 0x6d,
 	0x64, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x05, 0x63, 0x6d, 0x64, 0x49,
 	0x64, 0x12, 0x14, 0x0a, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d,
-	0x52, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x22, 0xbf, 0x01, 0x0a, 0x1a, 0x50, 0x61, 0x63, 0x6b,
+	0x52, 0x05, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x22, 0x9f, 0x01, 0x0a, 0x1a, 0x50, 0x61, 0x63, 0x6b,
 	0x65, 0x74, 0x46, 0x72, 0x65, 0x71, 0x65, 0x6e, 0x63, 0x79, 0x45, 0x78, 0x63, 0x65, 0x65, 0x64,
 	0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x12, 0x21, 0x0a, 0x0c, 0x70, 0x61, 0x63, 0x6b, 0x65, 0x74,
 	0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0b, 0x70, 0x61,
@@ -1854,18 +1060,14 @@ var file_server_only_cmd_misc_server_proto_rawDesc = []byte{
 	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b,
 	0x32, 0x16, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x50, 0x61, 0x63, 0x6b, 0x65, 0x74, 0x43,
 	0x6f, 0x75, 0x6e, 0x74, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x0f, 0x70, 0x61, 0x63, 0x6b, 0x65, 0x74,
-	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64,
-	0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06,
-	0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0x93, 0x4e, 0x22, 0x40, 0x0a, 0x1e, 0x53, 0x63, 0x65,
+	0x43, 0x6f, 0x75, 0x6e, 0x74, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x20, 0x0a, 0x1e, 0x53, 0x63, 0x65,
 	0x6e, 0x65, 0x41, 0x73, 0x79, 0x6e, 0x63, 0x4c, 0x6f, 0x61, 0x64, 0x47, 0x72, 0x6f, 0x75, 0x70,
-	0x42, 0x61, 0x74, 0x63, 0x68, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x22, 0x1e, 0x0a, 0x05, 0x43,
-	0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b,
-	0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0xea, 0x4e, 0x22, 0x42, 0x0a, 0x10, 0x43,
+	0x42, 0x61, 0x74, 0x63, 0x68, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x22, 0x42, 0x0a, 0x10, 0x43,
 	0x72, 0x63, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x12,
 	0x2e, 0x0a, 0x13, 0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x5f, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f,
 	0x6e, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01, 0x20, 0x03, 0x28, 0x09, 0x52, 0x11, 0x63, 0x6c,
 	0x69, 0x65, 0x6e, 0x74, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x4c, 0x69, 0x73, 0x74, 0x22,
-	0x81, 0x06, 0x0a, 0x17, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f,
+	0xe1, 0x05, 0x0a, 0x17, 0x43, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x56, 0x65, 0x72, 0x73, 0x69, 0x6f,
 	0x6e, 0x53, 0x79, 0x6e, 0x63, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x12, 0x48, 0x0a, 0x13, 0x64,
 	0x61, 0x74, 0x61, 0x5f, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x63, 0x6f, 0x6e, 0x66,
 	0x69, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x18, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
@@ -1911,55 +1113,37 @@ var file_server_only_cmd_misc_server_proto_rawDesc = []byte{
 	0x12, 0x2d, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x17, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x52, 0x65, 0x73, 0x56, 0x65, 0x72, 0x73, 0x69,
 	0x6f, 0x6e, 0x43, 0x6f, 0x6e, 0x66, 0x69, 0x67, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x3a,
-	0x02, 0x38, 0x01, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04,
-	0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44,
-	0x10, 0xd9, 0x4e, 0x22, 0x3e, 0x0a, 0x1c, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x53,
+	0x02, 0x38, 0x01, 0x22, 0x1e, 0x0a, 0x1c, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x53,
 	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x53, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x4e, 0x6f, 0x74,
-	0x69, 0x66, 0x79, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04,
-	0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44,
-	0x10, 0xf3, 0x4e, 0x22, 0x34, 0x0a, 0x12, 0x52, 0x65, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6f, 0x6e,
-	0x66, 0x69, 0x67, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64,
-	0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06,
-	0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0xaf, 0x4e, 0x22, 0x7e, 0x0a, 0x1c, 0x4d, 0x75, 0x6c,
+	0x69, 0x66, 0x79, 0x22, 0x14, 0x0a, 0x12, 0x52, 0x65, 0x6c, 0x6f, 0x61, 0x64, 0x43, 0x6f, 0x6e,
+	0x66, 0x69, 0x67, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x22, 0x5e, 0x0a, 0x1c, 0x4d, 0x75, 0x6c,
 	0x74, 0x69, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x54,
 	0x79, 0x70, 0x65, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x12, 0x3e, 0x0a, 0x11, 0x73, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x5f, 0x6c, 0x69, 0x73, 0x74, 0x18, 0x01,
 	0x20, 0x03, 0x28, 0x0e, 0x32, 0x12, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x53, 0x65, 0x72,
 	0x76, 0x69, 0x63, 0x65, 0x54, 0x79, 0x70, 0x65, 0x52, 0x0f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
-	0x65, 0x54, 0x79, 0x70, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64,
-	0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06,
-	0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0xdb, 0x4e, 0x22, 0x55, 0x0a, 0x16, 0x4d, 0x61, 0x74,
+	0x65, 0x54, 0x79, 0x70, 0x65, 0x4c, 0x69, 0x73, 0x74, 0x22, 0x35, 0x0a, 0x16, 0x4d, 0x61, 0x74,
 	0x63, 0x68, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x53, 0x74, 0x6f, 0x70, 0x4e, 0x6f, 0x74,
 	0x69, 0x66, 0x79, 0x12, 0x1b, 0x0a, 0x09, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x5f, 0x69, 0x64,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x08, 0x73, 0x65, 0x72, 0x76, 0x65, 0x72, 0x49, 0x64,
-	0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e,
-	0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0xc0, 0x4e,
-	0x22, 0x72, 0x0a, 0x1f, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x22, 0x52, 0x0a, 0x1f, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x53, 0x74, 0x6f, 0x70, 0x49, 0x6d, 0x70, 0x6c, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x4e, 0x6f, 0x74,
 	0x69, 0x66, 0x79, 0x12, 0x2f, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
 	0x32, 0x1d, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e, 0x4d, 0x61, 0x74, 0x63, 0x68, 0x53, 0x65,
 	0x72, 0x76, 0x69, 0x63, 0x65, 0x53, 0x74, 0x6f, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x52,
-	0x03, 0x6d, 0x73, 0x67, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a,
-	0x04, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49,
-	0x44, 0x10, 0xf1, 0x4e, 0x22, 0x73, 0x0a, 0x19, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x42, 0x6c,
+	0x03, 0x6d, 0x73, 0x67, 0x22, 0x53, 0x0a, 0x19, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x42, 0x6c,
 	0x6f, 0x63, 0x6b, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x4d, 0x70, 0x4e, 0x6f, 0x74, 0x69, 0x66,
 	0x79, 0x12, 0x1b, 0x0a, 0x09, 0x69, 0x73, 0x5f, 0x75, 0x6e, 0x6c, 0x6f, 0x63, 0x6b, 0x18, 0x01,
 	0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x69, 0x73, 0x55, 0x6e, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x19,
 	0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d,
-	0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64,
-	0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06,
-	0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0xe1, 0x4e, 0x22, 0x75, 0x0a, 0x1b, 0x53, 0x65, 0x72,
+	0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65, 0x22, 0x55, 0x0a, 0x1b, 0x53, 0x65, 0x72,
 	0x76, 0x65, 0x72, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x50, 0x6c, 0x61, 0x79, 0x65, 0x72, 0x43, 0x68,
 	0x61, 0x74, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x12, 0x1b, 0x0a, 0x09, 0x69, 0x73, 0x5f, 0x75,
 	0x6e, 0x6c, 0x6f, 0x63, 0x6b, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x08, 0x69, 0x73, 0x55,
 	0x6e, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x19, 0x0a, 0x08, 0x65, 0x6e, 0x64, 0x5f, 0x74, 0x69, 0x6d,
 	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x07, 0x65, 0x6e, 0x64, 0x54, 0x69, 0x6d, 0x65,
-	0x22, 0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e,
-	0x45, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0x95, 0x4e,
-	0x22, 0x3d, 0x0a, 0x1b, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x53,
-	0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x72, 0x63, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x22,
-	0x1e, 0x0a, 0x05, 0x43, 0x6d, 0x64, 0x49, 0x64, 0x12, 0x08, 0x0a, 0x04, 0x4e, 0x4f, 0x4e, 0x45,
-	0x10, 0x00, 0x12, 0x0b, 0x0a, 0x06, 0x43, 0x4d, 0x44, 0x5f, 0x49, 0x44, 0x10, 0xe2, 0x4e, 0x42,
+	0x22, 0x1d, 0x0a, 0x1b, 0x53, 0x65, 0x72, 0x76, 0x65, 0x72, 0x43, 0x68, 0x65, 0x63, 0x6b, 0x53,
+	0x65, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x43, 0x72, 0x63, 0x4e, 0x6f, 0x74, 0x69, 0x66, 0x79, 0x42,
 	0x28, 0x5a, 0x26, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x74, 0x65,
 	0x79, 0x76, 0x61, 0x74, 0x2d, 0x68, 0x65, 0x6c, 0x70, 0x65, 0x72, 0x2f, 0x68, 0x6b, 0x34, 0x65,
 	0x2d, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f,
@@ -1978,64 +1162,46 @@ func file_server_only_cmd_misc_server_proto_rawDescGZIP() []byte {
 	return file_server_only_cmd_misc_server_proto_rawDescData
 }
 
-var file_server_only_cmd_misc_server_proto_enumTypes = make([]protoimpl.EnumInfo, 17)
 var file_server_only_cmd_misc_server_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
 var file_server_only_cmd_misc_server_proto_goTypes = []interface{}{
-	(StopServerConfigNotify_CmdId)(0),                 // 0: proto.StopServerConfigNotify.CmdId
-	(NodeserverConnectedAndRegisteredNotify_CmdId)(0), // 1: proto.NodeserverConnectedAndRegisteredNotify.CmdId
-	(MultiPlayerMsg_CmdId)(0),                         // 2: proto.MultiPlayerMsg.CmdId
-	(AddGateserverNotify_CmdId)(0),                    // 3: proto.AddGateserverNotify.CmdId
-	(RegisterServiceNotify_CmdId)(0),                  // 4: proto.RegisterServiceNotify.CmdId
-	(PlayerTransferNotify_CmdId)(0),                   // 5: proto.PlayerTransferNotify.CmdId
-	(PacketFreqencyExceedNotify_CmdId)(0),             // 6: proto.PacketFreqencyExceedNotify.CmdId
-	(SceneAsyncLoadGroupBatchNotify_CmdId)(0),         // 7: proto.SceneAsyncLoadGroupBatchNotify.CmdId
-	(ClientVersionSyncNotify_CmdId)(0),                // 8: proto.ClientVersionSyncNotify.CmdId
-	(RegisterServiceSuccessNotify_CmdId)(0),           // 9: proto.RegisterServiceSuccessNotify.CmdId
-	(ReloadConfigNotify_CmdId)(0),                     // 10: proto.ReloadConfigNotify.CmdId
-	(MultiserverServiceTypeNotify_CmdId)(0),           // 11: proto.MultiserverServiceTypeNotify.CmdId
-	(MatchServiceStopNotify_CmdId)(0),                 // 12: proto.MatchServiceStopNotify.CmdId
-	(MatchServiceStopImplementNotify_CmdId)(0),        // 13: proto.MatchServiceStopImplementNotify.CmdId
-	(ServerBlockPlayerMpNotify_CmdId)(0),              // 14: proto.ServerBlockPlayerMpNotify.CmdId
-	(ServerBlockPlayerChatNotify_CmdId)(0),            // 15: proto.ServerBlockPlayerChatNotify.CmdId
-	(ServerCheckSegmentCrcNotify_CmdId)(0),            // 16: proto.ServerCheckSegmentCrcNotify.CmdId
-	(*StopServerConfigNotify)(nil),                    // 17: proto.StopServerConfigNotify
-	(*NodeserverConnectedAndRegisteredNotify)(nil),    // 18: proto.NodeserverConnectedAndRegisteredNotify
-	(*MultiPlayerMsg)(nil),                            // 19: proto.MultiPlayerMsg
-	(*AddGateserverNotify)(nil),                       // 20: proto.AddGateserverNotify
-	(*RegisterServiceNotify)(nil),                     // 21: proto.RegisterServiceNotify
-	(*PlayerTransferNotify)(nil),                      // 22: proto.PlayerTransferNotify
-	(*PacketCountInfo)(nil),                           // 23: proto.PacketCountInfo
-	(*PacketFreqencyExceedNotify)(nil),                // 24: proto.PacketFreqencyExceedNotify
-	(*SceneAsyncLoadGroupBatchNotify)(nil),            // 25: proto.SceneAsyncLoadGroupBatchNotify
-	(*CrcVersionConfig)(nil),                          // 26: proto.CrcVersionConfig
-	(*ClientVersionSyncNotify)(nil),                   // 27: proto.ClientVersionSyncNotify
-	(*RegisterServiceSuccessNotify)(nil),              // 28: proto.RegisterServiceSuccessNotify
-	(*ReloadConfigNotify)(nil),                        // 29: proto.ReloadConfigNotify
-	(*MultiserverServiceTypeNotify)(nil),              // 30: proto.MultiserverServiceTypeNotify
-	(*MatchServiceStopNotify)(nil),                    // 31: proto.MatchServiceStopNotify
-	(*MatchServiceStopImplementNotify)(nil),           // 32: proto.MatchServiceStopImplementNotify
-	(*ServerBlockPlayerMpNotify)(nil),                 // 33: proto.ServerBlockPlayerMpNotify
-	(*ServerBlockPlayerChatNotify)(nil),               // 34: proto.ServerBlockPlayerChatNotify
-	(*ServerCheckSegmentCrcNotify)(nil),               // 35: proto.ServerCheckSegmentCrcNotify
-	nil,                                               // 36: proto.ClientVersionSyncNotify.ResVersionConfigMapEntry
-	nil,                                               // 37: proto.ClientVersionSyncNotify.CrcVersionConfigMapEntry
-	nil,                                               // 38: proto.ClientVersionSyncNotify.NextResVersionConfigMapEntry
-	(ServiceType)(0),                                  // 39: proto.ServiceType
-	(*DataVersionConfig)(nil),                         // 40: proto.DataVersionConfig
-	(*ResVersionConfig)(nil),                          // 41: proto.ResVersionConfig
+	(*StopServerConfigNotify)(nil),                 // 0: proto.StopServerConfigNotify
+	(*NodeserverConnectedAndRegisteredNotify)(nil), // 1: proto.NodeserverConnectedAndRegisteredNotify
+	(*MultiPlayerMsg)(nil),                         // 2: proto.MultiPlayerMsg
+	(*AddGateserverNotify)(nil),                    // 3: proto.AddGateserverNotify
+	(*RegisterServiceNotify)(nil),                  // 4: proto.RegisterServiceNotify
+	(*PlayerTransferNotify)(nil),                   // 5: proto.PlayerTransferNotify
+	(*PacketCountInfo)(nil),                        // 6: proto.PacketCountInfo
+	(*PacketFreqencyExceedNotify)(nil),             // 7: proto.PacketFreqencyExceedNotify
+	(*SceneAsyncLoadGroupBatchNotify)(nil),         // 8: proto.SceneAsyncLoadGroupBatchNotify
+	(*CrcVersionConfig)(nil),                       // 9: proto.CrcVersionConfig
+	(*ClientVersionSyncNotify)(nil),                // 10: proto.ClientVersionSyncNotify
+	(*RegisterServiceSuccessNotify)(nil),           // 11: proto.RegisterServiceSuccessNotify
+	(*ReloadConfigNotify)(nil),                     // 12: proto.ReloadConfigNotify
+	(*MultiserverServiceTypeNotify)(nil),           // 13: proto.MultiserverServiceTypeNotify
+	(*MatchServiceStopNotify)(nil),                 // 14: proto.MatchServiceStopNotify
+	(*MatchServiceStopImplementNotify)(nil),        // 15: proto.MatchServiceStopImplementNotify
+	(*ServerBlockPlayerMpNotify)(nil),              // 16: proto.ServerBlockPlayerMpNotify
+	(*ServerBlockPlayerChatNotify)(nil),            // 17: proto.ServerBlockPlayerChatNotify
+	(*ServerCheckSegmentCrcNotify)(nil),            // 18: proto.ServerCheckSegmentCrcNotify
+	nil,                                            // 19: proto.ClientVersionSyncNotify.ResVersionConfigMapEntry
+	nil,                                            // 20: proto.ClientVersionSyncNotify.CrcVersionConfigMapEntry
+	nil,                                            // 21: proto.ClientVersionSyncNotify.NextResVersionConfigMapEntry
+	(ServiceType)(0),                               // 22: proto.ServiceType
+	(*DataVersionConfig)(nil),                      // 23: proto.DataVersionConfig
+	(*ResVersionConfig)(nil),                       // 24: proto.ResVersionConfig
 }
 var file_server_only_cmd_misc_server_proto_depIdxs = []int32{
-	39, // 0: proto.RegisterServiceNotify.service_type_list:type_name -> proto.ServiceType
-	23, // 1: proto.PacketFreqencyExceedNotify.packet_count_list:type_name -> proto.PacketCountInfo
-	40, // 2: proto.ClientVersionSyncNotify.data_version_config:type_name -> proto.DataVersionConfig
-	36, // 3: proto.ClientVersionSyncNotify.res_version_config_map:type_name -> proto.ClientVersionSyncNotify.ResVersionConfigMapEntry
-	37, // 4: proto.ClientVersionSyncNotify.crc_version_config_map:type_name -> proto.ClientVersionSyncNotify.CrcVersionConfigMapEntry
-	38, // 5: proto.ClientVersionSyncNotify.next_res_version_config_map:type_name -> proto.ClientVersionSyncNotify.NextResVersionConfigMapEntry
-	39, // 6: proto.MultiserverServiceTypeNotify.service_type_list:type_name -> proto.ServiceType
-	31, // 7: proto.MatchServiceStopImplementNotify.msg:type_name -> proto.MatchServiceStopNotify
-	41, // 8: proto.ClientVersionSyncNotify.ResVersionConfigMapEntry.value:type_name -> proto.ResVersionConfig
-	26, // 9: proto.ClientVersionSyncNotify.CrcVersionConfigMapEntry.value:type_name -> proto.CrcVersionConfig
-	41, // 10: proto.ClientVersionSyncNotify.NextResVersionConfigMapEntry.value:type_name -> proto.ResVersionConfig
+	22, // 0: proto.RegisterServiceNotify.service_type_list:type_name -> proto.ServiceType
+	6,  // 1: proto.PacketFreqencyExceedNotify.packet_count_list:type_name -> proto.PacketCountInfo
+	23, // 2: proto.ClientVersionSyncNotify.data_version_config:type_name -> proto.DataVersionConfig
+	19, // 3: proto.ClientVersionSyncNotify.res_version_config_map:type_name -> proto.ClientVersionSyncNotify.ResVersionConfigMapEntry
+	20, // 4: proto.ClientVersionSyncNotify.crc_version_config_map:type_name -> proto.ClientVersionSyncNotify.CrcVersionConfigMapEntry
+	21, // 5: proto.ClientVersionSyncNotify.next_res_version_config_map:type_name -> proto.ClientVersionSyncNotify.NextResVersionConfigMapEntry
+	22, // 6: proto.MultiserverServiceTypeNotify.service_type_list:type_name -> proto.ServiceType
+	14, // 7: proto.MatchServiceStopImplementNotify.msg:type_name -> proto.MatchServiceStopNotify
+	24, // 8: proto.ClientVersionSyncNotify.ResVersionConfigMapEntry.value:type_name -> proto.ResVersionConfig
+	9,  // 9: proto.ClientVersionSyncNotify.CrcVersionConfigMapEntry.value:type_name -> proto.CrcVersionConfig
+	24, // 10: proto.ClientVersionSyncNotify.NextResVersionConfigMapEntry.value:type_name -> proto.ResVersionConfig
 	11, // [11:11] is the sub-list for method output_type
 	11, // [11:11] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name
@@ -2285,14 +1451,13 @@ func file_server_only_cmd_misc_server_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_server_only_cmd_misc_server_proto_rawDesc,
-			NumEnums:      17,
+			NumEnums:      0,
 			NumMessages:   22,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_server_only_cmd_misc_server_proto_goTypes,
 		DependencyIndexes: file_server_only_cmd_misc_server_proto_depIdxs,
-		EnumInfos:         file_server_only_cmd_misc_server_proto_enumTypes,
 		MessageInfos:      file_server_only_cmd_misc_server_proto_msgTypes,
 	}.Build()
 	File_server_only_cmd_misc_server_proto = out.File
