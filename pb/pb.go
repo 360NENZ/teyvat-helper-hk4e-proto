@@ -1,10 +1,6 @@
 package pb
 
-import (
-	"log"
-
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-)
+import protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 
 type ProtoCommand uint16
 
@@ -30,7 +26,6 @@ func (m protoCommandNewFuncMap) New(cmd ProtoCommand) ProtoMessage {
 	if f, ok := m[cmd]; ok {
 		return f()
 	}
-	log.Println("unknown command:", cmd)
 	return nil
 }
 
