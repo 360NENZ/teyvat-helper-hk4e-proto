@@ -12,15 +12,6 @@ message QueryFilter {
 }
 
 message QueryPathReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2372;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   enum OptionType {
     OPTION_NONE = 0;
     OPTION_NORMAL = 1;
@@ -38,14 +29,6 @@ message QueryPathReq {
 }
 
 message QueryPathRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2398;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum PathStatusType {
     STATUS_FAIL = 0;
     STATUS_SUCC = 1;
@@ -72,41 +55,15 @@ message ObstacleInfo {
 }
 
 message ObstacleModifyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2312;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated int32 remove_obstacle_ids = 9;
   repeated ObstacleInfo add_obstacles = 6;
   uint32 scene_id = 5;
 }
 
 message PathfindingPingNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2335;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message PathfindingEnterSceneReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2307;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 scene_id = 12;
   repeated uint32 activity_id = 14;
   uint32 scene_tag_hash = 15;
@@ -117,26 +74,10 @@ message PathfindingEnterSceneReq {
 }
 
 message PathfindingEnterSceneRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2321;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
 }
 
 message GMShowObstacleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2361;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GMObstacleInfo {
@@ -154,28 +95,11 @@ message GMObstacleInfo {
 }
 
 message GMShowObstacleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2329;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
   repeated GMObstacleInfo obstacles = 6;
 }
 
 message GMShowNavMeshReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2357;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   Vector center = 1;
   Vector extent = 5;
 }
@@ -199,14 +123,6 @@ message PBNavMeshTile {
 }
 
 message GMShowNavMeshRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2400;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated PBNavMeshTile tiles = 11;
   int32 retcode = 5;
 }
@@ -219,14 +135,5 @@ message PbNavMeshStatsInfo {
 }
 
 message NavMeshStatsNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2316;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated PbNavMeshStatsInfo infos = 4;
 }

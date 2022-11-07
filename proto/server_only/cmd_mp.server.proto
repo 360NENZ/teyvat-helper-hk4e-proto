@@ -7,11 +7,6 @@ option go_package = "github.com/teyvat-helper/hk4e-proto/pb";
 import "define.proto";
 
 message UpdateMpStatusNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10472;
-  }
-
   uint32 uid = 1;
   bool is_only_mp_with_ps_player = 2;
   PlatformType platform_type = 3;
@@ -19,37 +14,18 @@ message UpdateMpStatusNotify {
 }
 
 message DelMpStatusNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10498;
-  }
-
   uint32 uid = 1;
 }
 
 message GetPlayerMpStatusListReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10412;
-  }
 }
 
 message GetPlayerMpStatusListRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10435;
-  }
-
   int32 retcode = 1;
   repeated OnlinePlayerInfo player_list = 2;
 }
 
 message GetPlayerMpStatusInfoReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10407;
-  }
-
   bool is_online_id = 1;
   oneof player_id {
     uint32 target_uid = 2;
@@ -59,11 +35,6 @@ message GetPlayerMpStatusInfoReq {
 }
 
 message GetPlayerMpStatusInfoRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10421;
-  }
-
   int32 retcode = 1;
   uint32 target_uid = 2;
   OnlinePlayerInfo target_player_info = 3;

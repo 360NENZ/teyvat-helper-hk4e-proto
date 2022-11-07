@@ -170,91 +170,33 @@ message MultistagePlayInfo {
 }
 
 message MultistagePlayInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5372;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   MultistagePlayInfo info = 13;
 }
 
 message MultistagePlayFinishStageReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5398;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 group_id = 12;
   uint32 play_index = 15;
 }
 
 message InBattleMechanicusExcapeMonsterNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5307;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 excaped_monster_num = 4;
 }
 
 message InBattleMechanicusLeftMonsterNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5321;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 left_monster = 14;
 }
 
 message InBattleMechanicusBuildingPointsNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5303;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, uint32> player_building_points_map = 4;
 }
 
 message InBattleMechanicusPickCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5390;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 group_id = 11;
   uint32 play_index = 7;
   uint32 card_id = 1;
 }
 
 message InBattleMechanicusPickCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5373;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   uint32 card_id = 2;
   uint32 play_index = 4;
@@ -262,14 +204,6 @@ message InBattleMechanicusPickCardRsp {
 }
 
 message InBattleMechanicusPickCardNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5399;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 player_uid = 6;
   uint32 group_id = 7;
   uint32 play_index = 8;
@@ -277,29 +211,12 @@ message InBattleMechanicusPickCardNotify {
 }
 
 message InBattleMechanicusConfirmCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5331;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 play_index = 6;
   uint32 card_id = 1;
   uint32 group_id = 3;
 }
 
 message InBattleMechanicusConfirmCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5375;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 play_index = 2;
   uint32 card_id = 14;
   int32 retcode = 11;
@@ -307,14 +224,6 @@ message InBattleMechanicusConfirmCardRsp {
 }
 
 message InBattleMechanicusConfirmCardNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5348;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 play_index = 11;
   uint32 card_id = 13;
   uint32 group_id = 10;
@@ -322,14 +231,6 @@ message InBattleMechanicusConfirmCardNotify {
 }
 
 message InBattleMechanicusCardResultNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5397;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 wait_seconds = 6;
   uint32 group_id = 2;
   repeated InBattleMechanicusCardInfo card_list = 9;
@@ -339,14 +240,6 @@ message InBattleMechanicusCardResultNotify {
 }
 
 message MultistagePlayFinishStageRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5381;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   uint32 group_id = 12;
   uint32 play_index = 6;
@@ -360,14 +253,6 @@ message MultistageSettleWatcherInfo {
 }
 
 message InBattleMechanicusSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5305;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 group_id = 15;
   uint64 scene_time_ms = 11;
   uint32 difficulty_percentage = 6;
@@ -390,14 +275,6 @@ message InBattleMechanicusSettleInfo {
 }
 
 message MultistagePlaySettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5313;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 play_index = 14;
   uint32 group_id = 4;
   oneof detail {
@@ -408,40 +285,16 @@ message MultistagePlaySettleNotify {
 }
 
 message MultistagePlayStageEndNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5379;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 group_id = 15;
   uint32 play_index = 9;
 }
 
 message MultistagePlayEndNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5355;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 group_id = 5;
   uint32 play_index = 13;
 }
 
 message FleurFairBuffEnergyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5324;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 energy = 4;
 }
 
@@ -472,14 +325,6 @@ message FleurFairBossSettleInfo {
 }
 
 message FleurFairStageSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5356;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_type = 10;
   oneof detail {
     FleurFairGallerySettleInfo gallery_settle_info = 13;
@@ -488,13 +333,6 @@ message FleurFairStageSettleNotify {
 }
 
 message FleurFairFinishGalleryStageNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5342;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message HideAndSeekPlayerBattleInfo {
@@ -514,51 +352,18 @@ message HideAndSeekStageInfo {
 }
 
 message HideAndSeekSelectAvatarReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5330;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 avatar_id = 8;
 }
 
 message HideAndSeekSelectAvatarRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5367;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
   uint32 avatar_id = 3;
 }
 
 message HideAndSeekSetReadyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5358;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message HideAndSeekSetReadyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5370;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
 }
 
@@ -572,14 +377,6 @@ message HideAndSeekSettleInfo {
 }
 
 message HideAndSeekSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5317;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum SettleReason {
     SETTLE_REASON_TIME_OUT = 0;
     SETTLE_PLAY_END = 1;
@@ -597,26 +394,10 @@ message HideAndSeekSettleNotify {
 }
 
 message HideAndSeekPlayerReadyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5302;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 uid_list = 5;
 }
 
 message HideAndSeekPlayerSetAvatarNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5319;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 avatar_id = 2;
   uint32 costume_id = 13;
   uint32 uid = 5;
@@ -688,126 +469,45 @@ message ChessNormalCardInfo {
 }
 
 message ChessPickCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5333;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 card_id = 1;
   uint32 card_index = 4;
 }
 
 message ChessPickCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5384;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 card_index = 11;
   uint32 card_id = 1;
   int32 retcode = 4;
 }
 
 message ChessPickCardNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5380;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 curse_card_id = 13;
   ChessNormalCardInfo normal_card_info = 1;
 }
 
 message ChessManualRefreshCardsReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5389;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message ChessManualRefreshCardsRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5359;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
 }
 
 message ChessPlayerInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5332;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   ChessPlayerInfo player_info = 10;
 }
 
 message ChessLeftMonstersNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5360;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 left_monsters = 6;
 }
 
 message ChessEscapedMonstersNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5314;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 excaped_monsters = 14;
 }
 
 message ChessSelectedCardsNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5392;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ChessCardInfo selected_card_info_list = 4;
 }
 
 message GlobalBuildingInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5320;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 current_num = 5;
   repeated BuildingInfo building_list = 3;
   uint32 max_num = 13;
@@ -859,26 +559,10 @@ message IrodoriChessPlayerInfo {
 }
 
 message IrodoriChessPlayerInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5364;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   IrodoriChessPlayerInfo player_info = 6;
 }
 
 message IrodoriChessLeftMonsterNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5338;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 left_monsters = 8;
 }
 
@@ -893,153 +577,54 @@ message BrickBreakerPlayerBattleInfo {
 }
 
 message BrickBreakerPlayerReadyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5345;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 uid_list = 14;
 }
 
 message BrickBreakerPlayerSetAvatarNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5308;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 avatar_id_list = 8;
   repeated uint32 costume_id_list = 11;
   uint32 uid = 9;
 }
 
 message BrickBreakerPlayerSetSkillNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5309;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 uid = 8;
   repeated uint32 skill_id_list = 14;
 }
 
 message BrickBreakerSetReadyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5352;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message BrickBreakerSetReadyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5377;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
 }
 
 message BrickBreakerSelectAvatarReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5337;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 avatar_id = 2;
 }
 
 message BrickBreakerSelectAvatarRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5385;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 avatar_id = 8;
   int32 retcode = 4;
 }
 
 message BrickBreakerSelectSkillReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5325;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 skill_id = 6;
 }
 
 message BrickBreakerSelectSkillRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5378;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
   repeated uint32 skill_id = 11;
 }
 
 message BrickBreakerSetChangingReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5336;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_changing = 11;
 }
 
 message BrickBreakerSetChangingRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5354;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
 }
 
 message BrickBreakerPlayerSetChangingNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5383;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 uid = 15;
   bool is_changing = 7;
 }
@@ -1058,14 +643,6 @@ message CoinCollectPlayerInfo {
 }
 
 message CoinCollectPrepareStageNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6536;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   CoinCollectStageInfo coin_collect_info = 3;
 }
 
@@ -1079,14 +656,6 @@ message LanV3BoatSettleInfo {
 }
 
 message LanV3BoatSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6539;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_gallery_succ = 10;
   repeated uint32 winner_uid_list = 2;
   bool is_single = 8;

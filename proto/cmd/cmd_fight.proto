@@ -119,15 +119,6 @@ message EvtHittingOtherInfo {
 }
 
 message EvtBeingHitNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 372;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 6;
   EvtBeingHitInfo being_hit_info = 3;
 }
@@ -140,15 +131,6 @@ message EvtAnimatorParameterInfo {
 }
 
 message EvtAnimatorParameterNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 398;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   EvtAnimatorParameterInfo animator_param_info = 12;
   ForwardType forward_type = 14;
 }
@@ -162,28 +144,11 @@ message AbilityArgument {
 }
 
 message HostPlayerNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 312;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 host_peer_id = 13;
   uint32 host_uid = 10;
 }
 
 message EvtDoSkillSuccNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 335;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 caster_id = 13;
   ForwardType forward_type = 10;
   Vector forward = 15;
@@ -191,15 +156,6 @@ message EvtDoSkillSuccNotify {
 }
 
 message EvtCreateGadgetNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 307;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_async_load = 8;
   uint32 camp_type = 5;
   bool sight_group_with_owner = 10;
@@ -222,29 +178,11 @@ message EvtCreateGadgetNotify {
 }
 
 message EvtDestroyGadgetNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 321;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 5;
   uint32 entity_id = 3;
 }
 
 message EvtFaceToEntityNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 303;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 face_entity_id = 5;
   ForwardType forward_type = 9;
   uint32 entity_id = 1;
@@ -256,29 +194,11 @@ message EvtFaceToDirInfo {
 }
 
 message EvtFaceToDirNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 390;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 13;
   EvtFaceToDirInfo evt_face_to_dir_info = 5;
 }
 
 message EvtCostStaminaNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 373;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 skill_id = 6;
   float cost_stamina = 11;
 }
@@ -290,15 +210,6 @@ message EvtSetAttackTargetInfo {
 }
 
 message EvtSetAttackTargetNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 399;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 1;
   EvtSetAttackTargetInfo evt_set_attack_target_info = 11;
 }
@@ -366,15 +277,6 @@ message EvtGrapplingHookMove {
 }
 
 message EvtAnimatorStateChangedNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 331;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 3;
   EvtAnimatorStateChangedInfo evt_animator_state_changed_info = 10;
 }
@@ -420,29 +322,11 @@ message EvtSyncEntityPositionInfo {
 }
 
 message EvtRushMoveNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 375;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 1;
   EvtRushMoveInfo evt_rush_move_info = 15;
 }
 
 message EvtBulletHitNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 348;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 single_bullet_id = 8;
   Vector hit_point = 15;
   Vector hit_normal = 11;
@@ -455,30 +339,12 @@ message EvtBulletHitNotify {
 }
 
 message EvtBulletDeactiveNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 397;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 6;
   uint32 entity_id = 9;
   Vector disappear_pos = 4;
 }
 
 message EvtEntityStartDieEndNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 381;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool immediately = 15;
   uint32 die_state_flag = 12;
   uint32 entity_id = 8;
@@ -486,30 +352,12 @@ message EvtEntityStartDieEndNotify {
 }
 
 message EvtBulletMoveNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 365;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 14;
   Vector cur_pos = 1;
   uint32 entity_id = 11;
 }
 
 message EvtAvatarEnterFocusNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 304;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 1;
   bool can_move = 10;
   bool enter_holding_focus_shoot = 13;
@@ -526,30 +374,12 @@ message EvtAvatarEnterFocusNotify {
 }
 
 message EvtAvatarExitFocusNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 393;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   Vector finish_forward = 12;
   ForwardType forward_type = 11;
   uint32 entity_id = 14;
 }
 
 message EvtAvatarUpdateFocusNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 327;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 7;
   Vector focus_forward = 11;
   uint32 entity_id = 10;
@@ -562,95 +392,35 @@ message AuthorityChange {
 }
 
 message EntityAuthorityChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 394;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated AuthorityChange authority_change_list = 15;
 }
 
 message AvatarBuffAddNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 388;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint64 avatar_guid = 10;
   uint32 buff_id = 6;
 }
 
 message AvatarBuffDelNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 326;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint64 avatar_guid = 10;
   uint32 buff_id = 12;
 }
 
 message MonsterAlertChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 363;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 avatar_entity_id = 15;
   repeated uint32 monster_entity_list = 5;
   uint32 is_alert = 13;
 }
 
 message MonsterForceAlertNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 395;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 monster_entity_id = 13;
 }
 
 message AvatarEnterElementViewNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 334;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_triggerd = 3;
   uint32 avatar_entity_id = 12;
 }
 
 message TriggerCreateGadgetToEquipPartNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 350;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gadget_id = 1;
   uint32 entity_id = 13;
   string equip_part = 14;
@@ -658,15 +428,6 @@ message TriggerCreateGadgetToEquipPartNotify {
 }
 
 message EvtEntityRenderersChangedNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 343;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 8;
   bool is_server_cache = 3;
   EntityRendererChangedInfo renderer_changed_info = 5;
@@ -674,15 +435,6 @@ message EvtEntityRenderersChangedNotify {
 }
 
 message AnimatorForceSetAirMoveNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 374;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 14;
   bool in_air_move = 13;
   ForwardType forward_type = 9;
@@ -694,57 +446,21 @@ message AiSkillCdInfo {
 }
 
 message EvtAiSyncSkillCdNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 376;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   map<uint32, AiSkillCdInfo> ai_cd_map = 7;
 }
 
 message EvtBeingHitsCombineNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 346;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ForwardType forward_type = 11;
   repeated EvtBeingHitInfo evt_being_hit_info_list = 7;
 }
 
 message EvtAvatarSitDownNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 324;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   Vector position = 9;
   uint32 entity_id = 4;
   uint64 chair_id = 6;
 }
 
 message EvtAvatarStandUpNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 356;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint64 chair_id = 11;
   int32 performID = 6;
   int32 direction = 1;
@@ -752,65 +468,22 @@ message EvtAvatarStandUpNotify {
 }
 
 message CreateMassiveEntityReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 342;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated ClientMassiveEntity massive_entity_list = 1;
 }
 
 message CreateMassiveEntityRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 330;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
 }
 
 message CreateMassiveEntityNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 367;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ServerMassiveEntity massive_entity_list = 15;
 }
 
 message DestroyMassiveEntityNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 358;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated ClientMassiveEntity massive_entity_list = 7;
 }
 
 message MassiveEntityStateChangedNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 370;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated MassiveEntityState massive_entity_state_list = 4;
 }
 
@@ -821,27 +494,11 @@ message TeamEntityInfo {
 }
 
 message SyncTeamEntityNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 317;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 scene_id = 13;
   repeated TeamEntityInfo team_entity_info_list = 15;
 }
 
 message DelTeamEntityNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 302;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 del_entity_id_list = 15;
   uint32 scene_id = 8;
 }
@@ -858,27 +515,10 @@ message CombatInvokeEntry {
 }
 
 message CombatInvocationsNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 319;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated CombatInvokeEntry invoke_list = 14;
 }
 
 message ServerBuffChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 361;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum ServerBuffChangeType {
     ADD_SERVER_BUFF = 0;
     DEL_SERVER_BUFF = 1;
@@ -896,28 +536,10 @@ message AiThreatInfo {
 }
 
 message EvtAiSyncCombatThreatInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 329;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   map<uint32, AiThreatInfo> combat_threat_info_map = 8;
 }
 
 message MassiveEntityElementOpBatchNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 357;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   int32 entity_type = 6;
   uint32 op_idx = 9;
   uint32 user_id = 11;
@@ -938,28 +560,11 @@ message AiSyncInfo {
 }
 
 message EntityAiSyncNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 400;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 local_avatar_alerted_monster_list = 15;
   repeated AiSyncInfo info_list = 1;
 }
 
 message LuaSetOptionNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 316;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum LuaOptionType {
     LUA_OPTION_NONE = 0;
     LUA_OPTION_PLAYER_INPUT = 1;
@@ -970,54 +575,19 @@ message LuaSetOptionNotify {
 }
 
 message EvtDestroyServerGadgetNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 387;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 7;
 }
 
 message EntityAiKillSelfNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 340;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 12;
 }
 
 message EvtAvatarLockChairReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 318;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint64 chair_id = 5;
   Vector position = 8;
 }
 
 message EvtAvatarLockChairRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 366;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint64 chair_id = 14;
   uint32 entity_id = 15;
   Vector position = 4;
@@ -1025,28 +595,11 @@ message EvtAvatarLockChairRsp {
 }
 
 message ReportFightAntiCheatNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 368;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 cheat_count = 8;
   uint32 cheat_type = 12;
 }
 
 message EvtBeingHealedNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 333;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 target_id = 1;
   float real_heal_amount = 5;
   uint32 source_id = 13;
@@ -1054,13 +607,5 @@ message EvtBeingHealedNotify {
 }
 
 message EvtLocalGadgetOwnerLeaveSceneNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 384;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 entity_id = 10;
 }

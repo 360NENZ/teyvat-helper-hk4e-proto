@@ -100,15 +100,6 @@ message AbilityInvokeEntry {
 }
 
 message AbilityInvocationFixedNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1172;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   AbilityInvokeEntry invoke6th = 14;
   AbilityInvokeEntry invoke5th = 8;
   AbilityInvokeEntry invoke4th = 1;
@@ -118,15 +109,6 @@ message AbilityInvocationFixedNotify {
 }
 
 message AbilityInvocationsNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1198;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated AbilityInvokeEntry invokes = 2;
 }
 
@@ -470,41 +452,15 @@ message AttackResultCreateCount {
 }
 
 message ClientAbilityInitBeginNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1112;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 1;
 }
 
 message ClientAbilityInitFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1135;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated AbilityInvokeEntry invokes = 14;
   uint32 entity_id = 11;
 }
 
 message AbilityInvocationFailNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1107;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   string reason = 7;
   uint32 entity_id = 13;
   AbilityInvokeEntry invoke = 3;
@@ -516,27 +472,10 @@ message EntityAbilityInvokeEntry {
 }
 
 message ClientAbilitiesInitFinishCombineNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1103;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated EntityAbilityInvokeEntry entity_invoke_list = 1;
 }
 
 message WindSeedClientNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1199;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   message RefreshNotify {
     uint32 refresh_num = 9;
   }
@@ -561,42 +500,17 @@ message WindSeedClientNotify {
 }
 
 message AbilityChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1131;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 entity_id = 1;
   AbilityControlBlock ability_control_block = 15;
 }
 
 message ClientAbilityChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1175;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_init_hash = 9;
   uint32 entity_id = 2;
   repeated AbilityInvokeEntry invokes = 3;
 }
 
 message ServerUpdateGlobalValueNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1148;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum UpdateType {
     INVALUE = 0;
     ADD = 1;
@@ -611,67 +525,25 @@ message ServerUpdateGlobalValueNotify {
 }
 
 message ServerGlobalValueChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1197;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 entity_id = 6;
   float value = 12;
   uint32 key_hash = 13;
 }
 
 message ClientAIStateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1181;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 9;
   uint32 cur_tactic = 15;
 }
 
 message ServerCombatEndNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1105;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 combat_end_type_list = 14;
 }
 
 message ClientRemoveCombatEndModifierNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1182;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 combat_end_type_list = 7;
 }
 
 message PerformOperationNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1147;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum OperateType {
     OPERATE_TYPE_NONE = 0;
     OPERATE_TYPE_EFFECT = 1;

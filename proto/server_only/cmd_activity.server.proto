@@ -5,21 +5,11 @@ package proto;
 option go_package = "github.com/teyvat-helper/hk4e-proto/pb";
 
 message SeaLampPlayerContributionNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10672;
-  }
-
   uint32 total_contribution = 1;
   uint32 add_progress = 2;
 }
 
 message SeaLampProgressNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10698;
-  }
-
   uint32 schedule_id = 1;
   uint32 progress = 2;
   bool is_finished = 3;
@@ -27,11 +17,6 @@ message SeaLampProgressNotify {
 }
 
 message SeaLampBroadcastNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10612;
-  }
-
   uint32 schedule_id = 1;
   uint32 last_phase = 2;
   uint32 phase = 3;
@@ -40,20 +25,10 @@ message SeaLampBroadcastNotify {
 }
 
 message SeaLampSetProgressByMuipReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10635;
-  }
-
   uint32 progress = 1;
 }
 
 message SeaLampSetProgressByMuipRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10607;
-  }
-
   int32 retcode = 1;
   uint32 old_progress = 2;
   uint32 new_progress = 3;
@@ -61,36 +36,17 @@ message SeaLampSetProgressByMuipRsp {
 }
 
 message SeaLampProgressImplementNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10621;
-  }
-
   SeaLampProgressNotify msg = 1;
 }
 
 message SeaLampClearProgressByGmNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10603;
-  }
 }
 
 message SeaLampAddProgressByMuipReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10690;
-  }
-
   uint32 add_progress = 1;
 }
 
 message SeaLampAddProgressByMuipRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10673;
-  }
-
   int32 retcode = 1;
   uint32 old_progress = 2;
   uint32 new_progress = 3;
@@ -104,20 +60,10 @@ message SeaLampActivityDataMuip {
 }
 
 message GetActivityDataByMuipReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10699;
-  }
-
   uint32 activity_id = 1;
 }
 
 message GetActivityDataByMuipRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10631;
-  }
-
   int32 retcode = 1;
   uint32 activity_id = 2;
   uint32 schedule_id = 3;

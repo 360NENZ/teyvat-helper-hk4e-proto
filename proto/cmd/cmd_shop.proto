@@ -53,55 +53,21 @@ message Shop {
 }
 
 message GetShopReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 772;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 shop_type = 13;
 }
 
 message GetShopRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 798;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   Shop shop = 11;
   int32 retcode = 2;
 }
 
 message BuyGoodsReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 712;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 buy_count = 14;
   ShopGoods goods = 15;
   uint32 shop_type = 7;
 }
 
 message BuyGoodsRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 735;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 buy_count = 14;
   ShopGoods goods = 12;
   uint32 shop_type = 11;
@@ -110,25 +76,9 @@ message BuyGoodsRsp {
 }
 
 message GetShopmallDataReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 707;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GetShopmallDataRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 721;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 shop_type_list = 15;
   int32 retcode = 3;
 }
@@ -140,27 +90,10 @@ message ActivityShopSheetInfo {
 }
 
 message GetActivityShopSheetInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 703;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 shop_type = 7;
 }
 
 message GetActivityShopSheetInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 790;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ActivityShopSheetInfo sheet_info_list = 6;
   uint32 shop_type = 8;
   int32 retcode = 13;
@@ -172,28 +105,11 @@ message BuyGoodsParam {
 }
 
 message BatchBuyGoodsReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 773;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 shop_type = 7;
   repeated BuyGoodsParam buy_goods_list = 2;
 }
 
 message BatchBuyGoodsRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 799;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ShopGoods goods_list = 9;
   int32 retcode = 1;
   repeated BuyGoodsParam buy_goods_list = 5;

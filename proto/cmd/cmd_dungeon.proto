@@ -59,15 +59,6 @@ enum DungeonRestartReason {
 }
 
 message DungeonEntryInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 972;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 point_id = 2;
   uint32 scene_id = 9;
   repeated Uint32Pair scene_point_id_list = 4;
@@ -93,14 +84,6 @@ message DungeonEntryPointInfo {
 }
 
 message DungeonEntryInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 998;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated DungeonEntryInfo dungeon_entry_list = 12;
   uint32 point_id = 15;
   repeated DungeonEntryPointInfo dungeon_entry_point_list = 4;
@@ -114,96 +97,37 @@ message DungeonEnterPosInfo {
 }
 
 message PlayerEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 912;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   DungeonEnterPosInfo enter_pos_info = 2;
   uint32 point_id = 13;
   uint32 dungeon_id = 7;
 }
 
 message PlayerEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 935;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 dungeon_id = 2;
   uint32 point_id = 6;
   int32 retcode = 5;
 }
 
 message PlayerQuitDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 907;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_quit_immediately = 10;
   uint32 point_id = 7;
 }
 
 message PlayerQuitDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 921;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 point_id = 11;
   int32 retcode = 7;
 }
 
 message DungeonWayPointNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 903;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_add = 9;
   repeated uint32 active_way_point_list = 4;
 }
 
 message DungeonWayPointActivateReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 990;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 way_point_id = 3;
 }
 
 message DungeonWayPointActivateRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 973;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
   uint32 way_point_id = 7;
 }
@@ -264,14 +188,6 @@ message TeamChainSettleInfo {
 }
 
 message DungeonSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 999;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 result = 10;
   uint32 dungeon_id = 13;
   map<uint32, StrengthenPointData> strengthen_point_data_map = 14;
@@ -298,14 +214,6 @@ message DungeonSettleNotify {
 }
 
 message DungeonPlayerDieNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 931;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, StrengthenPointData> strengthen_point_data_map = 15;
   uint32 wait_time = 1;
   uint32 dungeon_id = 9;
@@ -319,92 +227,34 @@ message DungeonPlayerDieNotify {
 }
 
 message DungeonDieOptionReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 975;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   PlayerDieOption die_option = 11;
   bool is_quit_immediately = 14;
 }
 
 message DungeonDieOptionRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 948;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
   uint32 revive_count = 10;
   PlayerDieOption die_option = 6;
 }
 
 message DungeonShowReminderNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 997;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 reminder_id = 9;
 }
 
 message DungeonPlayerDieReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 981;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   PlayerDieType die_type = 6;
   uint32 dungeon_id = 8;
 }
 
 message DungeonPlayerDieRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 905;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
 }
 
 message DungeonDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 982;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, uint32> dungeon_data_map = 1;
 }
 
 message DungeonChallengeBeginNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 947;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 father_index = 5;
   repeated uint32 param_list = 14;
   uint32 challenge_index = 6;
@@ -432,14 +282,6 @@ message CustomDungeonResultInfo {
 }
 
 message DungeonChallengeFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 939;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, StrengthenPointData> strengthen_point_data_map = 13;
   ChallengeFinishType finish_type = 9;
   bool is_new_record = 10;
@@ -457,51 +299,19 @@ message DungeonChallengeFinishNotify {
 }
 
 message ChallengeDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 953;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 value = 8;
   uint32 challenge_index = 2;
   uint32 param_index = 9;
 }
 
 message DungeonFollowNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 922;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 target_uid = 8;
 }
 
 message DungeonGetStatueDropReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 965;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message DungeonGetStatueDropRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 904;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
 }
 
@@ -513,14 +323,6 @@ message ChallengeRecord {
 }
 
 message ChallengeRecordNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 993;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 group_id = 2;
   repeated ChallengeRecord challenge_record_list = 5;
 }
@@ -531,14 +333,6 @@ message DungeonCandidateTeamAvatar {
 }
 
 message DungeonCandidateTeamInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 927;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, DungeonCandidateTeamPlayerState> player_state_map = 10;
   uint32 dungeon_id = 9;
   repeated uint32 ready_player_uid = 13;
@@ -547,230 +341,80 @@ message DungeonCandidateTeamInfoNotify {
 }
 
 message DungeonCandidateTeamInviteNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 994;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 player_uid = 5;
   uint32 vaild_deadline_time_sec = 9;
   uint32 dungeon_id = 6;
 }
 
 message DungeonCandidateTeamRefuseNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 988;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 player_uid = 3;
 }
 
 message DungeonCandidateTeamPlayerLeaveNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 926;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   DungeonCandidateTeamPlayerLeaveReason reason = 3;
   uint32 player_uid = 13;
 }
 
 message DungeonCandidateTeamDismissNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 963;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   DungeonCandidateTeamDismissReason reason = 9;
   uint32 player_uid = 12;
 }
 
 message DungeonCandidateTeamCreateReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 995;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 point_id = 7;
   uint32 dungeon_id = 6;
 }
 
 message DungeonCandidateTeamCreateRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 906;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
 }
 
 message DungeonCandidateTeamInviteReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 934;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 player_uids = 5;
 }
 
 message DungeonCandidateTeamInviteRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 950;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
   repeated uint32 invalid_player_uids = 7;
 }
 
 message DungeonCandidateTeamKickReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 943;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 player_uid = 9;
 }
 
 message DungeonCandidateTeamKickRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 974;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
 }
 
 message DungeonCandidateTeamLeaveReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 976;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message DungeonCandidateTeamLeaveRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 946;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 14;
 }
 
 message DungeonCandidateTeamReplyInviteReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 941;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_accept = 5;
 }
 
 message DungeonCandidateTeamReplyInviteRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 949;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_trans_point = 4;
   int32 retcode = 2;
 }
 
 message DungeonCandidateTeamSetReadyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 991;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_ready = 15;
 }
 
 message DungeonCandidateTeamSetReadyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 924;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
 }
 
 message DungeonCandidateTeamChangeAvatarReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 956;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint64 avatar_guid_list = 5;
 }
 
 message DungeonCandidateTeamChangeAvatarRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 942;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
 }
 
@@ -782,81 +426,30 @@ message DailyDungeonEntryInfo {
 }
 
 message GetDailyDungeonEntryInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 930;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 scene_id = 15;
 }
 
 message GetDailyDungeonEntryInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 967;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated DailyDungeonEntryInfo daily_dungeon_info_list = 2;
   int32 retcode = 14;
 }
 
 message DungeonSlipRevivePointActivateReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 958;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 slip_revive_point_id = 9;
 }
 
 message DungeonSlipRevivePointActivateRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 970;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 slip_revive_point_id = 14;
   int32 retcode = 4;
 }
 
 message DungeonInterruptChallengeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 917;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 challenge_index = 14;
   uint32 group_id = 13;
   uint32 challenge_id = 11;
 }
 
 message DungeonInterruptChallengeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 902;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   uint32 challenge_index = 2;
   uint32 group_id = 15;
@@ -864,51 +457,18 @@ message DungeonInterruptChallengeRsp {
 }
 
 message InteractDailyDungeonInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 919;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message DungeonRestartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 961;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message DungeonRestartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 929;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 dungeon_id = 15;
   int32 retcode = 9;
   uint32 point_id = 14;
 }
 
 message DungeonRestartInviteNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 957;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 player_uid = 3;
   uint32 cd = 15;
   uint32 point_id = 13;
@@ -916,108 +476,38 @@ message DungeonRestartInviteNotify {
 }
 
 message DungeonRestartInviteReplyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1000;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_accept = 11;
 }
 
 message DungeonRestartInviteReplyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 916;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_accept = 10;
   bool is_trans_point = 1;
   int32 retcode = 9;
 }
 
 message DungeonRestartInviteReplyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 987;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_accept = 6;
   uint32 player_uid = 9;
 }
 
 message DungeonRestartResultNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 940;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_add_accpet = 9;
 }
 
 message DungeonCandidateTeamSetChangingAvatarReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 918;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_changing_avatar = 12;
 }
 
 message DungeonCandidateTeamSetChangingAvatarRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 966;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
 }
 
 message MistTrialFloorLevelNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 968;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 floor_level = 7;
   uint32 dungeon_scene_id = 14;
 }
 
 message DungeonReviseLevelNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 933;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 scene_level = 5;
   uint32 revise_level = 10;
   uint32 dungeon_id = 3;

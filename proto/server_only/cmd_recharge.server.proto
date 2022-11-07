@@ -32,67 +32,33 @@ message Order {
 }
 
 message RechargeOrderNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10726;
-  }
-
   Order order = 1;
 }
 
 message MarkOrderFinishedReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10718;
-  }
-
   uint32 order_id = 1;
   uint32 finish_time = 2;
   bool is_retry = 3;
 }
 
 message MarkOrderFinishedRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10725;
-  }
-
   int32 retcode = 1;
   uint32 order_id = 2;
 }
 
 message GetUnfinishedOrderReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10707;
-  }
 }
 
 message GetUnfinishedOrderRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10702;
-  }
-
   int32 retcode = 1;
   repeated Order order_list = 2;
 }
 
 message GetSpecificUnfinishedReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10731;
-  }
-
   uint32 order_id = 1;
 }
 
 message GetSpecificUnfinishedRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10729;
-  }
-
   int32 retcode = 1;
   Order order = 2;
 }

@@ -30,40 +30,15 @@ message ScenePlayBattleInfo {
 }
 
 message ScenePlayBattleInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4422;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   ScenePlayBattleInfo battle_info = 11;
 }
 
 message ScenePlayOwnerCheckReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4448;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 play_id = 9;
   bool is_skip_match = 6;
 }
 
 message ScenePlayOwnerCheckRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4362;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 param_list = 8;
   bool is_skip_match = 1;
   uint32 play_id = 9;
@@ -72,98 +47,40 @@ message ScenePlayOwnerCheckRsp {
 }
 
 message ScenePlayOwnerStartInviteReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4385;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_skip_match = 8;
   uint32 play_id = 13;
 }
 
 message ScenePlayOwnerStartInviteRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4357;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_skip_match = 7;
   int32 retcode = 15;
   uint32 play_id = 11;
 }
 
 message ScenePlayOwnerInviteNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4371;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 invite_cd = 14;
   uint32 play_id = 5;
   bool is_remain_reward = 15;
 }
 
 message ScenePlayGuestReplyInviteReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4353;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_agree = 15;
   uint32 play_id = 6;
 }
 
 message ScenePlayGuestReplyInviteRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4440;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
   bool is_agree = 2;
   uint32 play_id = 8;
 }
 
 message ScenePlayGuestReplyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4423;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 play_id = 13;
   uint32 guest_uid = 12;
   bool is_agree = 3;
 }
 
 message ScenePlayInviteResultNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4449;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_all_argee = 11;
   uint32 play_id = 15;
 }
@@ -176,26 +93,10 @@ message ScenePlayInfo {
 }
 
 message ScenePlayInfoListNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4381;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ScenePlayInfo play_info_list = 6;
 }
 
 message ScenePlayBattleInterruptNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4425;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 interrupt_state = 6;
   uint32 play_id = 5;
   uint32 play_type = 1;
@@ -218,14 +119,6 @@ message ScenePlayBattleSettleRewardInfo {
 }
 
 message ScenePlayBattleResultNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4398;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_win = 1;
   uint32 cost_time = 7;
   uint32 play_type = 15;
@@ -235,14 +128,6 @@ message ScenePlayBattleResultNotify {
 }
 
 message ScenePlayBattleUidOpNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4447;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 op = 7;
   repeated uint32 param_target_list = 9;
   uint32 entity_id = 2;
@@ -256,26 +141,9 @@ message ScenePlayBattleUidOpNotify {
 }
 
 message ScenePlayBattleInfoListNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4431;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ScenePlayBattleInfo battle_info_list = 12;
 }
 
 message ScenePlayOutofRegionNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4355;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 play_id = 13;
 }

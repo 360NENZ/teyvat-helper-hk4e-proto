@@ -35,11 +35,6 @@ message OfflineOpData {
 }
 
 message SendOfflineOpReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12226;
-  }
-
   uint32 uid = 1;
   fixed32 time = 2;
   OfflineOpType op_type = 3;
@@ -47,11 +42,6 @@ message SendOfflineOpReq {
 }
 
 message SendOfflineOpRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12218;
-  }
-
   int32 retcode = 1;
   uint32 index = 2;
   OfflineOpType op_type = 3;
@@ -59,62 +49,32 @@ message SendOfflineOpRsp {
 }
 
 message GetOfflineOpReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12225;
-  }
-
   OfflineOpType op_type = 1;
   uint32 index = 2;
 }
 
 message GetOfflineOpRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12207;
-  }
-
   int32 retcode = 1;
   repeated bytes bin_str_list = 2;
 }
 
 message NewOfflineOpNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12202;
-  }
-
   OfflineOpType op_type = 1;
   uint32 index = 2;
 }
 
 message RemoveOfflineOpReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12231;
-  }
-
   OfflineOpType op_type = 1;
   uint32 index = 2;
 }
 
 message RemoveOfflineOpRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12229;
-  }
-
   int32 retcode = 1;
   OfflineOpType op_type = 2;
   uint32 index = 3;
 }
 
 message SendGCGOfflineOpReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12222;
-  }
-
   uint32 uid = 1;
   fixed32 time = 2;
   OfflineOpType op_type = 3;
@@ -122,11 +82,6 @@ message SendGCGOfflineOpReq {
 }
 
 message SendGCGOfflineOpRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12244;
-  }
-
   int32 retcode = 1;
   uint32 index = 2;
   OfflineOpType op_type = 3;

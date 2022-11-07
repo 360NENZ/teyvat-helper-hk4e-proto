@@ -36,80 +36,29 @@ message InvestigationTarget {
 }
 
 message PlayerInvestigationAllInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1928;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated Investigation investigation_list = 15;
   repeated InvestigationTarget investigation_target_list = 12;
 }
 
 message TakeInvestigationRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1912;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 id = 5;
 }
 
 message TakeInvestigationRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1922;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
   uint32 id = 12;
 }
 
 message TakeInvestigationTargetRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1918;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 quest_id = 11;
 }
 
 message TakeInvestigationTargetRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1916;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   uint32 quest_id = 2;
 }
 
 message GetInvestigationMonsterReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1901;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 city_id_list = 3;
   bool is_for_mark = 4;
 }
@@ -140,54 +89,20 @@ message InvestigationMonster {
 }
 
 message GetInvestigationMonsterRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1910;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated InvestigationMonster monster_list = 10;
   int32 retcode = 1;
   bool is_for_mark = 2;
 }
 
 message PlayerInvestigationNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1911;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated Investigation investigation_list = 1;
 }
 
 message PlayerInvestigationTargetNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1929;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated InvestigationTarget investigation_target_list = 1;
 }
 
 message MarkTargetInvestigationMonsterNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1915;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 scene_id = 11;
   uint32 monster_id = 4;
   uint32 group_id = 5;
@@ -195,34 +110,11 @@ message MarkTargetInvestigationMonsterNotify {
 }
 
 message InvestigationMonsterUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1906;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   InvestigationMonster investigation_monster = 5;
 }
 
 message InvestigationQuestDailyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1921;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message InvestigationReadQuestDailyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1902;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }

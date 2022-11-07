@@ -36,14 +36,6 @@ enum ActivityPushTipsState {
 }
 
 message GetActivityScheduleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2136;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message ActivityScheduleInfo {
@@ -55,29 +47,12 @@ message ActivityScheduleInfo {
 }
 
 message GetActivityScheduleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2107;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ActivityScheduleInfo activity_schedule_list = 9;
   int32 retcode = 13;
   uint32 remain_fly_sea_lamp_num = 4;
 }
 
 message GetActivityInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2095;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 activity_id_list = 4;
 }
 
@@ -177,14 +152,6 @@ message ActivityInfo {
 }
 
 message GetActivityInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2041;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 13;
   repeated ActivityInfo activity_info_list = 5;
   repeated uint32 activated_sale_id_list = 11;
@@ -192,41 +159,14 @@ message GetActivityInfoRsp {
 }
 
 message ActivityPlayOpenAnimNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2157;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 8;
 }
 
 message ActivityInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2060;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ActivityInfo activity_info = 9;
 }
 
 message ActivityScheduleInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2073;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated ActivityScheduleInfo activity_schedule_list = 12;
   uint32 remain_fly_sea_lamp_num = 6;
 }
@@ -239,84 +179,33 @@ message ActivityWatcherInfo {
 }
 
 message ActivityTakeWatcherRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2038;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 4;
   uint32 watcher_id = 14;
 }
 
 message ActivityTakeWatcherRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2034;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 activity_id = 14;
   uint32 watcher_id = 7;
   int32 retcode = 9;
 }
 
 message ActivityUpdateWatcherNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2156;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   ActivityWatcherInfo watcher_info = 2;
   uint32 activity_id = 1;
 }
 
 message ActivitySelectAvatarCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2028;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 15;
   uint32 reward_id = 10;
 }
 
 message ActivitySelectAvatarCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2189;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 activity_id = 4;
   int32 retcode = 3;
   uint32 reward_id = 9;
 }
 
 message ActivityCoinInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2008;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 8;
   uint32 activity_id = 10;
   map<uint32, uint32> activity_coin_map = 2;
@@ -333,15 +222,6 @@ message SeaLampActivityDetailInfo {
 }
 
 message SeaLampFlyLampReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2199;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 item_id = 9;
   int32 param = 10;
   Vector pos = 7;
@@ -349,96 +229,37 @@ message SeaLampFlyLampReq {
 }
 
 message SeaLampFlyLampRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2192;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 item_num = 9;
   uint32 item_id = 15;
   int32 retcode = 14;
 }
 
 message SeaLampTakeContributionRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2019;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 4;
   uint32 config_id = 10;
 }
 
 message SeaLampTakeContributionRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2177;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 config_id = 9;
   int32 retcode = 7;
 }
 
 message SeaLampTakePhaseRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2176;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 phase_id = 12;
   uint32 activity_id = 11;
 }
 
 message SeaLampTakePhaseRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2190;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 phase_id = 2;
   int32 retcode = 6;
 }
 
 message SeaLampContributeItemReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2123;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 8;
   repeated ItemParam item_list = 1;
 }
 
 message SeaLampContributeItemRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2139;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 add_contribution = 7;
   uint32 add_progress = 1;
   uint32 total_contribution = 14;
@@ -462,14 +283,6 @@ message SeaLampActivityInfo {
 }
 
 message SeaLampFlyLampNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2105;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   Vector pos = 11;
   uint32 item_num = 10;
   uint32 item_id = 7;
@@ -477,26 +290,10 @@ message SeaLampFlyLampNotify {
 }
 
 message SeaLampCoinNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2114;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 sea_lamp_coin = 8;
 }
 
 message SeaLampPopularityNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2032;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 popularity = 4;
 }
 
@@ -513,78 +310,28 @@ message AnnounceData {
 }
 
 message LoadActivityTerrainNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2029;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 3;
 }
 
 message ServerAnnounceNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2197;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated AnnounceData announce_data_list = 11;
 }
 
 message ServerAnnounceRevokeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2092;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 config_id_list = 15;
 }
 
 message ActivityBannerNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2155;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 1;
   uint32 activity_id = 3;
 }
 
 message ActivityBannerClearReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2009;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 15;
   uint32 activity_id = 12;
 }
 
 message ActivityBannerClearRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2163;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 activity_id = 4;
   int32 retcode = 6;
   uint32 schedule_id = 11;
@@ -604,54 +351,20 @@ message SalesmanActivityDetailInfo {
 }
 
 message SalesmanDeliverItemReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2138;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 4;
 }
 
 message SalesmanDeliverItemRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2104;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 9;
   int32 retcode = 15;
 }
 
 message SalesmanTakeRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2191;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 position = 8;
   uint32 schedule_id = 7;
 }
 
 message SalesmanTakeRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2110;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 position = 13;
   uint32 schedule_id = 7;
   uint32 reward_id = 9;
@@ -659,14 +372,6 @@ message SalesmanTakeRewardRsp {
 }
 
 message ActivityCondStateChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2140;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 activated_sale_id_list = 9;
   uint32 activity_id = 4;
   uint32 schedule_id = 5;
@@ -676,53 +381,19 @@ message ActivityCondStateChangeNotify {
 }
 
 message SalesmanTakeSpecialRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2145;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 13;
 }
 
 message SalesmanTakeSpecialRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2124;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
   uint32 schedule_id = 5;
 }
 
 message GetAuthSalesmanInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2070;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 8;
 }
 
 message GetAuthSalesmanInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2004;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 day_reward_id = 5;
   int32 retcode = 6;
   uint32 schedule_id = 11;
@@ -740,82 +411,32 @@ message TrialAvatarActivityDetailInfo {
 }
 
 message EnterTrialAvatarActivityDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2118;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 enter_point_id = 10;
   uint32 trial_avatar_index_id = 5;
   uint32 activity_id = 14;
 }
 
 message EnterTrialAvatarActivityDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2183;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   uint32 trial_avatar_index_id = 13;
   uint32 activity_id = 10;
 }
 
 message ReceivedTrialAvatarActivityRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2130;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 trial_avatar_index_id = 4;
 }
 
 message ReceivedTrialAvatarActivityRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2076;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 activity_id = 13;
   int32 retcode = 3;
   uint32 trial_avatar_index_id = 9;
 }
 
 message TrialAvatarFirstPassDungeonNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2013;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 trial_avatar_index_id = 10;
 }
 
 message TrialAvatarInDungeonIndexNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2186;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 trial_avatar_index_id = 14;
 }
 
@@ -841,40 +462,15 @@ message DeliveryActivityDetailInfo {
 }
 
 message TakeDeliveryDailyRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2121;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 9;
 }
 
 message TakeDeliveryDailyRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2162;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 5;
   int32 retcode = 7;
 }
 
 message FinishDeliveryNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2089;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 finished_quest_index = 1;
   uint32 schedule_id = 10;
   uint32 day_index = 12;
@@ -923,29 +519,12 @@ message AsterActivityDetailInfo {
 }
 
 message SelectAsterMidDifficultyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2134;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gadget_entity_id = 13;
   uint32 schedule_id = 1;
   uint32 difficulty_id = 5;
 }
 
 message SelectAsterMidDifficultyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2180;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
   uint32 schedule_id = 2;
   uint32 gadget_entity_id = 5;
@@ -953,89 +532,32 @@ message SelectAsterMidDifficultyRsp {
 }
 
 message AsterProgressInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2016;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   AsterProgressDetailInfo info = 1;
 }
 
 message AsterLittleInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2068;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   AsterLittleDetailInfo info = 1;
 }
 
 message AsterMidInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2031;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   AsterMidDetailInfo info = 4;
 }
 
 message AsterMiscInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2036;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 aster_token = 2;
   uint32 aster_credit = 15;
 }
 
 message TakeAsterSpecialRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2097;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 5;
 }
 
 message TakeAsterSpecialRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2193;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
   uint32 schedule_id = 14;
 }
 
 message AsterLargeInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2146;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   AsterLargeDetailInfo info = 10;
 }
 
@@ -1054,14 +576,6 @@ message FlightActivityDetailInfo {
 }
 
 message FlightActivitySettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2195;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_new_record = 1;
   uint32 medal_level = 6;
   uint32 left_time = 13;
@@ -1073,42 +587,17 @@ message FlightActivitySettleNotify {
 }
 
 message FlightActivityRestartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2037;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 group_id = 4;
   uint32 schedule_id = 10;
 }
 
 message FlightActivityRestartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2165;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 group_id = 11;
   uint32 schedule_id = 10;
   int32 retcode = 15;
 }
 
 message AsterMidCampInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2133;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated AsterMidCampInfo camp_list = 5;
 }
 
@@ -1131,55 +620,23 @@ message DragonSpineChapterInfo {
 }
 
 message DragonSpineChapterOpenNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2022;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 12;
   uint32 chapter_id = 10;
 }
 
 message DragonSpineChapterProgressChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2065;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 7;
   uint32 chapter_id = 11;
   uint32 cur_progress = 5;
 }
 
 message DragonSpineChapterFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2069;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 13;
   uint32 chapter_id = 11;
   uint32 weapon_enhance_level = 14;
 }
 
 message DragonSpineCoinChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2088;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 shimmering_essence = 4;
   uint32 warm_essence = 13;
   uint32 schedule_id = 12;
@@ -1187,14 +644,6 @@ message DragonSpineCoinChangeNotify {
 }
 
 message ActivitySaleChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2071;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 sale_id = 5;
   bool is_close = 1;
 }
@@ -1217,15 +666,6 @@ message EffigyActivityDetailInfo {
 }
 
 message StartEffigyChallengeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2169;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 difficulty_id = 9;
   repeated uint32 condition_id_list = 6;
   uint32 challenge_id = 1;
@@ -1233,14 +673,6 @@ message StartEffigyChallengeReq {
 }
 
 message StartEffigyChallengeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2173;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 condition_id_list = 2;
   int32 retcode = 8;
   uint32 challenge_id = 15;
@@ -1249,14 +681,6 @@ message StartEffigyChallengeRsp {
 }
 
 message EffigyChallengeInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2090;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 difficulty_id = 9;
   repeated uint32 condition_id_list = 11;
   uint32 challenge_score = 14;
@@ -1272,14 +696,6 @@ message EffigyChallengeDungeonResultInfo {
 }
 
 message EffigyChallengeResultNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2046;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_success = 5;
   uint32 challenge_max_score = 12;
   uint32 challenge_score = 3;
@@ -1287,81 +703,30 @@ message EffigyChallengeResultNotify {
 }
 
 message TakeEffigyFirstPassRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2196;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 challenge_id = 6;
 }
 
 message TakeEffigyFirstPassRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2061;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 challenge_id = 2;
   int32 retcode = 7;
 }
 
 message TakeEffigyRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2040;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 reward_index = 14;
 }
 
 message TakeEffigyRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2007;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
   uint32 reward_index = 7;
 }
 
 message SelectEffigyChallengeConditionReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2064;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 difficulty_id = 15;
   uint32 challenge_id = 7;
   repeated uint32 condition_id_list = 9;
 }
 
 message SelectEffigyChallengeConditionRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2039;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 condition_id_list = 12;
   int32 retcode = 6;
   uint32 difficulty_id = 7;
@@ -1369,25 +734,9 @@ message SelectEffigyChallengeConditionRsp {
 }
 
 message RestartEffigyChallengeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2148;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message RestartEffigyChallengeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2042;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
 }
 
@@ -1424,81 +773,28 @@ message TreasureMapActivityDetailInfo {
 }
 
 message TreasureMapRegionInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2185;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   TreasureMapRegionInfo region_info = 14;
 }
 
 message TreasureMapCurrencyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2171;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 currency_num = 8;
 }
 
 message TreasureMapRegionActiveNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2122;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 active_region_index = 14;
 }
 
 message TreasureMapMpChallengeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2048;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message TreasureMapBonusChallengeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2115;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   TreasureMapBonusChallengeInfo info = 5;
 }
 
 message TreasureMapGuideTaskDoneNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2119;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message TreasureMapPreTaskDoneNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2152;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message BlessingActivityDetailInfo {
@@ -1513,52 +809,19 @@ message BlessingActivityDetailInfo {
 }
 
 message BlessingScanReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2081;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 11;
 }
 
 message BlessingScanRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2093;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 scan_pic_id = 4;
   int32 retcode = 11;
   uint32 cur_day_scan_num = 1;
 }
 
 message BlessingRedeemRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2137;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message BlessingRedeemRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2098;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, uint32> pic_num_map = 12;
   int32 retcode = 15;
 }
@@ -1586,80 +849,30 @@ message BlessingRecvPicRecord {
 }
 
 message BlessingGetFriendPicListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2043;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message BlessingGetFriendPicListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2056;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
   repeated BlessingFriendPicData friend_pic_data_list = 6;
 }
 
 message BlessingGiveFriendPicReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2062;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 uid = 11;
   uint32 pic_id = 3;
 }
 
 message BlessingGiveFriendPicRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2053;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 pic_id = 10;
   int32 retcode = 11;
   uint32 uid = 13;
 }
 
 message BlessingAcceptGivePicReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2006;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 index = 9;
   uint32 uid = 1;
 }
 
 message BlessingAcceptGivePicRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2055;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 pic_id = 1;
   int32 retcode = 13;
   uint32 index = 5;
@@ -1667,62 +880,22 @@ message BlessingAcceptGivePicRsp {
 }
 
 message BlessingGetAllRecvPicRecordListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2096;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message BlessingGetAllRecvPicRecordListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2083;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated BlessingRecvPicRecord recv_pic_record_list = 15;
   int32 retcode = 9;
 }
 
 message BlessingRecvFriendPicNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2178;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 uid = 15;
   uint32 pic_id = 5;
 }
 
 message BlessingAcceptAllGivePicReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2045;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message BlessingAcceptAllGivePicRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2044;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   map<uint32, uint32> accept_pic_num_map = 14;
   repeated uint32 accept_index_list = 5;
@@ -1757,15 +930,6 @@ message ExpeditionActivityDetailInfo {
 }
 
 message ExpeditionStartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2087;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 avatar_id_list = 1;
   uint32 assist_uid = 5;
   uint32 assist_avatar_id = 8;
@@ -1773,14 +937,6 @@ message ExpeditionStartReq {
 }
 
 message ExpeditionStartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2135;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 assist_uid = 1;
   uint32 path_id = 7;
   repeated uint32 avatar_id_list = 4;
@@ -1789,53 +945,19 @@ message ExpeditionStartRsp {
 }
 
 message ExpeditionRecallReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2131;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 path_id = 13;
 }
 
 message ExpeditionRecallRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2129;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 path_id = 1;
   int32 retcode = 8;
 }
 
 message ExpeditionTakeRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2149;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 path_id = 3;
 }
 
 message ExpeditionTakeRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2080;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 13;
   bool is_bonus = 11;
   uint32 reward_level = 1;
@@ -1851,77 +973,28 @@ message ExpeditionAssistInfo {
 }
 
 message GetExpeditionAssistInfoListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2150;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GetExpeditionAssistInfoListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2035;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ExpeditionAssistInfo assist_info_list = 6;
   int32 retcode = 7;
 }
 
 message SetCurExpeditionChallengeIdReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2021;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 id = 5;
 }
 
 message SetCurExpeditionChallengeIdRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2049;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 id = 14;
   int32 retcode = 3;
 }
 
 message ExpeditionChallengeEnterRegionNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2154;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 id = 5;
   bool is_puzzle_finished = 10;
 }
 
 message ExpeditionChallengeFinishedNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2091;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 id = 13;
 }
 
@@ -1993,41 +1066,16 @@ message FleurFairFallSettleInfo {
 }
 
 message FleurFairBalloonSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2099;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 minigame_id = 9;
   map<uint32, FleurFairBalloonSettleInfo> settle_info_map = 15;
 }
 
 message FleurFairFallSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2017;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 minigame_id = 15;
   map<uint32, FleurFairFallSettleInfo> settle_info_map = 11;
 }
 
 message FleurFairMusicGameSettleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2194;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 score = 3;
   uint32 combo = 6;
   uint32 correct_hit = 10;
@@ -2035,14 +1083,6 @@ message FleurFairMusicGameSettleReq {
 }
 
 message FleurFairMusicGameSettleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2113;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_unlock_next_level = 4;
   bool is_new_record = 12;
   int32 retcode = 5;
@@ -2050,53 +1090,19 @@ message FleurFairMusicGameSettleRsp {
 }
 
 message FleurFairMusicGameStartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2167;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 music_basic_id = 2;
 }
 
 message FleurFairMusicGameStartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2079;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
   uint32 music_basic_id = 7;
 }
 
 message FleurFairReplayMiniGameReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2181;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 minigame_id = 5;
 }
 
 message FleurFairReplayMiniGameRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2052;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 14;
   uint32 minigame_id = 8;
 }
@@ -2114,29 +1120,12 @@ message ArenaChallengeActivityDetailInfo {
 }
 
 message StartArenaChallengeLevelReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2127;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 arena_challenge_id = 4;
   uint32 gadget_entity_id = 5;
   uint32 arena_challenge_level = 2;
 }
 
 message StartArenaChallengeLevelRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2125;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 arena_challenge_level = 1;
   int32 retcode = 9;
   uint32 gadget_entity_id = 3;
@@ -2152,14 +1141,6 @@ message ArenaChallengeChildChallengeInfo {
 }
 
 message ArenaChallengeFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2030;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 arena_challenge_level = 13;
   uint32 arena_challenge_id = 3;
   repeated ArenaChallengeChildChallengeInfo child_challenge_list = 2;
@@ -2167,38 +1148,14 @@ message ArenaChallengeFinishNotify {
 }
 
 message WaterSpritePhaseFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2025;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message ActivityTakeWatcherRewardBatchReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2159;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 watcher_id_list = 11;
   uint32 activity_id = 3;
 }
 
 message ActivityTakeWatcherRewardBatchRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2109;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 watcher_id_list = 6;
   int32 retcode = 15;
   uint32 activity_id = 7;
@@ -2275,56 +1232,23 @@ message ChannelerSlabActivityDetailInfo {
 }
 
 message ChannelerSlabStageActiveChallengeIndexNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8734;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 15;
   uint32 challenge_index = 12;
   uint32 active_camp_index = 6;
 }
 
 message ChannelerSlabStageOneoffDungeonNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8203;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 2;
   bool is_done = 8;
 }
 
 message ChannellerSlabWearBuffReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8107;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 buff_id = 3;
   bool is_mp = 5;
   uint32 slot_id = 13;
 }
 
 message ChannellerSlabWearBuffRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8600;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 buff_id = 15;
   int32 retcode = 1;
   bool is_mp = 9;
@@ -2332,29 +1256,12 @@ message ChannellerSlabWearBuffRsp {
 }
 
 message ChannellerSlabTakeoffBuffReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8516;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_mp = 10;
   uint32 slot_id = 12;
   uint32 buff_id = 9;
 }
 
 message ChannellerSlabTakeoffBuffRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8237;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
   bool is_mp = 13;
   uint32 buff_id = 14;
@@ -2362,15 +1269,6 @@ message ChannellerSlabTakeoffBuffRsp {
 }
 
 message ChannellerSlabEnterLoopDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8869;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 point_id = 9;
   uint32 dungeon_index = 10;
   repeated uint32 condition_id_list = 5;
@@ -2378,14 +1276,6 @@ message ChannellerSlabEnterLoopDungeonReq {
 }
 
 message ChannellerSlabEnterLoopDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8081;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
   uint32 point_id = 12;
   repeated uint32 condition_id_list = 6;
@@ -2394,66 +1284,24 @@ message ChannellerSlabEnterLoopDungeonRsp {
 }
 
 message ChannellerSlabLoopDungeonTakeFirstPassRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8589;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 dungeon_index = 10;
 }
 
 message ChannellerSlabLoopDungeonTakeFirstPassRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8539;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
   uint32 dungeon_index = 8;
 }
 
 message ChannellerSlabLoopDungeonTakeScoreRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8684;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 reward_index = 8;
 }
 
 message ChannellerSlabLoopDungeonTakeScoreRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8433;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 reward_index = 12;
   int32 retcode = 5;
 }
 
 message ChannellerSlabLoopDungeonChallengeInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8224;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 dungeon_index = 12;
   uint32 challenge_score = 4;
   uint32 difficulty_id = 2;
@@ -2462,29 +1310,12 @@ message ChannellerSlabLoopDungeonChallengeInfoNotify {
 }
 
 message ChannellerSlabLoopDungeonSelectConditionReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8503;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 dungeon_index = 4;
   repeated uint32 condition_id_list = 3;
   uint32 difficulty_id = 8;
 }
 
 message ChannellerSlabLoopDungeonSelectConditionRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8509;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
   uint32 dungeon_index = 5;
   repeated uint32 condition_id_list = 13;
@@ -2500,63 +1331,22 @@ message ChannellerSlabLoopDungeonResultInfo {
 }
 
 message ChannellerSlabOneOffDungeonInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8409;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message ChannellerSlabOneOffDungeonInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8268;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 scheme_buff_id_list = 3;
   int32 retcode = 15;
 }
 
 message ChannellerSlabOneOffDungeonInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8729;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 scheme_buff_id_list = 6;
 }
 
 message ChannellerSlabSaveAssistInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8416;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated ChannellerSlabAssistInfo assist_info_list = 8;
 }
 
 message ChannellerSlabSaveAssistInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8932;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ChannellerSlabAssistInfo assist_info_list = 8;
   int32 retcode = 11;
 }
@@ -2581,15 +1371,6 @@ message MistTrialActivityDetailInfo {
 }
 
 message MistTrialSelectAvatarAndEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8666;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   message SelectAvatarIndex {
     oneof detail {
       uint32 mist_trial_avatar_id = 8;
@@ -2604,14 +1385,6 @@ message MistTrialSelectAvatarAndEnterDungeonReq {
 }
 
 message MistTrialSelectAvatarAndEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8239;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 trial_id = 1;
   int32 retcode = 2;
 }
@@ -2622,64 +1395,23 @@ message MistTrialMissionInfo {
 }
 
 message MistTrialGetChallengeMissionReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8893;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 trial_id = 9;
 }
 
 message MistTrialGetChallengeMissionRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8508;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 trial_id = 1;
   repeated MistTrialMissionInfo mission_info_list = 15;
   int32 retcode = 11;
 }
 
 message MistTrialDunegonFailNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8135;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 dungeon_id = 9;
 }
 
 message ChannellerSlabCheckEnterLoopDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8745;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message ChannellerSlabCheckEnterLoopDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8452;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
 }
 
@@ -2697,108 +1429,40 @@ message HideAndSeekActivityDetailInfo {
 }
 
 message HideAndSeekSelectSkillReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8183;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 skill_list = 13;
 }
 
 message HideAndSeekSelectSkillRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8088;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
   repeated uint32 skill_list = 12;
 }
 
 message ActivityTakeScoreRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8971;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 reward_config_id = 12;
   uint32 activity_id = 9;
 }
 
 message ActivityTakeScoreRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8583;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 activity_id = 13;
   int32 retcode = 9;
   uint32 reward_config_id = 15;
 }
 
 message ActivityTakeAllScoreRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8372;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 9;
 }
 
 message ActivityTakeAllScoreRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8043;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 reward_config_list = 14;
   int32 retcode = 15;
   uint32 activity_id = 7;
 }
 
 message HideAndSeekChooseMapReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8512;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 map_list = 3;
 }
 
 message HideAndSeekChooseMapRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8533;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 map_list = 3;
   int32 retcode = 11;
 }
@@ -2818,38 +1482,15 @@ message FindHilichurlDetailInfo {
 }
 
 message CommonPlayerTipsNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8466;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 notify_type = 3;
   repeated string text_map_id_list = 9;
 }
 
 message FindHilichurlFinishSecondQuestNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8901;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 day_index = 11;
 }
 
 message FindHilichurlAcceptQuestNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8659;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message SummerTimeSprintBoatRecord {
@@ -2878,42 +1519,18 @@ message SummerTimeStageInfo {
 }
 
 message SummerTimeFloatSignalPositionNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8077;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   Vector position = 1;
   bool is_transfer_anchor = 5;
   uint32 float_signal_id = 7;
 }
 
 message SummerTimeFloatSignalUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8781;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_transfer_anchor = 4;
   uint32 float_signal_id = 8;
   Vector position = 10;
 }
 
 message SummerTimeSprintBoatSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8651;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 total_num = 13;
   uint32 group_id = 12;
   bool is_success = 15;
@@ -2925,28 +1542,11 @@ message SummerTimeSprintBoatSettleNotify {
 }
 
 message SummerTimeSprintBoatRestartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8410;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 group_id = 10;
   uint32 schedule_id = 14;
 }
 
 message SummerTimeSprintBoatRestartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8356;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
   uint32 schedule_id = 5;
   uint32 group_id = 4;
@@ -2962,28 +1562,11 @@ message BuoyantCombatDetailInfo {
 }
 
 message StartBuoyantCombatGalleryReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8732;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 15;
   uint32 gallery_level = 13;
 }
 
 message StartBuoyantCombatGalleryRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8680;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_level = 12;
   int32 retcode = 5;
   uint32 gallery_id = 8;
@@ -2995,27 +1578,11 @@ message BuoyantCombatSettleInfo {
 }
 
 message BuoyantCombatSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8305;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 8;
   BuoyantCombatSettleInfo settle_info = 11;
 }
 
 message SetLimitOptimizationNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8851;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_active = 3;
 }
 
@@ -3035,39 +1602,14 @@ message EchoShellDetailInfo {
 }
 
 message EchoShellUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8150;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 shell_id = 1;
 }
 
 message EchoShellTakeRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8114;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 reward_id = 10;
 }
 
 message EchoShellTakeRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8797;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 reward_id = 6;
   int32 retcode = 10;
 }
@@ -3085,14 +1627,6 @@ message BounceConjuringActivityDetailInfo {
 }
 
 message BounceConjuringSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8084;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_new_record = 14;
   map<uint32, BounceConjuringGallerySettleInfo> settle_info_map = 4;
   uint32 total_score = 2;
@@ -3119,28 +1653,11 @@ message BlitzRushActivityDetailInfo {
 }
 
 message BlitzRushParkourRestartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8653;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 13;
   uint32 group_id = 2;
 }
 
 message BlitzRushParkourRestartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8944;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 14;
   uint32 group_id = 15;
   uint32 schedule_id = 1;
@@ -3159,40 +1676,15 @@ message ChessActivityDetailInfo {
 }
 
 message EnterChessDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8191;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 map_id = 12;
 }
 
 message EnterChessDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8592;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
   uint32 map_id = 13;
 }
 
 message TreasureMapHostInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8681;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 mp_challenge_region_list = 8;
 }
 
@@ -3221,15 +1713,6 @@ message SumoStageData {
 }
 
 message SumoSaveTeamReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8313;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 11;
   uint32 stage_id = 13;
   uint32 difficulty_id = 7;
@@ -3237,14 +1720,6 @@ message SumoSaveTeamReq {
 }
 
 message SumoSaveTeamRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8319;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 9;
   int32 retcode = 2;
   uint32 activity_id = 11;
@@ -3253,15 +1728,6 @@ message SumoSaveTeamRsp {
 }
 
 message SumoSelectTeamAndEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8215;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 1;
   uint32 stage_id = 7;
   uint32 difficulty_id = 4;
@@ -3269,14 +1735,6 @@ message SumoSelectTeamAndEnterDungeonReq {
 }
 
 message SumoSelectTeamAndEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8193;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   uint32 activity_id = 14;
   uint32 difficulty_id = 12;
@@ -3285,14 +1743,6 @@ message SumoSelectTeamAndEnterDungeonRsp {
 }
 
 message SumoDungeonSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8291;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 final_score = 7;
   uint32 difficulty_id = 14;
   uint32 kill_elite_monster_num = 15;
@@ -3312,14 +1762,6 @@ message SumoDungeonTeam {
 }
 
 message SumoEnterDungeonNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8013;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 activity_id = 15;
   repeated SumoDungeonTeam dungeon_team_list = 11;
   uint32 no_switch_punish_time = 10;
@@ -3329,28 +1771,11 @@ message SumoEnterDungeonNotify {
 }
 
 message SumoSwitchTeamReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8351;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 9;
   uint32 activity_id = 5;
 }
 
 message SumoSwitchTeamRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8525;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 next_valid_switch_time = 7;
   repeated SumoDungeonTeam dungeon_team_list = 10;
   uint32 activity_id = 6;
@@ -3360,62 +1785,23 @@ message SumoSwitchTeamRsp {
 }
 
 message SumoLeaveDungeonNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8640;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message SumoRestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8612;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message SumoRestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8214;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   uint32 dungeon_id = 4;
   uint32 point_id = 12;
 }
 
 message ActivityDisableTransferPointInteractionNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8982;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_disable = 10;
   Uint32Pair scene_point_pair = 5;
 }
 
 message SumoSetNoSwitchPunishTimeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8935;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 cur_team_index = 15;
   uint32 stage_id = 13;
   repeated SumoDungeonTeam dungeon_team_list = 11;
@@ -3435,14 +1821,6 @@ message MoonfinTrialActivityDetailInfo {
 }
 
 message FishingGallerySettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8780;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 6;
   uint32 level_id = 15;
   FishingGallerySettleInfo settle_info = 13;
@@ -3469,28 +1847,11 @@ message LunaRiteDetailInfo {
 }
 
 message LunaRiteSacrificeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8805;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 area_id = 15;
   uint32 index = 14;
 }
 
 message LunaRiteSacrificeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8080;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 area_id = 13;
   repeated uint32 sacrifice_list = 14;
   uint32 index = 8;
@@ -3498,28 +1859,11 @@ message LunaRiteSacrificeRsp {
 }
 
 message LunaRiteTakeSacrificeRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8045;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 area_id = 11;
   uint32 index = 3;
 }
 
 message LunaRiteTakeSacrificeRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8397;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 index = 11;
   repeated uint32 sacrifice_reward_list = 2;
   uint32 sacrifice_reward_index = 14;
@@ -3528,28 +1872,10 @@ message LunaRiteTakeSacrificeRewardRsp {
 }
 
 message LunaRiteHintPointReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8195;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 area_id = 13;
 }
 
 message LunaRiteHintPointRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8765;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   LunaRiteHintStatusType hint_status = 4;
   uint32 area_id = 5;
   int32 retcode = 13;
@@ -3557,41 +1883,14 @@ message LunaRiteHintPointRsp {
 }
 
 message LunaRiteHintPointRemoveNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8787;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 hint_point_index = 14;
 }
 
 message LunaRiteGroupBundleRegisterNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8465;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 group_link_bundle_id = 11;
 }
 
 message LunaRiteAreaFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8213;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 area_id = 2;
 }
 
@@ -3605,95 +1904,35 @@ message PlantFlowerActivityDetailInfo {
 }
 
 message PlantFlowerGetSeedInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8560;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 6;
 }
 
 message PlantFlowerGetSeedInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8764;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
   uint32 schedule_id = 12;
   uint32 seed_reward_id = 5;
 }
 
 message PlantFlowerTakeSeedRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8968;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 12;
 }
 
 message PlantFlowerTakeSeedRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8860;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
   uint32 schedule_id = 13;
 }
 
 message PlantFlowerSetFlowerWishReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8547;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   map<uint32, uint32> flower_num_map = 12;
   uint32 schedule_id = 5;
 }
 
 message PlantFlowerSetFlowerWishRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8910;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 7;
   int32 retcode = 8;
 }
 
 message PlantFlowerGetFriendFlowerWishListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8126;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 7;
 }
 
@@ -3705,58 +1944,24 @@ message PlantFlowerFriendFlowerWishData {
 }
 
 message PlantFlowerGetFriendFlowerWishListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8511;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
   uint32 schedule_id = 2;
   repeated PlantFlowerFriendFlowerWishData friend_flower_wish_list = 9;
 }
 
 message PlantFlowerGiveFriendFlowerReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8846;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 11;
   uint32 uid = 13;
   map<uint32, uint32> flower_num_map = 12;
 }
 
 message PlantFlowerGiveFriendFlowerRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8386;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 limit_flower_list = 5;
   int32 retcode = 3;
   uint32 schedule_id = 14;
 }
 
 message PlantFlowerGetRecvFlowerListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8270;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 1;
 }
 
@@ -3768,41 +1973,16 @@ message PlantFlowerRecvFlowerData {
 }
 
 message PlantFlowerGetRecvFlowerListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8374;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 6;
   int32 retcode = 1;
   repeated PlantFlowerRecvFlowerData recv_flower_list = 4;
 }
 
 message PlantFlowerHaveRecvFlowerNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8078;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 10;
 }
 
 message PlantFlowerAcceptGiveFlowerReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8383;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 2;
   uint32 uid = 12;
 }
@@ -3814,97 +1994,38 @@ message PlantFlowerAcceptFlowerResultInfo {
 }
 
 message PlantFlowerAcceptGiveFlowerRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8567;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 1;
   PlantFlowerAcceptFlowerResultInfo accept_flower_result_info = 15;
   int32 retcode = 12;
 }
 
 message PlantFlowerAcceptAllGiveFlowerReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8808;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 11;
 }
 
 message PlantFlowerAcceptAllGiveFlowerRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8888;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 10;
   int32 retcode = 11;
   repeated PlantFlowerAcceptFlowerResultInfo accept_flower_result_info_list = 13;
 }
 
 message PlantFlowerGetCanGiveFriendFlowerReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8716;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 15;
 }
 
 message PlantFlowerGetCanGiveFriendFlowerRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8766;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, uint32> flower_num_map = 6;
   uint32 schedule_id = 4;
   int32 retcode = 3;
 }
 
 message PlantFlowerEditFlowerCombinationReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8843;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   CustomGadgetTreeInfo flower_combination_info = 10;
   uint32 entity_id = 14;
   uint32 schedule_id = 9;
 }
 
 message PlantFlowerEditFlowerCombinationRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8788;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 13;
   int32 retcode = 6;
 }
@@ -3922,15 +2043,6 @@ message MusicGameActivityDetailInfo {
 }
 
 message MusicGameSettleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8892;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 button_list = 384;
   uint32 delay = 795;
   repeated uint32 note_list = 4;
@@ -3952,14 +2064,6 @@ message MusicGameSettleReq {
 }
 
 message MusicGameSettleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8673;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   uint32 music_basic_id = 5;
   bool is_new_record = 6;
@@ -3968,29 +2072,12 @@ message MusicGameSettleRsp {
 }
 
 message MusicGameStartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8406;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 music_basic_id = 2;
   bool is_save_score = 11;
   uint64 ugc_guid = 3;
 }
 
 message MusicGameStartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8326;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 music_basic_id = 4;
   int32 retcode = 1;
   uint64 ugc_guid = 15;
@@ -4052,145 +2139,53 @@ message RoguelikeDungeonActivityDetailInfo {
 }
 
 message DoRoguelikeDungeonCardGachaReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8148;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 dungeon_id = 13;
   uint32 cell_id = 6;
 }
 
 message DoRoguelikeDungeonCardGachaRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8472;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_can_refresh = 8;
   repeated uint32 card_list = 15;
   int32 retcode = 5;
 }
 
 message RefreshRoguelikeDungeonCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8279;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message RefreshRoguelikeDungeonCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8349;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
   repeated uint32 res_card_list = 9;
 }
 
 message SelectRoguelikeDungeonCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8085;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 card_id = 13;
 }
 
 message SelectRoguelikeDungeonCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8138;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 card_id = 9;
   int32 retcode = 8;
 }
 
 message EquipRoguelikeRuneReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8306;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 rune_list = 3;
 }
 
 message EquipRoguelikeRuneRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8705;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 14;
   repeated uint32 rune_list = 1;
 }
 
 message TriggerRoguelikeRuneReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8463;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 rune_id = 8;
 }
 
 message TriggerRoguelikeRuneRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8065;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 available_count = 4;
   uint32 rune_id = 14;
   int32 retcode = 8;
 }
 
 message TriggerRoguelikeCurseNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8412;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 effect_param_list = 14;
   uint32 curse_group_id = 9;
   bool is_trigger_curse = 13;
@@ -4198,83 +2193,32 @@ message TriggerRoguelikeCurseNotify {
 }
 
 message UpgradeRoguelikeShikigamiReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8151;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 upgrade_level = 6;
   uint32 shikigami_group_id = 15;
 }
 
 message UpgradeRoguelikeShikigamiRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8966;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
   uint32 shikigami_group_id = 14;
   uint32 cur_level = 4;
 }
 
 message RoguelikeSelectAvatarAndEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8457;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint64 onstage_avatar_guid_list = 14;
   uint32 stage_id = 4;
   repeated uint64 backstage_avatar_guid_list = 11;
 }
 
 message RoguelikeSelectAvatarAndEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8538;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 15;
   int32 retcode = 1;
 }
 
 message RoguelikeGiveUpReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8660;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 9;
 }
 
 message RoguelikeGiveUpRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8139;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
   uint32 stage_id = 7;
   oneof info {
@@ -4283,51 +2227,18 @@ message RoguelikeGiveUpRsp {
 }
 
 message RoguelikeTakeStageFirstPassRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8421;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 1;
 }
 
 message RoguelikeTakeStageFirstPassRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8552;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 14;
   int32 retcode = 5;
 }
 
 message GiveUpRoguelikeDungeonCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8353;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GiveUpRoguelikeDungeonCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8497;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
 }
 
@@ -4340,14 +2251,6 @@ message RogueCellInfo {
 }
 
 message EnterRoguelikeDungeonNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8652;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_mist_clear = 14;
   uint32 dungeon_weight_config_id = 2;
   repeated RoguelikeRuneRecord rune_record_list = 6;
@@ -4367,150 +2270,58 @@ message EnterRoguelikeDungeonNotify {
 }
 
 message StartRogueEliteCellChallengeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8242;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   RogueEliteCellDifficultyType difficulty = 1;
   uint32 dungeon_id = 11;
   uint32 cell_id = 4;
 }
 
 message StartRogueEliteCellChallengeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8958;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 dungeon_id = 12;
   uint32 cell_id = 9;
   int32 retcode = 10;
 }
 
 message StartRogueNormalCellChallengeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8205;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 dungeon_id = 3;
   uint32 cell_id = 8;
 }
 
 message StartRogueNormalCellChallengeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8036;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 dungeon_id = 10;
   uint32 cell_id = 2;
   int32 retcode = 6;
 }
 
 message RogueCellUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8642;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   RogueCellInfo cell_info = 7;
 }
 
 message RogueDungeonPlayerCellChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8347;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 old_cell_id = 10;
   uint32 cell_id = 7;
 }
 
 message RogueHealAvatarsReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8947;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 dungeon_id = 1;
   uint32 cell_id = 3;
 }
 
 message RogueHealAvatarsRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8949;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 dungeon_id = 10;
   int32 retcode = 9;
   uint32 cell_id = 14;
 }
 
 message RogueResumeDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8795;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 12;
 }
 
 message RogueResumeDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8647;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 12;
   int32 retcode = 15;
 }
 
 message ClearRoguelikeCurseNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8207;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, uint32> clear_curse_map = 10;
   bool is_clear_all = 11;
   uint32 card_id = 8;
@@ -4518,28 +2329,11 @@ message ClearRoguelikeCurseNotify {
 }
 
 message RoguelikeCardGachaNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8925;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 card_list = 10;
   bool is_can_refresh = 11;
 }
 
 message RogueSwitchAvatarReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8201;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 cell_id = 15;
   repeated uint64 onstage_avatar_guid_list = 3;
   uint64 cur_avatar_guid = 11;
@@ -4547,14 +2341,6 @@ message RogueSwitchAvatarReq {
 }
 
 message RogueSwitchAvatarRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8915;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint64 cur_avatar_guid = 4;
   repeated uint64 backstage_avatar_guid_list = 8;
   uint32 dungeon_id = 14;
@@ -4564,88 +2350,31 @@ message RogueSwitchAvatarRsp {
 }
 
 message DisableRoguelikeTrapNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8259;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 card_id = 13;
 }
 
 message RoguelikeRuneRecordUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8973;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated RoguelikeRuneRecord rune_record_list = 11;
 }
 
 message RoguelikeMistClearNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8324;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message RoguelikeEffectDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8222;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated RogueEffectRecord curse_list = 7;
   repeated RogueEffectRecord card_list = 4;
 }
 
 message RoguelikeEffectViewReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8528;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 view_curse_list = 10;
   repeated uint32 view_card_list = 2;
 }
 
 message RoguelikeEffectViewRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8639;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   int32 retcode = 2;
 }
 
 message RoguelikeResourceBonusPropUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8555;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   float bonus_resource_prop = 12;
 }
 
@@ -4666,14 +2395,6 @@ message RoguelikeDungeonSettleInfo {
 }
 
 message RoguelikeRefreshCardCostUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8927;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 item_count = 5;
   uint32 item_id = 1;
 }
@@ -4691,39 +2412,14 @@ message DigActivityDetailInfo {
 }
 
 message DigActivityMarkPointChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8109;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated DigMarkPoint dig_mark_point_list = 11;
 }
 
 message DigActivityChangeGadgetStateReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8464;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 10;
 }
 
 message DigActivityChangeGadgetStateRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8430;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 entity_id = 15;
   int32 retcode = 6;
 }
@@ -4767,80 +2463,30 @@ message WinterCampActivityDetailInfo {
 }
 
 message WinterCampStageInfoChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8154;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   WinterCampStageInfo explore_info = 12;
   WinterCampStageInfo battle_info = 4;
 }
 
 message WinterCampRaceScoreNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8149;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 id = 5;
   uint32 max_score = 14;
 }
 
 message WinterCampGiveFriendItemReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8572;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 uid = 12;
   repeated ItemParam item_list = 11;
 }
 
 message WinterCampGiveFriendItemRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8264;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 limit_item_id_list = 11;
   int32 retcode = 3;
 }
 
 message WinterCampSetWishListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8753;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 item_id_list = 4;
 }
 
 message WinterCampSetWishListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8281;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
   repeated uint32 item_id_list = 7;
 }
@@ -4853,38 +2499,14 @@ message WinterCampFriendWishData {
 }
 
 message WinterCampGetFriendWishListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8946;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message WinterCampGetFriendWishListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8937;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
   repeated WinterCampFriendWishData wish_data_list = 5;
 }
 
 message WinterCampRecvItemNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8580;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   WinterCampRecvItemData recv_item_data = 14;
 }
 
@@ -4895,75 +2517,26 @@ message WinterCampAcceptItemResultInfo {
 }
 
 message WinterCampAcceptGiveItemReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8387;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 uid = 11;
 }
 
 message WinterCampAcceptGiveItemRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8185;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 14;
   WinterCampAcceptItemResultInfo accept_item_result_info = 3;
 }
 
 message WinterCampAcceptAllGiveItemReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 9000;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message WinterCampAcceptAllGiveItemRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8626;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
   repeated WinterCampAcceptItemResultInfo accept_item_result_info = 14;
 }
 
 message WinterCampGetCanGiveFriendItemReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8964;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message WinterCampGetCanGiveFriendItemRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8357;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ItemParam item_list = 8;
   int32 retcode = 11;
 }
@@ -4976,64 +2549,23 @@ message WinterCampRecvItemData {
 }
 
 message WinterCampGetRecvItemListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8143;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message WinterCampGetRecvItemListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8423;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated WinterCampRecvItemData recv_item_data_list = 8;
   int32 retcode = 6;
 }
 
 message WinterCampEditSnowmanCombinationReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8144;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 9;
   CustomGadgetTreeInfo combination_info = 6;
 }
 
 message WinterCampEditSnowmanCombinationRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8142;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
 }
 
 message WinterCampTriathlonSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8342;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 limited_coin = 9;
   uint32 normal_coin = 2;
   bool is_new_record = 7;
@@ -5045,93 +2577,33 @@ message WinterCampTriathlonSettleNotify {
 }
 
 message WinterCampTakeExploreRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8607;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 id = 8;
 }
 
 message WinterCampTakeExploreRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8978;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
   uint32 id = 15;
 }
 
 message WinterCampTakeBattleRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8401;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 id = 2;
 }
 
 message WinterCampTakeBattleRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8153;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
   uint32 id = 15;
 }
 
 message WinterCampTriathlonRestartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8844;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 6;
 }
 
 message WinterCampTriathlonRestartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8569;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
   uint32 gallery_id = 14;
 }
 
 message MistTrialSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8373;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated MistTrialBestAvatar best_avatar_list = 2;
   map<uint32, uint32> exhibition_list_data_result_map = 14;
   MistTrialBestAvatar best_hit_avatar = 4;
@@ -5141,27 +2613,10 @@ message MistTrialSettleNotify {
 }
 
 message MistTrialGetDungeonExhibitionDataReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8740;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 trial_id = 13;
 }
 
 message MistTrialGetDungeonExhibitionDataRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8066;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 trial_id = 12;
   int32 retcode = 4;
 }
@@ -5186,27 +2641,10 @@ message PotionActivityDetailInfo {
 }
 
 message PotionResetChallengeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8377;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 1;
 }
 
 message PotionResetChallengeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8067;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   PotionStageData stage_data = 14;
 }
@@ -5217,15 +2655,6 @@ message PotionAvatarInfo {
 }
 
 message PotionEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8261;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 buff_id_list = 15;
   uint32 level_id = 5;
   repeated PotionAvatarInfo avatar_info_list = 14;
@@ -5234,14 +2663,6 @@ message PotionEnterDungeonReq {
 }
 
 message PotionEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8482;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
 }
 
@@ -5251,14 +2672,6 @@ message PotionDungeonAvatar {
 }
 
 message PotionEnterDungeonNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8531;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 13;
   uint32 difficulty_level = 7;
   repeated PotionDungeonAvatar dungeon_avatar_list = 6;
@@ -5267,51 +2680,18 @@ message PotionEnterDungeonNotify {
 }
 
 message PotionSaveDungeonResultReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8192;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 8;
   uint32 stage_id = 7;
 }
 
 message PotionSaveDungeonResultRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8688;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
 }
 
 message PotionRestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8273;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message PotionRestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8062;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
 }
 
@@ -5337,14 +2717,6 @@ message TanukiTravelActivityDetailInfo {
 }
 
 message TanukiTravelFinishGuideQuestNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8924;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 activity_id = 14;
 }
 
@@ -5414,79 +2786,28 @@ message LanternRiteActivityDetailInfo {
 }
 
 message FinishLanternProjectionReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8704;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 finish_time = 3;
   uint32 level_id = 11;
 }
 
 message FinishLanternProjectionRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8713;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 13;
 }
 
 message ViewLanternProjectionTipsReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8218;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_input_tips = 9;
   ClientInputType input_type = 10;
 }
 
 message ViewLanternProjectionTipsRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8590;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
 }
 
 message ViewLanternProjectionLevelTipsReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8758;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 7;
 }
 
 message ViewLanternProjectionLevelTipsRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8411;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
 }
 
@@ -5496,14 +2817,6 @@ message SalvagePreventSettleInfo {
 }
 
 message SalvagePreventSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8231;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 13;
   SalvagePreventSettleInfo settle_info = 12;
 }
@@ -5514,103 +2827,36 @@ message SalvageEscortSettleInfo {
 }
 
 message SalvageEscortSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8499;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 14;
   SalvageEscortSettleInfo settle_info = 15;
 }
 
 message LanternRiteTakeSkinRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8826;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message LanternRiteTakeSkinRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8777;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
 }
 
 message SalvagePreventRestartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8367;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 13;
 }
 
 message SalvagePreventRestartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8938;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
   uint32 gallery_id = 12;
 }
 
 message SalvageEscortRestartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8396;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 4;
 }
 
 message SalvageEscortRestartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8959;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 14;
   int32 retcode = 5;
 }
 
 message LanternRiteStartFireworksReformReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8518;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 2;
   uint32 challenge_id = 7;
 }
@@ -5628,14 +2874,6 @@ message LanternRiteFireworksReformSkillInfo {
 }
 
 message LanternRiteStartFireworksReformRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8862;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated LanternRiteFireworksReformFactorInfo factor_info_list = 15;
   uint32 fire_element_addition_ratio = 13;
   uint32 stamina_value = 2;
@@ -5648,15 +2886,6 @@ message LanternRiteStartFireworksReformRsp {
 }
 
 message LanternRiteDoFireworksReformReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8226;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 12;
   uint32 skill_id = 11;
   uint32 challenge_id = 10;
@@ -5664,14 +2893,6 @@ message LanternRiteDoFireworksReformReq {
 }
 
 message LanternRiteDoFireworksReformRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8657;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 7;
   bool is_lucky = 13;
   uint32 challenge_id = 8;
@@ -5684,28 +2905,11 @@ message LanternRiteDoFireworksReformRsp {
 }
 
 message LanternRiteEndFireworksReformReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8277;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 9;
   uint32 challenge_id = 1;
 }
 
 message LanternRiteEndFireworksReformRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8933;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_full_score = 10;
   int32 retcode = 1;
   bool is_unlock_fireworks = 6;
@@ -5718,28 +2922,11 @@ message LanternRiteEndFireworksReformRsp {
 }
 
 message UpdateSalvageBundleMarkReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8967;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 14;
   uint32 challenge_type = 13;
 }
 
 message UpdateSalvageBundleMarkRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8459;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 challenge_type = 1;
   int32 retcode = 4;
   uint32 stage_id = 7;
@@ -5772,154 +2959,54 @@ message MichiaeMatsuriActivityDetailInfo {
 }
 
 message MichiaeMatsuriDarkPressureLevelUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8825;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 dark_pressure_level = 8;
 }
 
 message MichiaeMatsuriInteractStatueReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8718;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 statue_entity_id = 7;
 }
 
 message MichiaeMatsuriInteractStatueRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8449;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
 }
 
 message MichiaeMatsuriUnlockCrystalSkillReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8345;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 crystal_skill_id = 1;
 }
 
 message MichiaeMatsuriUnlockCrystalSkillRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8588;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 crystal_skill_id = 1;
   int32 retcode = 14;
 }
 
 message MichiaeMatsuriStartBossChallengeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8703;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 difficulty = 5;
   uint32 gadget_entity_id = 15;
 }
 
 message MichiaeMatsuriStartBossChallengeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8426;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
 }
 
 message MichiaeMatsuriStartDarkChallengeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8054;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 worktop_entity_id = 2;
 }
 
 message MichiaeMatsuriStartDarkChallengeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8791;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
 }
 
 message MichiaeMatsuriRemoveChestMarkNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8726;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 config_id = 9;
   uint32 group_id = 11;
 }
 
 message MichiaeMatsuriRemoveChallengeMarkNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8072;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gadget_id = 9;
   uint32 group_id = 2;
 }
 
 message MichiaeMatsuriGainCrystalExpUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8523;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gain_crystal_exp = 2;
   uint32 activity_id = 3;
 }
@@ -5945,15 +3032,6 @@ message BartenderActivityDetailInfo {
 }
 
 message BartenderCompleteOrderReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8414;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 cup_type = 14;
   uint32 qte_count = 7;
   uint32 quest_id = 11;
@@ -5964,14 +3042,6 @@ message BartenderCompleteOrderReq {
 }
 
 message BartenderCompleteOrderRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8125;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_new = 10;
   uint32 finish_order_id = 3;
   int32 retcode = 4;
@@ -5981,54 +3051,20 @@ message BartenderCompleteOrderRsp {
 }
 
 message BartenderCancelOrderReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8442;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 quest_id = 3;
 }
 
 message BartenderCancelOrderRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8837;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
   uint32 quest_id = 3;
 }
 
 message BartenderGetFormulaReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8462;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated ItemParam item_list = 7;
   uint32 quest_id = 4;
 }
 
 message BartenderGetFormulaRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8842;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_new = 12;
   int32 retcode = 6;
   repeated uint32 affix_list = 8;
@@ -6036,27 +3072,10 @@ message BartenderGetFormulaRsp {
 }
 
 message BartenderStartLevelReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8507;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 5;
 }
 
 message BartenderStartLevelRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8402;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
   repeated uint32 order_list = 13;
   uint32 level_id = 10;
@@ -6064,41 +3083,15 @@ message BartenderStartLevelRsp {
 }
 
 message BartenderCancelLevelReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8771;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 13;
 }
 
 message BartenderCancelLevelRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8686;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 2;
   int32 retcode = 14;
 }
 
 message BartenderLevelProgressNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8756;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_new_record = 9;
   bool is_finish = 3;
   uint32 level_id = 15;
@@ -6106,27 +3099,10 @@ message BartenderLevelProgressNotify {
 }
 
 message BartenderFinishLevelReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8227;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 6;
 }
 
 message BartenderFinishLevelRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8093;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
   uint32 level_id = 1;
 }
@@ -6171,29 +3147,12 @@ message CrystalLinkBuffInfo {
 }
 
 message CrystalLinkEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8325;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 7;
   repeated CrystalLinkTeamInfo team_info_list = 13;
   uint32 difficulty_id = 10;
 }
 
 message CrystalLinkEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8147;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 1;
   uint32 difficulty_id = 14;
   int32 retcode = 6;
@@ -6206,14 +3165,6 @@ message CrystalLinkDungeonAvatarInfo {
 }
 
 message CrystalLinkDungeonInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8858;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated CrystalLinkBuffInfo buff_info_list = 8;
   uint32 level_id = 1;
   bool is_upper_part = 15;
@@ -6223,50 +3174,17 @@ message CrystalLinkDungeonInfoNotify {
 }
 
 message CrystalLinkRestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8022;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message CrystalLinkRestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8119;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
 }
 
 message QuickOpenActivityReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8178;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 activity_id = 1;
 }
 
 message QuickOpenActivityRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8882;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
   uint32 activity_id = 4;
 }
@@ -6330,111 +3248,43 @@ message IrodoriActivityDetailInfo {
 }
 
 message IrodoriEditFlowerCombinationReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8608;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 13;
   CustomGadgetTreeInfo combination_info = 1;
 }
 
 message IrodoriEditFlowerCombinationRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8833;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_already_finished = 4;
   bool is_can_take_reward = 3;
   int32 retcode = 1;
 }
 
 message IrodoriScanEntityReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8767;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 11;
 }
 
 message IrodoriScanEntityRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8026;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   IrodoriPoetryThemeData theme_data = 10;
   int32 retcode = 5;
   bool is_get_inspiration = 1;
 }
 
 message IrodoriFillPoetryReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8129;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 theme_id = 9;
   uint32 line_id = 13;
 }
 
 message IrodoriFillPoetryRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8880;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   IrodoriPoetryThemeData theme_data = 13;
   int32 retcode = 12;
 }
 
 message IrodoriChessEquipCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8561;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_hard_map = 2;
   uint32 level_id = 12;
   uint32 card_id = 9;
 }
 
 message IrodoriChessEquipCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8308;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
   uint32 card_id = 8;
   uint32 level_id = 5;
@@ -6442,29 +3292,12 @@ message IrodoriChessEquipCardRsp {
 }
 
 message IrodoriChessUnequipCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8057;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 card_id = 8;
   uint32 level_id = 5;
   bool is_hard_map = 10;
 }
 
 message IrodoriChessUnequipCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8817;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_hard_map = 10;
   uint32 card_id = 13;
   uint32 level_id = 14;
@@ -6472,83 +3305,31 @@ message IrodoriChessUnequipCardRsp {
 }
 
 message EnterIrodoriChessDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8717;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_hard_map = 1;
   uint32 level_id = 11;
 }
 
 message EnterIrodoriChessDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8546;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
   bool is_hard_map = 7;
   uint32 level_id = 13;
 }
 
 message IrodoriMasterStartGalleryReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8165;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 12;
   uint32 difficulty = 4;
 }
 
 message IrodoriMasterStartGalleryRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8381;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
 }
 
 message IrodoriMasterGalleryCgEndNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8061;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 15;
   uint32 gallery_id = 4;
 }
 
 message IrodoriMasterGallerySettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8340;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   IrodoriMasterGallerySettleInfo settle_info = 13;
   uint32 gallery_id = 5;
 }
@@ -6567,55 +3348,21 @@ message PhotoActivityDetailInfo {
 }
 
 message PhotoActivityFinishReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8921;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 pos_id = 15;
   uint32 check_root_id = 2;
   bool is_succ = 5;
 }
 
 message PhotoActivityFinishRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8854;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   uint32 pos_id = 8;
 }
 
 message PhotoActivityClientViewReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8709;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 pos_id = 13;
 }
 
 message PhotoActivityClientViewRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8983;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
   uint32 pos_id = 8;
 }
@@ -6633,15 +3380,6 @@ message SpiceActivityDetailInfo {
 }
 
 message SpiceActivityFinishMakeSpiceReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8096;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 left_turns = 4;
   bool is_success = 9;
   repeated uint32 left_material_id_list = 12;
@@ -6649,55 +3387,22 @@ message SpiceActivityFinishMakeSpiceReq {
 }
 
 message SpiceActivityFinishMakeSpiceRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8481;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 13;
   int32 retcode = 14;
   bool is_success = 3;
 }
 
 message SpiceActivityProcessFoodReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8216;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated ItemParam normal_food_list = 1;
 }
 
 message SpiceActivityProcessFoodRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8772;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
   repeated ItemParam special_food_list = 14;
   repeated ItemParam normal_food_list = 1;
 }
 
 message SpiceActivityGivingRecordNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8407;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 current_increase_avatar_fetter_times = 3;
   uint32 increase_avatar_fetter_limit_times = 7;
   uint32 avatar_id = 11;
@@ -6719,14 +3424,6 @@ message GachaActivityDetailInfo {
 }
 
 message GachaActivityPercentNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8450;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 item_stage = 14;
   map<uint32, uint32> target_num_map = 6;
   uint32 sub_item_stage = 2;
@@ -6734,142 +3431,50 @@ message GachaActivityPercentNotify {
 }
 
 message GachaActivityUpdateElemNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8919;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 elem_type = 10;
 }
 
 message GachaActivityCreateRobotReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8614;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GachaActivityCreateRobotRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8610;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 robot_id = 1;
   int32 retcode = 3;
 }
 
 message GachaActivityTakeRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8930;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   map<uint32, uint32> robot_num_map = 12;
 }
 
 message GachaActivityTakeRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8768;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, uint32> robot_num_map = 3;
   int32 retcode = 13;
 }
 
 message GachaActivityResetReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8163;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 2;
 }
 
 message GachaActivityResetRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8240;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 13;
   uint32 stage_id = 6;
 }
 
 message GachaActivityNextStageReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8257;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GachaActivityNextStageRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8918;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 13;
   int32 retcode = 15;
 }
 
 message ActivityGiveFriendGiftReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8233;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 uid = 5;
   uint32 schedule_id = 1;
   map<uint32, uint32> gift_num_map = 4;
 }
 
 message ActivityGiveFriendGiftRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8696;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 limit_gift_list = 3;
   uint32 schedule_id = 4;
   int32 retcode = 10;
@@ -6884,41 +3489,16 @@ message ActivityRecvGiftData {
 }
 
 message ActivityGetRecvGiftListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8725;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 8;
 }
 
 message ActivityGetRecvGiftListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8120;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
   repeated ActivityRecvGiftData recv_gift_list = 11;
   uint32 schedule_id = 6;
 }
 
 message ActivityHaveRecvGiftNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8733;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 7;
 }
 
@@ -6929,110 +3509,42 @@ message ActivityAcceptGiftResultInfo {
 }
 
 message ActivityAcceptGiveGiftReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8095;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 3;
   uint32 uid = 12;
 }
 
 message ActivityAcceptGiveGiftRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8502;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   ActivityAcceptGiftResultInfo accept_gift_result_info = 4;
   int32 retcode = 11;
   uint32 schedule_id = 10;
 }
 
 message ActivityAcceptAllGiveGiftReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8113;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 3;
 }
 
 message ActivityAcceptAllGiveGiftRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8132;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ActivityAcceptGiftResultInfo accept_gift_result_info_list = 5;
   uint32 schedule_id = 10;
   int32 retcode = 9;
 }
 
 message ActivityGetCanGiveFriendGiftReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8559;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 8;
 }
 
 message ActivityGetCanGiveFriendGiftRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8848;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 7;
   int32 retcode = 3;
   map<uint32, uint32> gift_num_map = 14;
 }
 
 message ActivitySetGiftWishReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8017;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   map<uint32, uint32> gift_num_map = 2;
   uint32 schedule_id = 14;
 }
 
 message ActivitySetGiftWishRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8554;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 15;
   int32 retcode = 7;
 }
@@ -7046,27 +3558,10 @@ message ActivityFriendGiftWishData {
 }
 
 message ActivityGetFriendGiftWishListReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8806;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 6;
 }
 
 message ActivityGetFriendGiftWishListRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8253;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
   repeated ActivityFriendGiftWishData friend_gift_wish_list = 11;
   uint32 schedule_id = 10;
@@ -7085,14 +3580,6 @@ message LuminanceStoneChallengeSettleInfo {
 }
 
 message LuminanceStoneChallengeSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8186;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 10;
   LuminanceStoneChallengeSettleInfo settle_info = 13;
 }
@@ -7139,28 +3626,11 @@ message RogueDiaryRoomInfo {
 }
 
 message StartRogueDiaryPlayReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8419;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 difficulty = 1;
   uint32 stage_id = 12;
 }
 
 message StartRogueDiaryPlayRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8385;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   repeated RogueDiaryAvatar trial_avatar_list = 13;
   repeated uint32 rand_card_list = 12;
@@ -7168,91 +3638,31 @@ message StartRogueDiaryPlayRsp {
 }
 
 message ResetRogueDiaryPlayReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8127;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 5;
 }
 
 message ResetRogueDiaryPlayRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8948;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
 }
 
 message EnterRogueDiaryDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8943;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 chosen_card_list = 9;
   repeated RogueDiaryAvatar chosen_avatar_list = 11;
 }
 
 message EnterRogueDiaryDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8352;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
 }
 
 message ResumeRogueDiaryDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8838;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 2;
 }
 
 message ResumeRogueDiaryDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8989;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
 }
 
 message RogueDiaryDungeonInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8597;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 12;
   repeated uint32 round_monster_list = 15;
   uint32 time = 4;
@@ -7266,56 +3676,21 @@ message RogueDiaryDungeonInfoNotify {
 }
 
 message RogueDiaryDungeonSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8895;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 explore_time = 1;
   bool is_finish = 3;
   uint32 cur_round = 2;
 }
 
 message StartRogueDiaryRoomReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8159;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 room_difficulty = 13;
   bool is_select_hard = 1;
 }
 
 message StartRogueDiaryRoomRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8793;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
 }
 
 message RogueDiaryTiredAvatarNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8514;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated RogueDiaryAvatar optianal_tired_avatar_list = 10;
   uint32 reserve_avatar_num = 6;
   uint32 tired_type = 8;
@@ -7323,138 +3698,46 @@ message RogueDiaryTiredAvatarNotify {
 }
 
 message ReserveRogueDiaryAvatarReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8748;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated RogueDiaryAvatar reserve_avatar_list = 6;
 }
 
 message ReserveRogueDiaryAvatarRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8799;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 13;
 }
 
 message GetRogueDairyRepairInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8014;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GetRogueDairyRepairInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8447;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
 }
 
 message RefreshRogueDiaryCardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8991;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 refresh_card_list = 8;
 }
 
 message RefreshRogueDiaryCardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8028;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 rand_card_list = 15;
   int32 retcode = 1;
 }
 
 message RogueFinishRepairReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8363;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 chosen_card_list = 1;
   repeated RogueDiaryAvatar chosen_avatar_list = 8;
 }
 
 message RogueFinishRepairRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8535;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
 }
 
 message TryInterruptRogueDiaryDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8617;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message TryInterruptRogueDiaryDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8903;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
 }
 
 message RogueDiaryRepairInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8641;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 8;
   repeated uint32 select_card_list = 14;
   repeated RogueDiaryAvatar avatar_list = 13;
@@ -7466,86 +3749,28 @@ message RogueDiaryRepairInfoNotify {
 }
 
 message RetryCurRogueDiaryDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8398;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message RetryCurRogueDiaryDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8334;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
 }
 
 message RogueDiaryReviveAvatarReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8038;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   RogueDiaryAvatar revive_avatar = 2;
 }
 
 message RogueDiaryReviveAvatarRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8343;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
 }
 
 message TryEnterNextRogueDiaryDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8280;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message TryEnterNextRogueDiaryDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8362;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
 }
 
 message RogueDiaryCoinAddNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8602;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 num = 10;
 }
 
@@ -7572,14 +3797,6 @@ message SummerTimeV2BoatStageInfo {
 }
 
 message SummerTimeV2BoatSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8870;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   SummerTimeV2BoatGallerySettleInfo settle_info = 11;
   uint32 stage_id = 7;
   bool is_new_record = 2;
@@ -7592,91 +3809,33 @@ message ActivityPushTipsData {
 }
 
 message ActivityPushTipsInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8513;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 schedule_id = 14;
   repeated ActivityPushTipsData activity_push_tips_data_list = 3;
   uint32 activity_id = 10;
 }
 
 message ActivityReadPushTipsReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8145;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 activity_push_tips_id_list = 14;
   uint32 activity_id = 7;
 }
 
 message ActivityReadPushTipsRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8574;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
 }
 
 message SummerTimeV2RestartBoatGalleryReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8476;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 5;
 }
 
 message SummerTimeV2RestartBoatGalleryRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8004;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 13;
   int32 retcode = 8;
 }
 
 message SummerTimeV2RestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8346;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message SummerTimeV2RestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 8996;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
 }
 
@@ -7691,14 +3850,6 @@ message IslandPartyDetailInfo {
 }
 
 message IslandPartySettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24601;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_new_record = 13;
   GalleryStopReason reason = 1;
   repeated IslandPartyGallerySettleInfo settle_info_list = 8;
@@ -7728,27 +3879,10 @@ message GearActivityDetailInfo {
 }
 
 message GearActivityStartPlayGearReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23467;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 5;
 }
 
 message GearActivityStartPlayGearRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21025;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 9;
   int32 retcode = 2;
 }
@@ -7762,15 +3896,6 @@ message GearColumnInfo {
 }
 
 message GearActivityFinishPlayGearReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21834;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_success = 4;
   bool use_clue = 12;
   repeated GearColumnInfo gear_column_info_list = 9;
@@ -7778,64 +3903,23 @@ message GearActivityFinishPlayGearReq {
 }
 
 message GearActivityFinishPlayGearRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21800;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
   bool is_success = 15;
   uint32 level_id = 3;
 }
 
 message GearActivityStartPlayPictureReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24550;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GearActivityStartPlayPictureRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23388;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
 }
 
 message GearActivityFinishPlayPictureReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21054;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_success = 8;
 }
 
 message GearActivityFinishPlayPictureRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21851;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
   bool is_success = 6;
 }
@@ -7898,14 +3982,6 @@ message GravenInnocenceDetailInfo {
 }
 
 message GravenInnocenceRaceSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20681;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_new_record = 4;
   uint32 gallery_id = 6;
   uint32 score = 5;
@@ -7919,94 +3995,35 @@ message GravenInnocenceRaceSettleNotify {
 }
 
 message GravenInnocenceRaceRestartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22882;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 6;
 }
 
 message GravenInnocenceRaceRestartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21880;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
   uint32 gallery_id = 6;
 }
 
 message GravenInnocenceEditCarveCombinationReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23107;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 2;
   CustomGadgetTreeInfo combination_info = 11;
 }
 
 message GravenInnocenceEditCarveCombinationRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20702;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
 }
 
 message GravenInnocencePhotoFinishReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21750;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 param = 1;
   uint32 object_id = 4;
 }
 
 message GravenInnocencePhotoFinishRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23948;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 object_id = 6;
   uint32 param = 11;
   int32 retcode = 12;
 }
 
 message GravenInnocencePhotoReminderNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23864;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 group_bundle_id = 14;
   uint32 reminder_id = 6;
 }
@@ -8032,68 +4049,26 @@ message InstableSprayAvatarInfo {
 }
 
 message InstableSprayEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24312;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 13;
   uint32 difficulty = 2;
   repeated InstableSprayAvatarInfo avatar_info_list = 7;
 }
 
 message InstableSprayEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23381;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 11;
   int32 retcode = 9;
 }
 
 message InstableSpraySwitchTeamReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24857;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated InstableSprayAvatarInfo avatar_info_list = 13;
 }
 
 message InstableSpraySwitchTeamRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24152;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 1;
   int32 retcode = 8;
 }
 
 message InstableSprayLevelFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21961;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_need_switch_team = 11;
   bool is_skip_black_screen = 7;
   uint32 round = 15;
@@ -8102,27 +4077,10 @@ message InstableSprayLevelFinishNotify {
 }
 
 message InstableSprayRestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23678;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated InstableSprayAvatarInfo avatar_info_list = 6;
 }
 
 message InstableSprayRestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24923;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 1;
   int32 retcode = 13;
 }
@@ -8138,40 +4096,15 @@ message MuqadasPotionActivityDetailInfo {
 }
 
 message MuqadasPotionActivityEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24602;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 12;
 }
 
 message MuqadasPotionActivityEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21804;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
   uint32 level_id = 9;
 }
 
 message MuqadasPotionDungeonSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20005;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 final_score = 11;
   uint32 capture_weakness_count = 15;
   bool is_success = 6;
@@ -8180,51 +4113,18 @@ message MuqadasPotionDungeonSettleNotify {
 }
 
 message MuqadasPotionRestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22391;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message MuqadasPotionRestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21208;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
 }
 
 message MuqadasPotionCaptureWeaknessReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20011;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 capture_weakness_count = 10;
   uint32 level_id = 15;
 }
 
 message MuqadasPotionCaptureWeaknessRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24081;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
 }
 
@@ -8248,14 +4148,6 @@ message TreasureSeelieActivityDetailInfo {
 }
 
 message TreasureSeelieCollectOrbsNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20754;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 current_num = 11;
   uint32 total_num = 5;
 }
@@ -8375,28 +4267,11 @@ message VintageActivityDetailInfo {
 }
 
 message VintageMarketDeliverItemReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23141;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated ItemParam deliver_item_list = 3;
   uint32 trader_id = 5;
 }
 
 message VintageMarketDeliverItemRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22181;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
   uint32 trader_id = 3;
 }
@@ -8420,14 +4295,6 @@ message VintageHuntingThirdStageSettleInfo {
 }
 
 message SceneGalleryVintageHuntingSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20324;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool has_new_watcher = 11;
   uint32 stage_id = 9;
   uint32 total_watcher_num = 12;
@@ -8441,114 +4308,39 @@ message SceneGalleryVintageHuntingSettleNotify {
 }
 
 message VintagePresentFinishNoify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24142;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 present_id = 7;
 }
 
 message VintageDecorateBoothReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20846;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 6;
   CustomGadgetTreeInfo combination_info = 11;
 }
 
 message VintageDecorateBoothRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20993;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
 }
 
 message VintageHuntingStartGalleryReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21780;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 7;
 }
 
 message VintageHuntingStartGalleryRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21951;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
 }
 
 message VintageCampGroupBundleRegisterNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24244;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 group_bundle_id = 10;
 }
 
 message VintageCampStageFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22830;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 11;
 }
 
 message VintageMarketStartStorePlayReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22864;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 store_round = 5;
 }
 
 message VintageMarketStartStorePlayRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22130;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 prev_round_coin_b = 7;
   uint32 store_round = 2;
   uint32 prev_round_coin_c = 5;
@@ -8556,28 +4348,11 @@ message VintageMarketStartStorePlayRsp {
 }
 
 message VintageMarketFinishStorePlayReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20676;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 store_round = 9;
   repeated VintageMarketStoreOpInfo store_op_list = 3;
 }
 
 message VintageMarketFinishStorePlayRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23462;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 trigger_env_event_list = 8;
   uint32 store_round = 12;
   repeated uint32 trigger_npc_event_list = 10;
@@ -8591,123 +4366,48 @@ message VintageMarketFinishStorePlayRsp {
 }
 
 message VintagePresentFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20086;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 present_id = 3;
 }
 
 message VintageMarketStoreUnlockSlotReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20626;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 store_id = 10;
 }
 
 message VintageMarketStoreUnlockSlotRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20733;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   uint32 slot_count = 6;
   uint32 store_id = 10;
 }
 
 message VintageMarketStoreChooseStrategyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21248;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 store_id = 6;
   repeated VintageMarketStoreOpInfo store_op_list = 9;
   repeated uint32 strategy_list = 8;
 }
 
 message VintageMarketStoreChooseStrategyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24860;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 store_id = 15;
   int32 retcode = 9;
   repeated uint32 strategy_list = 2;
 }
 
 message VintageMarketStoreViewStrategyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21700;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 strategy_id = 1;
   repeated uint32 strategy_list = 14;
 }
 
 message VintageMarketStoreViewStrategyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21814;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
   repeated uint32 strategy_list = 3;
   uint32 strategy_id = 14;
 }
 
 message VintageMarketDividendFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23147;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 coin_a = 5;
   uint32 coin_c = 11;
 }
 
 message VintageMarketNpcEventFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24201;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 unlock_strategy_list = 15;
   uint32 coin_c = 12;
   uint32 coin_a = 4;
@@ -8724,25 +4424,9 @@ message WindFieldStageInfo {
 }
 
 message WindFieldRestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20731;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message WindFieldRestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24712;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
 }
 
@@ -8803,56 +4487,22 @@ message FungusFighterDetailInfo {
 }
 
 message EnterFungusFighterPlotDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23053;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 dungeon_id = 14;
   repeated uint32 fungus_id_list = 8;
 }
 
 message EnterFungusFighterPlotDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21008;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
   uint32 dungeon_id = 15;
   repeated uint32 fungus_id_list = 2;
 }
 
 message FungusFighterPlotInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22174;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 fungus_id_list = 11;
   uint32 dungeon_id = 4;
 }
 
 message FungusCultivateReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21749;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 cultivate_id = 8;
   uint32 copy_step = 7;
   uint32 exchange_step = 11;
@@ -8864,120 +4514,45 @@ message FungusCultivateReq {
 }
 
 message FungusCultivateRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23532;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 cultivate_id = 4;
   bool is_new_record = 13;
   int32 retcode = 10;
 }
 
 message FungusRenameReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22006;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 name_id = 1;
   uint32 fungus_id = 11;
 }
 
 message FungusRenameRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20066;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
   uint32 fungus_id = 15;
   uint32 name_id = 12;
 }
 
 message EnterFungusFighterTrainingDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23860;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 dungeon_id = 3;
 }
 
 message EnterFungusFighterTrainingDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21593;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 7;
   uint32 dungeon_id = 11;
 }
 
 message FungusFighterRuntimeDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24674;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   FungusTrainingProgressDetail progress_detail = 7;
 }
 
 message FungusFighterTrainingSelectFungusReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23903;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 backup_fungus_id_list = 11;
   repeated uint32 fight_fungus_id_list = 7;
 }
 
 message FungusFighterTrainingSelectFungusRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21570;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 7;
 }
 
 message FungusFighterTrainingGallerySettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23931;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_new_record = 14;
   uint32 total_used_time = 4;
   GalleryStopReason reason = 5;
@@ -8989,75 +4564,25 @@ message FungusFighterTrainingGallerySettleNotify {
 }
 
 message FungusFighterClearTrainingRuntimeDataReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24137;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 dungeon_id = 6;
 }
 
 message FungusFighterClearTrainingRuntimeDataRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22991;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
 }
 
 message FungusFighterUseBackupFungusReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21266;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 backup_fungus_id_list = 1;
 }
 
 message FungusFighterUseBackupFungusRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23428;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 12;
 }
 
 message FungusFighterRestartTraningDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23980;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message FungusFighterRestartTraningDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22890;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
 }
 
@@ -9072,14 +4597,6 @@ message CharAmusementDetailInfo {
 }
 
 message CharAmusementSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23133;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_succ = 3;
   uint32 finish_time = 14;
   bool is_new_record = 2;
@@ -9099,29 +4616,12 @@ message EffigyChallengeV2DetailInfo {
 }
 
 message EffigyChallengeV2EnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23489;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 challenge_mode_difficulty = 7;
   uint32 level_id = 12;
   uint32 challenge_mode_skill_no = 11;
 }
 
 message EffigyChallengeV2EnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24917;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 challenge_mode_skill_no = 11;
   int32 retcode = 10;
   uint32 challenge_mode_difficulty = 14;
@@ -9129,65 +4629,24 @@ message EffigyChallengeV2EnterDungeonRsp {
 }
 
 message EffigyChallengeV2RestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24522;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message EffigyChallengeV2RestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23167;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
 }
 
 message EffigyChallengeV2ChooseSkillReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21269;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 6;
   uint32 challenge_mode_skill_no = 7;
 }
 
 message EffigyChallengeV2ChooseSkillRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22448;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 15;
   int32 retcode = 9;
   uint32 challenge_mode_skill_no = 3;
 }
 
 message EffigyChallengeV2DungeonInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22835;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 challenge_mode_difficulty = 2;
   uint32 skill_no = 4;
   uint32 level_id = 13;
@@ -9222,155 +4681,54 @@ message CoinCollectDetailInfo {
 }
 
 message CoinCollectChooseSkillReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21214;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 choose_skill_no = 5;
   uint32 level_id = 2;
 }
 
 message CoinCollectChooseSkillRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24700;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 4;
   uint32 choose_skill_no = 6;
   int32 retcode = 5;
 }
 
 message RestartCoinCollectPlaySingleModeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22367;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 2;
 }
 
 message RestartCoinCollectPlaySingleModeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24828;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
   uint32 level_id = 11;
 }
 
 message EndCoinCollectPlaySingleModeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23216;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 multistage_play_index = 15;
 }
 
 message EndCoinCollectPlaySingleModeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20302;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 13;
 }
 
 message CoinCollectPrepareReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21718;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message CoinCollectPrepareRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20930;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
 }
 
 message CoinCollectInterruptPlayReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22934;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 13;
 }
 
 message CoinCollectInterruptPlayRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22509;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
   uint32 gallery_id = 8;
 }
 
 message CoinCollectCheckDoubleStartPlayReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21294;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 11;
 }
 
 message CoinCollectCheckDoubleStartPlayRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21244;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 3;
   int32 retcode = 9;
 }
@@ -9398,15 +4756,6 @@ message BrickBreakerDetailInfo {
 }
 
 message SingleStartBrickBreakerReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23113;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_dungeon = 11;
   repeated uint32 chosen_avatar_list = 13;
   repeated uint32 chosen_skill_list = 7;
@@ -9414,56 +4763,23 @@ message SingleStartBrickBreakerReq {
 }
 
 message SingleStartBrickBreakerRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20622;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 5;
   int32 retcode = 11;
   bool is_dungeon = 12;
 }
 
 message SingleRestartBrickBreakerReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22704;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 3;
   bool is_dungeon = 6;
 }
 
 message SingleRestartBrickBreakerRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22112;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_id = 13;
   bool is_dungeon = 1;
   int32 retcode = 14;
 }
 
 message BrickBreakerSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24616;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum SettleReason {
     SETTLE_REASON_TIME_OUT = 0;
     SETTLE_PLAY_END = 1;
@@ -9484,48 +4800,16 @@ message BrickBreakerSettleNotify {
 }
 
 message BrickBreakerTwiceStartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24028;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message BrickBreakerTwiceStartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22591;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 13;
 }
 
 message BrickBreakerQuitReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20137;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message BrickBreakerQuitRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20667;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
 }
 
@@ -9573,49 +4857,17 @@ message SeaLampV3DetailInfo {
 }
 
 message LanV3BoatGameStartSingleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23637;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message LanV3BoatGameStartSingleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22069;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 14;
 }
 
 message LanV3BoatGameTransferFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20683;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_reenter = 5;
 }
 
 message LanV3RaceSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24629;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 remain_time = 10;
   uint32 gallery_id = 4;
   uint32 level_id = 13;
@@ -9627,77 +4879,27 @@ message LanV3RaceSettleNotify {
 }
 
 message LanV3RaceRestartReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20331;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 13;
 }
 
 message LanV3RaceRestartRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23477;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   uint32 gallery_id = 3;
 }
 
 message LanV3BoatInterruptSettleStageReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20951;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message LanV3BoatInterruptSettleStageRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24759;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
 }
 
 message LanV3ShadowFinishLevelReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20227;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 finish_time = 6;
   uint32 level_id = 15;
 }
 
 message LanV3ShadowFinishLevelRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20480;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
 }
 
@@ -9719,101 +4921,35 @@ message DuelHeartDetailInfo {
 }
 
 message DuelHeartEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20076;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 12;
 }
 
 message DuelHeartEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24080;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
 }
 
 message DuelHeartRestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23780;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message DuelHeartRestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24816;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
 }
 
 message DuelHeartSelectDifficultyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22297;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 difficulty = 4;
 }
 
 message DuelHeartSelectDifficultyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22312;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
 }
 
 message DuelHeartSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22250;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_succ = 1;
   bool is_new_record = 5;
   uint32 cost_time = 13;
 }
 
 message DuelHeartCgEndNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20093;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message TeamChainStageData {
@@ -9838,91 +4974,32 @@ message TeamChainChooseTeamInfo {
 }
 
 message TeamChainEnterDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 20636;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 7;
   uint32 difficulty = 11;
   repeated TeamChainChooseTeamInfo team_info_list = 6;
 }
 
 message TeamChainEnterDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21776;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
 }
 
 message TeamChainRestartDungeonReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 22269;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated TeamChainChooseTeamInfo team_info_list = 11;
 }
 
 message TeamChainRestartDungeonRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21313;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
 }
 
 message TeamChainDungeonInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24946;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated uint32 skill_no_list = 13;
   uint32 stage_id = 5;
 }
 
 message TeamChainTakeCostumeRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21207;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message TeamChainTakeCostumeRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24258;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
 }
 
@@ -9943,28 +5020,11 @@ message ElectroherculesBattleDetailInfo {
 }
 
 message ElectroherculesBattleSelectDifficultyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 24212;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 stage_id = 11;
   uint32 diffculty = 14;
 }
 
 message ElectroherculesBattleSelectDifficultyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 23684;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 stage_id = 6;
   int32 retcode = 14;
   uint32 diffculty = 3;
@@ -9972,14 +5032,6 @@ message ElectroherculesBattleSelectDifficultyRsp {
 }
 
 message ElectroherculesBattleSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 21083;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_new_record = 11;
   uint32 diffculty = 9;
   uint32 gallery_id = 14;

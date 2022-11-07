@@ -60,28 +60,11 @@ message AnchorPointData {
 }
 
 message AnchorPointDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4276;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated AnchorPointData anchor_point_list = 10;
   uint32 next_usable_time = 14;
 }
 
 message AnchorPointOpReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4257;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   enum AnchorPointOpType {
     ANCHOR_POINT_OP_NONE = 0;
     ANCHOR_POINT_OP_TELEPORT = 1;
@@ -93,14 +76,6 @@ message AnchorPointOpReq {
 }
 
 message AnchorPointOpRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4252;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
   uint32 anchor_point_id = 12;
   uint32 anchor_point_op_type = 4;
@@ -111,27 +86,10 @@ message LunchBoxData {
 }
 
 message SetUpLunchBoxWidgetReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4272;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   LunchBoxData lunch_box_data = 6;
 }
 
 message SetUpLunchBoxWidgetRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4294;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   LunchBoxData lunch_box_data = 3;
   int32 retcode = 13;
 }
@@ -185,15 +143,6 @@ message WidgetThunderBirdFeatherInfo {
 }
 
 message QuickUseWidgetReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4299;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   oneof param {
     WidgetCreateLocationInfo location_info = 676;
     WidgetCameraInfo camera_info = 478;
@@ -203,14 +152,6 @@ message QuickUseWidgetReq {
 }
 
 message QuickUseWidgetRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4270;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 material_id = 6;
   int32 retcode = 5;
   oneof param {
@@ -227,28 +168,11 @@ message WidgetCoolDownData {
 }
 
 message WidgetCoolDownNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4295;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated WidgetCoolDownData normal_cool_down_data_list = 1;
   repeated WidgetCoolDownData group_cool_down_data_list = 12;
 }
 
 message WidgetReportReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4291;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 weather_wizard_shield_value = 7;
   bool is_clear_sky_crystal_hint = 5;
   uint32 material_id = 15;
@@ -257,63 +181,23 @@ message WidgetReportReq {
 }
 
 message WidgetReportRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4292;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 14;
   uint32 material_id = 4;
 }
 
 message ClientCollectorDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4264;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ClientCollectorData client_collector_data_list = 13;
 }
 
 message OneoffGatherPointDetectorDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4297;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 3;
 }
 
 message SkyCrystalDetectorDataUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4287;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   SkyCrystalDetectorData sky_crystal_detector_data = 9;
 }
 
 message TreasureMapDetectorDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4300;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   TreasureMapDetectorData data = 2;
 }
 
@@ -325,29 +209,12 @@ message WidgetSlotData {
 }
 
 message SetWidgetSlotReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4259;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated WidgetSlotTag tag_list = 15;
   uint32 material_id = 6;
   WidgetSlotOp op = 2;
 }
 
 message SetWidgetSlotRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4277;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated WidgetSlotTag tag_list = 15;
   int32 retcode = 6;
   uint32 material_id = 1;
@@ -355,51 +222,19 @@ message SetWidgetSlotRsp {
 }
 
 message WidgetSlotChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4267;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   WidgetSlotOp op = 11;
   WidgetSlotData slot = 8;
 }
 
 message GetWidgetSlotReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4253;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GetWidgetSlotRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4254;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated WidgetSlotData slot_list = 13;
   int32 retcode = 9;
 }
 
 message AllWidgetDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4271;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   WeatherWizardData weather_wizard_data = 5;
   repeated OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 15;
   repeated WidgetCoolDownData normal_cool_down_data_list = 9;
@@ -414,56 +249,21 @@ message AllWidgetDataNotify {
 }
 
 message UseWidgetCreateGadgetReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4293;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   Vector pos = 15;
   Vector rot = 12;
   uint32 material_id = 4;
 }
 
 message UseWidgetCreateGadgetRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4290;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
   uint32 material_id = 12;
 }
 
 message UseWidgetRetractGadgetReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4286;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 entity_id = 3;
 }
 
 message UseWidgetRetractGadgetRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4261;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   int32 retcode = 6;
   uint32 entity_id = 14;
 }
@@ -474,38 +274,14 @@ message WidgetGadgetData {
 }
 
 message WidgetGadgetAllDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4284;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated WidgetGadgetData widget_gadget_data = 13;
 }
 
 message WidgetGadgetDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4266;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   WidgetGadgetData widget_gadget_data = 12;
 }
 
 message WidgetGadgetDestroyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4274;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 entity_id = 15;
 }
 
@@ -521,15 +297,6 @@ message WidgetCreatorInfo {
 }
 
 message WidgetDoBagReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4255;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 material_id = 9;
   oneof op_info {
     WidgetCreateLocationInfo location_info = 832;
@@ -538,67 +305,26 @@ message WidgetDoBagReq {
 }
 
 message WidgetDoBagRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4296;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
   uint32 material_id = 3;
 }
 
 message WidgetActiveChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4280;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated WidgetSlotData widget_data_list = 5;
 }
 
 message WidgetUseAttachAbilityGroupChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4258;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_attach = 6;
   uint32 material_id = 11;
 }
 
 message WidgetCaptureAnimalReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4256;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   Vector pos = 10;
   uint32 entity_id = 15;
   uint32 material_id = 6;
 }
 
 message WidgetCaptureAnimalRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 4289;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
   uint32 entity_id = 4;
   uint32 material_id = 8;
@@ -606,29 +332,12 @@ message WidgetCaptureAnimalRsp {
 }
 
 message WidgetUpdateExtraCDReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5960;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 material_id = 14;
   WIDGET_EXTRA_CD_TYPE extra_cd_type = 10;
   uint32 cd_group = 7;
 }
 
 message WidgetUpdateExtraCDRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6056;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 14;
   uint32 material_id = 11;
   WIDGET_EXTRA_CD_TYPE extra_cd_type = 6;
@@ -647,39 +356,14 @@ message FireworksReformData {
 }
 
 message FireworksReformDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6033;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated FireworksReformData fireworks_reform_data_list = 6;
 }
 
 message ReformFireworksReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6036;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   FireworksReformData fireworks_reform_data = 3;
 }
 
 message ReformFireworksRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5929;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
 }
 
@@ -695,79 +379,29 @@ message FireworksLaunchSchemeData {
 }
 
 message LaunchFireworksReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6090;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   FireworksLaunchSchemeData scheme_data = 13;
 }
 
 message LaunchFireworksRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6057;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 6;
 }
 
 message FireworksLaunchDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5928;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated FireworksLaunchSchemeData scheme_data_list = 12;
   uint32 last_use_scheme_id = 4;
 }
 
 message ChangeWidgetBackgroundActiveStateReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5907;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_active = 15;
   uint32 material_id = 3;
 }
 
 message ChangeWidgetBackgroundActiveStateRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6060;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
   uint32 material_id = 6;
 }
 
 message AllWidgetBackgroundActiveStateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6092;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 background_active_widget_list = 3;
 }
 
@@ -777,25 +411,9 @@ message PlayerWidgetInfo {
 }
 
 message RemotePlayerWidgetNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5995;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated PlayerWidgetInfo player_widget_info_list = 3;
 }
 
 message WidgetWeatherWizardDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5942;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 shield_value = 15;
 }

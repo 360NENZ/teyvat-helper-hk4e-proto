@@ -64,14 +64,6 @@ message GalleryFlowerStartParam {
 }
 
 message GalleryStartNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5572;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 end_time = 6;
   uint32 player_count = 11;
   uint32 owner_uid = 9;
@@ -83,14 +75,6 @@ message GalleryStartNotify {
 }
 
 message GalleryBalloonShootNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5598;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 trigger_entity_id = 12;
   uint32 gallery_id = 5;
   uint32 combo = 14;
@@ -100,14 +84,6 @@ message GalleryBalloonShootNotify {
 }
 
 message GalleryBalloonScoreNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5512;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 9;
   map<uint32, uint32> uid_score_map = 7;
 }
@@ -121,14 +97,6 @@ message BalloonSettleInfo {
 }
 
 message GalleryStopNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5535;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 8;
 }
 
@@ -142,14 +110,6 @@ message FallSettleInfo {
 }
 
 message GalleryFallCatchNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5507;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 cur_score = 6;
   uint32 time_cost = 11;
   map<uint32, uint32> ball_catch_count_map = 15;
@@ -165,14 +125,6 @@ message FallPlayerBrief {
 }
 
 message GalleryFallScoreNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5521;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 7;
   map<uint32, FallPlayerBrief> uid_brief_map = 1;
 }
@@ -448,118 +400,44 @@ message SceneGalleryInfo {
 }
 
 message GetAllSceneGalleryInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5503;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GetAllSceneGalleryInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5590;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated SceneGalleryInfo gallery_info_list = 12;
   int32 retcode = 2;
 }
 
 message GalleryFlowerCatchNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5573;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 cur_score = 12;
   uint32 add_score = 14;
   uint32 gallery_id = 5;
 }
 
 message GalleryPreStartNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5599;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 10;
   uint32 pre_start_end_time = 9;
 }
 
 message GalleryBulletHitNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5531;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 hit_count = 14;
   uint32 gallery_id = 12;
 }
 
 message GalleryBrokenFloorFallNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5575;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 fall_count = 3;
   uint32 gallery_id = 5;
 }
 
 message InterruptGalleryReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5548;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 13;
 }
 
 message InterruptGalleryRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5597;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   int32 retcode = 12;
   uint32 gallery_id = 9;
 }
 
 message SceneGalleryInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5581;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   SceneGalleryInfo gallery_info = 4;
 }
 
@@ -586,28 +464,12 @@ message BounceConjuringGallerySettleInfo {
 }
 
 message GalleryBounceConjuringHitNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5505;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 add_score = 8;
   bool is_perfect = 5;
   uint32 gallery_id = 10;
 }
 
 message GallerySumoKillMonsterNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5582;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 kill_normal_mosnter_num = 4;
   uint32 score = 7;
   uint32 kill_elite_monster_num = 14;
@@ -615,27 +477,11 @@ message GallerySumoKillMonsterNotify {
 }
 
 message GalleryCrystalLinkKillMonsterNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5547;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 score = 7;
   uint32 gallery_id = 9;
 }
 
 message GalleryCrystalLinkBuffInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5539;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 13;
   bool is_buff_valid = 11;
   uint32 buff_id = 14;
@@ -703,14 +549,6 @@ message LuminanceStoneChallengeGallerySettleInfo {
 }
 
 message HomeGalleryInPlayingNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5553;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 13;
 }
 
@@ -724,28 +562,12 @@ message SummerTimeV2BoatGallerySettleInfo {
 }
 
 message GalleryIslandPartyDownHillInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5522;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 2;
   uint32 coin = 9;
   uint32 total_kill_monster_count = 11;
 }
 
 message IslandPartyRaftInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5565;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 point_id = 7;
   uint32 coin = 15;
   uint32 fuel = 3;
@@ -753,14 +575,6 @@ message IslandPartyRaftInfoNotify {
 }
 
 message IslandPartySailInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5504;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 coin = 10;
   IslandPartySailStage stage = 8;
   uint32 kill_monster_count = 4;
@@ -773,40 +587,15 @@ message IslandPartyGallerySettleInfo {
 }
 
 message BackRebornGalleryReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5593;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 gallery_id = 15;
 }
 
 message BackRebornGalleryRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5527;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 gallery_id = 9;
   int32 retcode = 5;
 }
 
 message GalleryWillStartCountdownNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5594;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   GalleryStartSource start_source = 11;
   uint32 end_time = 12;
   bool is_end = 7;
@@ -814,14 +603,6 @@ message GalleryWillStartCountdownNotify {
 }
 
 message InstableSprayGalleryInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5588;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 score = 3;
 }
 
@@ -858,14 +639,6 @@ message SceneGalleryVintageHuntingInfo {
 }
 
 message WindFieldGalleryInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5526;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 show_id = 3;
   uint32 killed_monster_num = 7;
   uint32 coin_num = 9;
@@ -877,14 +650,6 @@ message WindFieldGalleryInfoNotify {
 }
 
 message WindFieldGalleryChallengeInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5563;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 challenge_timestamp = 6;
   bool is_start = 8;
   uint32 show_id = 12;
@@ -895,14 +660,6 @@ message WindFieldGalleryChallengeInfoNotify {
 }
 
 message FungusFighterTrainingInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5595;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 buff_start_time = 3;
   uint32 max_skill_count = 7;
   uint32 max_monster_count = 8;
@@ -919,38 +676,14 @@ message FungusFighterTrainingSettleInfo {
 }
 
 message FungusCaptureSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5506;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_success = 2;
 }
 
 message HideAndSeekPlayerCapturedNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5534;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 ghost_skill_id = 12;
 }
 
 message CoinCollectGallerySettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5550;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 coin_collect_num = 11;
   uint32 coin_total_num = 7;
   uint32 level_id = 9;

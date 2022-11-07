@@ -26,11 +26,6 @@ message MatchUnit {
 }
 
 message AddMatchUnitReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10926;
-  }
-
   MatchType match_type = 1;
   MatchUnit match_unit = 2;
   MatchIdentity expect_identity = 3;
@@ -45,11 +40,6 @@ message AddMatchUnitReq {
 }
 
 message AddMatchUnitRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10918;
-  }
-
   int32 retcode = 1;
   MatchType match_type = 2;
   MatchUnit match_unit = 3;
@@ -59,11 +49,6 @@ message AddMatchUnitRsp {
 }
 
 message MatchStartNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10925;
-  }
-
   MatchType match_type = 1;
   uint32 match_begin_time = 2;
   uint32 estimate_match_cost_time = 3;
@@ -76,22 +61,12 @@ message MatchStartNotify {
 }
 
 message RemoveMatchUnitReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10907;
-  }
-
   MatchType match_type = 1;
   uint32 unit_id = 2;
   MatchUnitRemoveOpType op_type = 3;
 }
 
 message RemoveMatchUnitRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10902;
-  }
-
   int32 retcode = 1;
   MatchType match_type = 2;
   uint32 unit_id = 3;
@@ -99,21 +74,11 @@ message RemoveMatchUnitRsp {
 }
 
 message MatchUnitRemovedNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10931;
-  }
-
   MatchType match_type = 1;
   MatchReason reason = 2;
 }
 
 message GuestUnitMatchSuccNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10929;
-  }
-
   uint32 host_unit_id = 1;
   uint32 confirm_end_time = 2;
   uint32 match_type = 3;
@@ -123,11 +88,6 @@ message GuestUnitMatchSuccNotify {
 }
 
 message ConfirmGuestUnitReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10922;
-  }
-
   MatchType match_type = 1;
   uint32 unit_id = 2;
   bool is_agreed = 3;
@@ -135,11 +95,6 @@ message ConfirmGuestUnitReq {
 }
 
 message ConfirmGuestUnitRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10944;
-  }
-
   int32 retcode = 1;
   MatchType match_type = 2;
   uint32 unit_id = 3;
@@ -148,33 +103,18 @@ message ConfirmGuestUnitRsp {
 }
 
 message MatchPlayerJoinNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10949;
-  }
-
   MatchType match_type = 1;
   uint32 unit_id = 2;
   MatchPlayer match_player = 3;
 }
 
 message MatchPlayerQuitNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10920;
-  }
-
   MatchType match_type = 1;
   uint32 unit_id = 2;
   uint32 player_uid = 3;
 }
 
 message GuestUnitAgreedResultNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10945;
-  }
-
   enum Reason {
     SUCC = 0;
     HOST_UNIT_QUIT = 1;
@@ -186,11 +126,6 @@ message GuestUnitAgreedResultNotify {
 }
 
 message HostUnitMatchSuccNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10941;
-  }
-
   uint32 match_type = 1;
   uint32 dungeon_id = 11;
   uint32 mp_play_id = 12;
@@ -198,61 +133,31 @@ message HostUnitMatchSuccNotify {
 }
 
 message SyncMatchUnitReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10942;
-  }
-
   MatchType match_type = 1;
   MatchUnit match_unit = 2;
 }
 
 message SyncMatchUnitRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10914;
-  }
-
   int32 retcode = 1;
 }
 
 message MatchserverWorkloadInfoNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10947;
-  }
-
   uint32 match_unit_num = 1;
   map<uint32, uint32> match_unit_map = 2;
 }
 
 message MatchPlayerUpdateNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10937;
-  }
-
   MatchType match_type = 1;
   uint32 unit_id = 2;
   MatchPlayer match_player = 3;
 }
 
 message MatchIdentityNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10923;
-  }
-
   MatchType match_type = 1;
   MatchIdentity match_identity = 2;
 }
 
 message GeneralMatchFinishNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10935;
-  }
-
   MatchType match_type = 1;
   uint32 match_id = 2;
   uint32 match_param = 3;

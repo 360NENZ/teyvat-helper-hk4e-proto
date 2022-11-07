@@ -13,14 +13,6 @@ message OpActivityTagBriefInfo {
 }
 
 message OpActivityStateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2572;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 finished_bonus_activity_id_list = 14;
   repeated OpActivityTagBriefInfo opened_op_activity_info_list = 13;
 }
@@ -43,52 +35,19 @@ message SignInInfo {
 }
 
 message SignInInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2512;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message SignInInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2535;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated SignInInfo sign_in_info_list = 1;
   int32 retcode = 11;
 }
 
 message GetSignInRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2507;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 schedule_id = 10;
   uint32 reward_day = 3;
 }
 
 message GetSignInRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2521;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   SignInInfo sign_in_info = 14;
 }
@@ -99,63 +58,22 @@ message BonusActivityInfo {
 }
 
 message BonusActivityUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2575;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated BonusActivityInfo bonus_activity_info_list = 8;
 }
 
 message BonusActivityInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2548;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message BonusActivityInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2597;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated BonusActivityInfo bonus_activity_info_list = 2;
   int32 retcode = 7;
 }
 
 message GetBonusActivityRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2581;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 bonus_activity_id = 14;
 }
 
 message GetBonusActivityRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2505;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   BonusActivityInfo bonus_activity_info_list = 4;
   int32 retcode = 13;
 }

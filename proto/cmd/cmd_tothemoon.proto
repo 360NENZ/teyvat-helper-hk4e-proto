@@ -7,15 +7,6 @@ option go_package = "github.com/teyvat-helper/hk4e-proto/pb";
 import "define.proto";
 
 message ToTheMoonQueryPathReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6172;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   enum OptionType {
     OPTION_NONE = 0;
     OPTION_NORMAL = 1;
@@ -47,14 +38,6 @@ message ToTheMoonQueryPathReq {
 }
 
 message ToTheMoonQueryPathRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6198;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum PathStatusType {
     STATUS_FAIL = 0;
     STATUS_SUCC = 1;
@@ -70,39 +53,14 @@ message ToTheMoonQueryPathRsp {
 }
 
 message ToTheMoonPingNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6112;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message ToTheMoonEnterSceneReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6135;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 version = 14;
   uint32 scene_id = 15;
 }
 
 message ToTheMoonEnterSceneRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6107;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 7;
 }
 
@@ -120,15 +78,6 @@ message ToTheMoonObstacleInfo {
 }
 
 message ToTheMoonAddObstacleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6121;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool use_edge = 12;
   ToTheMoonObstacleInfo obstacle = 13;
   int32 query_id = 9;
@@ -151,29 +100,12 @@ message DynamicNodes {
 }
 
 message ToTheMoonAddObstacleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6103;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   DynamicNodes dynamic_nodes = 2;
   int32 query_id = 13;
   int32 retcode = 11;
 }
 
 message ToTheMoonRemoveObstacleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6190;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   enum ObstacleType {
     Box = 0;
     Capsule = 1;
@@ -185,29 +117,12 @@ message ToTheMoonRemoveObstacleReq {
 }
 
 message ToTheMoonRemoveObstacleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6173;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 query_id = 3;
   int32 retcode = 14;
   DynamicNodes dynamic_nodes = 8;
 }
 
 message ToTheMoonObstaclesModifyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6199;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated ToTheMoonObstacleInfo add_obstacles = 4;
   repeated int32 remove_obstacle_ids = 13;
   uint32 scene_id = 15;

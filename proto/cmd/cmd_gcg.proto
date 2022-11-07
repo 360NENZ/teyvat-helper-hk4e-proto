@@ -469,66 +469,25 @@ message GCGDuel {
 }
 
 message GCGOperationReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7107;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 op_seq = 2;
   uint32 redirect_uid = 7;
   GCGOperation op = 15;
 }
 
 message GCGOperationRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7600;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
   uint32 op_seq = 4;
 }
 
 message GCGMessagePackNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7516;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated GCGMessagePack msg_pack_list = 11;
   uint32 server_seq = 5;
 }
 
 message GCGAskDuelReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7237;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GCGAskDuelRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7869;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
   GCGDuel duel = 13;
 }
@@ -551,50 +510,18 @@ message GCGGameBriefData {
 }
 
 message GCGGameBriefDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7539;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_new_game = 11;
   GCGGameBriefData gcg_brief_data = 10;
 }
 
 message GCGInitFinishReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7684;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GCGInitFinishRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7433;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 2;
 }
 
 message GCGHeartBeatNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7224;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 server_seq = 6;
 }
 
@@ -666,14 +593,6 @@ message GCGSkillPreviewPlayCardInfo {
 }
 
 message GCGSkillPreviewNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7503;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 controller_id = 15;
   repeated GCGSkillPreviewPlayCardInfo play_card_list = 11;
   repeated GCGSkillPreviewInfo skill_preview_list = 9;
@@ -682,97 +601,33 @@ message GCGSkillPreviewNotify {
 }
 
 message GCGSkillPreviewAskReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7509;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GCGSkillPreviewAskRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7409;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
 }
 
 message GCGChallengeUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7268;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 server_seq = 12;
   GCGDuelChallenge challenge = 13;
 }
 
 message GCGBackToDuelReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7729;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_back = 14;
 }
 
 message GCGBackToDuelRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7416;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
 }
 
 message GCGDebugReplayNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7932;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   string json_str = 9;
 }
 
 message GCGGameMaxNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7666;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message GCGGameCreateFailReasonNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7239;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum GCGGameCreateReason {
     REASON_NONE = 0;
     REASON_GAME_MAX = 1;
@@ -805,14 +660,6 @@ message GCGDSCardData {
 }
 
 message GCGDSDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7122;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated GCGDSDeckData deck_list = 4;
   repeated uint32 unlock_card_back_id_list = 5;
   repeated uint32 unlock_field_id_list = 6;
@@ -822,177 +669,68 @@ message GCGDSDataNotify {
 }
 
 message GCGDSCardBackUnlockNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7265;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 card_back_id = 6;
 }
 
 message GCGDSFieldUnlockNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7333;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 field_id = 1;
 }
 
 message GCGDSCardFaceUnlockNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7049;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 card_id = 13;
   uint32 face_type = 1;
 }
 
 message GCGDSCardNumChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7358;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 card_id = 4;
   uint32 num = 10;
 }
 
 message GCGDSChangeCardFaceReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7169;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 face_type = 6;
   uint32 card_id = 3;
 }
 
 message GCGDSChangeCardFaceRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7331;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 face_type = 8;
   uint32 card_id = 4;
   int32 retcode = 9;
 }
 
 message GCGDSChangeCardBackReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7292;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 deck_id = 10;
   uint32 card_back_id = 12;
 }
 
 message GCGDSChangeCardBackRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7044;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
   uint32 card_back_id = 6;
   uint32 deck_id = 5;
 }
 
 message GCGDSChangeFieldReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7541;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 field_id = 6;
   uint32 deck_id = 11;
 }
 
 message GCGDSChangeFieldRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7444;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   uint32 field_id = 3;
   uint32 deck_id = 2;
 }
 
 message GCGDSChangeDeckNameReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7432;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 deck_id = 13;
   string name = 7;
 }
 
 message GCGDSChangeDeckNameRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7916;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 deck_id = 13;
   int32 retcode = 14;
   string name = 1;
 }
 
 message GCGDSDeckSaveReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7104;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 deck_id = 1;
   repeated uint32 card_list = 4;
   repeated uint32 character_card_list = 9;
@@ -1000,14 +738,6 @@ message GCGDSDeckSaveReq {
 }
 
 message GCGDSDeckSaveRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7269;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   fixed32 create_time = 14;
   uint32 deck_id = 11;
   int32 retcode = 8;
@@ -1015,169 +745,62 @@ message GCGDSDeckSaveRsp {
 }
 
 message GCGDSChangeCurDeckReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7131;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 deck_id = 3;
 }
 
 message GCGDSChangeCurDeckRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7301;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
   uint32 deck_id = 14;
 }
 
 message GCGDSCurDeckChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7796;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 deck_id = 6;
 }
 
 message GCGDSDeleteDeckReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7988;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 deck_id = 15;
 }
 
 message GCGDSDeleteDeckRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7524;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 14;
   uint32 deck_id = 7;
 }
 
 message GCGDSDeckUnlockNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7732;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 deck_id = 15;
 }
 
 message GCGDSCardProficiencyNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7680;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 proficiency = 2;
   uint32 card_id = 12;
 }
 
 message GCGDSDeckUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7305;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 deck_id = 6;
   bool is_valid = 12;
 }
 
 message GCGDSCardFaceUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7851;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 card_id = 14;
   uint32 face_type = 15;
 }
 
 message GCGDSTakeCardProficiencyRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7581;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 reward_index = 7;
   uint32 card_id = 14;
 }
 
 message GCGDSTakeCardProficiencyRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7889;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
   uint32 reward_index = 10;
   uint32 card_id = 7;
 }
 
 message GCGDSBanCardNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7839;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 card_list = 4;
 }
 
 message GCGTCTavernInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7011;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_last_duel_win = 14;
   uint32 level_id = 11;
   bool is_owner_in_duel = 5;
@@ -1188,28 +811,11 @@ message GCGTCTavernInfoNotify {
 }
 
 message GCGTCInviteReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7922;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 3;
   uint32 character_id = 6;
 }
 
 message GCGTCInviteRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7328;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 character_id = 12;
   int32 retcode = 5;
 }
@@ -1220,102 +826,36 @@ message GCGTCTavernChallengeData {
 }
 
 message GCGTCTavernChallengeDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7294;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated GCGTCTavernChallengeData tavern_challenge_list = 13;
 }
 
 message GCGTCTavernChallengeUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7184;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   GCGTCTavernChallengeData tavern_challenge = 5;
 }
 
 message GCGGrowthLevelNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7736;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 exp = 7;
   uint32 level = 11;
 }
 
 message GCGGrowthLevelRewardNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7477;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 level_reward_taken_list = 8;
 }
 
 message GCGGrowthLevelTakeRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7051;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level = 4;
 }
 
 message GCGGrowthLevelTakeRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7670;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level = 1;
   int32 retcode = 13;
 }
 
 message GCGInviteGuestBattleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7783;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 uid = 11;
 }
 
 message GCGInviteGuestBattleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7251;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 3;
   uint32 confirm_end_time = 2;
   uint32 punish_end_time = 9;
@@ -1323,65 +863,24 @@ message GCGInviteGuestBattleRsp {
 }
 
 message GCGInviteBattleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7692;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 confirm_end_time = 10;
 }
 
 message GCGApplyInviteBattleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7730;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_agree = 9;
 }
 
 message GCGApplyInviteBattleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7304;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 punish_end_time = 7;
   int32 retcode = 5;
 }
 
 message GCGApplyInviteBattleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7820;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_agree = 14;
   int32 retcode = 6;
 }
 
 message GCGWorldPlayerGCGStateReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7206;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GCGPlayerGCGState {
@@ -1391,27 +890,11 @@ message GCGPlayerGCGState {
 }
 
 message GCGWorldPlayerGCGStateRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7136;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated GCGPlayerGCGState player_state = 12;
   int32 retcode = 10;
 }
 
 message GCGSettleNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7769;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_win = 13;
   uint32 game_id = 7;
   GCGEndReason reason = 3;
@@ -1423,77 +906,27 @@ message GCGSettleNotify {
 }
 
 message GCGResourceStateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7876;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_complete = 5;
 }
 
 message GCGClientSettleReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7506;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GCGClientSettleRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7105;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 close_time = 4;
   int32 retcode = 1;
 }
 
 message GCGSettleOptionReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7124;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   GCGSettleOption option = 5;
 }
 
 message GCGSettleOptionRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7735;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   GCGSettleOption option = 13;
   int32 retcode = 14;
 }
 
 message GCGBasicDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7319;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level = 9;
   uint32 exp = 4;
   repeated uint32 level_reward_taken_list = 12;
@@ -1506,43 +939,18 @@ message GCGTavernNpcInfo {
 }
 
 message GCGTavernNpcInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7290;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated GCGTavernNpcInfo week_npc_list = 1;
   GCGTavernNpcInfo character_npc = 5;
   repeated GCGTavernNpcInfo const_npc_list = 15;
 }
 
 message GCGStartChallengeReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7595;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   GCGLevelType level_type = 5;
   uint32 config_id = 13;
   uint32 level_id = 12;
 }
 
 message GCGStartChallengeRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7763;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   GCGLevelType level_type = 12;
   int32 retcode = 15;
   uint32 config_id = 6;
@@ -1556,43 +964,18 @@ message GCGWeekChallengeInfo {
 }
 
 message GCGWeekChallengeInfoNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7615;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated GCGWeekChallengeInfo challenge_info_list = 15;
   uint32 next_refresh_time = 7;
   bool is_notify_npc_change = 9;
 }
 
 message GCGStartChallengeByCheckRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7778;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level_id = 9;
   uint32 config_id = 13;
   GCGLevelType level_type = 5;
 }
 
 message GCGStartChallengeByCheckRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7619;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   GCGLevelType level_type = 11;
   uint32 level_id = 2;
   int32 retcode = 4;
@@ -1612,64 +995,24 @@ message GCGBossChallengeData {
 }
 
 message GCGLevelChallengeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7055;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated GCGBossChallengeData unlock_boss_challenge_list = 3;
   repeated uint32 unlock_world_challenge_list = 8;
   repeated GCGLevelData level_list = 10;
 }
 
 message GCGLevelChallengeFinishNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7629;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 finished_challenge_id_list = 10;
   uint32 level_id = 15;
 }
 
 message GCGWorldChallengeUnlockNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7204;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 unlock_id_list = 8;
 }
 
 message GCGBossChallengeUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7073;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   GCGBossChallengeData boss_challenge = 11;
 }
 
 message GCGLevelChallengeDeleteNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 7648;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 level_id_list = 13;
 }

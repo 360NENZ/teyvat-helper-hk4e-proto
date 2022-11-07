@@ -12,26 +12,10 @@ message AranaraCollectionSuite {
 }
 
 message AranaraCollectionDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6376;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated AranaraCollectionSuite collection_suite_list = 14;
 }
 
 message AddAranaraCollectionNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6368;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 collection_type = 7;
   AranaraCollectionState target_state = 12;
   AranaraCollectionState from_state = 15;
@@ -44,25 +28,9 @@ message CataLogGlobalWatcherFinishedData {
 }
 
 message CataLogFinishedGlobalWatcherAllDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6370;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated CataLogGlobalWatcherFinishedData finished_global_watcher_data_list = 13;
 }
 
 message CataLogNewFinishedGlobalWatcherNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 6395;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated CataLogGlobalWatcherFinishedData new_finished_global_watcher_data_list = 2;
 }

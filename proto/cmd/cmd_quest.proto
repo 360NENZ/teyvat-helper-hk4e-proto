@@ -20,38 +20,14 @@ enum BargainResultType {
 }
 
 message QuestListNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 472;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated Quest quest_list = 1;
 }
 
 message QuestListUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 498;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated Quest quest_list = 6;
 }
 
 message QuestDelNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 412;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 quest_id = 1;
 }
 
@@ -95,94 +71,35 @@ message ParentQuest {
 }
 
 message FinishedParentQuestNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 435;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ParentQuest parent_quest_list = 2;
 }
 
 message FinishedParentQuestUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 407;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated ParentQuest parent_quest_list = 9;
 }
 
 message AddQuestContentProgressReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 421;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 content_type = 6;
   uint32 param = 12;
   uint32 add_progress = 15;
 }
 
 message AddQuestContentProgressRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 403;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 13;
   uint32 content_type = 4;
 }
 
 message GetQuestTalkHistoryReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 490;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 parent_quest_id = 6;
 }
 
 message GetQuestTalkHistoryRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 473;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 talk_id_list = 13;
   uint32 parent_quest_id = 7;
   int32 retcode = 15;
 }
 
 message QuestCreateEntityReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 499;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 parent_quest_id = 9;
   bool is_rewind = 3;
   uint32 quest_id = 2;
@@ -190,14 +107,6 @@ message QuestCreateEntityReq {
 }
 
 message QuestCreateEntityRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 431;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 quest_id = 13;
   int32 retcode = 8;
   uint32 entity_id = 7;
@@ -207,29 +116,12 @@ message QuestCreateEntityRsp {
 }
 
 message QuestDestroyEntityReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 475;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 scene_id = 2;
   uint32 entity_id = 9;
   uint32 quest_id = 8;
 }
 
 message QuestDestroyEntityRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 448;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 quest_id = 14;
   uint32 scene_id = 9;
   uint32 entity_id = 12;
@@ -237,14 +129,6 @@ message QuestDestroyEntityRsp {
 }
 
 message ChapterStateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 405;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   message NeedPlayerLevel {
     bool is_limit = 2;
     uint32 config_need_player_level = 11;
@@ -262,14 +146,6 @@ message ChapterStateNotify {
 }
 
 message QuestProgressUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 482;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 quest_id = 12;
   repeated uint32 fail_progress_list = 6;
   repeated uint32 finish_progress_list = 13;
@@ -282,15 +158,6 @@ message QuestVarOp {
 }
 
 message QuestUpdateQuestVarReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 447;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 parent_quest_id = 9;
   repeated QuestVarOp quest_var_op_list = 4;
   uint32 quest_id = 11;
@@ -298,14 +165,6 @@ message QuestUpdateQuestVarReq {
 }
 
 message QuestUpdateQuestVarRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 439;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 10;
   uint32 parent_quest_var_seq = 2;
   uint32 parent_quest_id = 8;
@@ -313,42 +172,17 @@ message QuestUpdateQuestVarRsp {
 }
 
 message QuestUpdateQuestVarNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 453;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated int32 quest_var = 1;
   uint32 parent_quest_id = 12;
   uint32 parent_quest_var_seq = 8;
 }
 
 message QuestDestroyNpcReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 422;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 npc_id = 1;
   uint32 parent_quest_id = 12;
 }
 
 message QuestDestroyNpcRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 465;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 npc_id = 12;
   uint32 parent_quest_id = 4;
   int32 retcode = 5;
@@ -362,41 +196,16 @@ message BargainSnapshot {
 }
 
 message BargainStartNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 404;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 bargain_id = 4;
   BargainSnapshot snapshot = 2;
 }
 
 message BargainOfferPriceReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 493;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 bargain_id = 4;
   uint32 price = 6;
 }
 
 message BargainOfferPriceRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 427;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
   uint32 result_param = 13;
   BargainResultType bargain_result = 14;
@@ -404,77 +213,28 @@ message BargainOfferPriceRsp {
 }
 
 message BargainTerminateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 494;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 bargain_id = 15;
 }
 
 message GetBargainDataReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 488;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 bargain_id = 12;
 }
 
 message GetBargainDataRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 426;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   uint32 bargain_id = 14;
   BargainSnapshot snapshot = 13;
 }
 
 message GetAllActivatedBargainDataReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 463;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GetAllActivatedBargainDataRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 495;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated BargainSnapshot snapshot_list = 5;
   int32 retcode = 9;
 }
 
 message ServerCondMeetQuestListUpdateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 406;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 del_quest_id_list = 1;
   repeated uint32 add_quest_id_list = 12;
 }
@@ -485,54 +245,21 @@ message QuestGlobalVar {
 }
 
 message QuestGlobalVarNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 434;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated QuestGlobalVar var_list = 1;
 }
 
 message QuestTransmitReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 450;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 point_id = 15;
   uint32 quest_id = 5;
 }
 
 message QuestTransmitRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 443;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 point_id = 12;
   int32 retcode = 5;
   uint32 quest_id = 3;
 }
 
 message PersonalLineAllDataReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 474;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message LockedPersonallineData {
@@ -550,14 +277,6 @@ message LockedPersonallineData {
 }
 
 message PersonalLineAllDataRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 476;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 cur_finished_daily_task_count = 5;
   repeated uint32 can_be_unlocked_personal_line_list = 13;
   int32 retcode = 15;
@@ -567,51 +286,18 @@ message PersonalLineAllDataRsp {
 }
 
 message RedeemLegendaryKeyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 446;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message RedeemLegendaryKeyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 441;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 legendary_key_count = 11;
   int32 retcode = 14;
 }
 
 message UnlockPersonalLineReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 449;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 personal_line_id = 4;
 }
 
 message UnlockPersonalLineRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 491;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 4;
   uint32 personal_line_id = 10;
   oneof param {
@@ -621,76 +307,27 @@ message UnlockPersonalLineRsp {
 }
 
 message CancelFinishParentQuestNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 424;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 parent_quest_id = 6;
 }
 
 message QuestUpdateQuestTimeVarNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 456;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, uint32> time_var_map = 1;
   uint32 parent_quest_id = 3;
 }
 
 message PersonalLineNewUnlockNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 442;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 personal_line_id_list = 9;
 }
 
 message NpcTalkStateNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 430;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_ban = 5;
 }
 
 message GetQuestLackingResourceReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 467;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 quest_id = 4;
 }
 
 message GetQuestLackingResourceRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 458;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 quest_id = 4;
   int32 retcode = 11;
   repeated uint32 lacked_npc_list = 8;
@@ -700,97 +337,38 @@ message GetQuestLackingResourceRsp {
 }
 
 message GetParentQuestVideoKeyReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 470;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 parent_quest_id = 15;
 }
 
 message GetParentQuestVideoKeyRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 417;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 1;
   uint64 video_key = 14;
   uint32 parent_quest_id = 10;
 }
 
 message ParentQuestInferenceDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 402;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 parent_quest_id = 2;
   repeated InferencePageInfo inference_page_list = 1;
 }
 
 message InterpretInferenceWordReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 419;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 word_id = 2;
   uint32 page_id = 4;
 }
 
 message InterpretInferenceWordRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 461;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 5;
   uint32 word_id = 14;
   uint32 page_id = 13;
 }
 
 message AssociateInferenceWordReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 429;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 base_word_id = 7;
   uint32 page_id = 11;
   uint32 associate_word_id = 2;
 }
 
 message AssociateInferenceWordRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 457;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 15;
   uint32 base_word_id = 14;
   uint32 associate_word_id = 13;
@@ -798,28 +376,11 @@ message AssociateInferenceWordRsp {
 }
 
 message SubmitInferenceWordReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 500;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 word_id = 4;
   uint32 page_id = 9;
 }
 
 message SubmitInferenceWordRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 416;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 word_id = 2;
   uint32 page_id = 13;
   uint32 conclusion_id = 5;
@@ -827,29 +388,12 @@ message SubmitInferenceWordRsp {
 }
 
 message QuestRenameAvatarReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 487;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 rename_id = 11;
   bool is_check = 8;
   string avatar_name = 2;
 }
 
 message QuestRenameAvatarRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 440;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   string avatar_name = 15;
   bool is_check = 13;
   uint32 rename_id = 1;

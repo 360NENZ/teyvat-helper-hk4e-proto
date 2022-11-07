@@ -5,14 +5,6 @@ package proto;
 option go_package = "github.com/teyvat-helper/hk4e-proto/pb";
 
 message MonsterSummonTagNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 1372;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   map<uint32, uint32> summon_tag_map = 1;
   uint32 monster_entity_id = 8;
 }

@@ -33,14 +33,6 @@ message TowerCurLevelRecord {
 }
 
 message TowerBriefDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2472;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 total_star_num = 11;
   uint32 last_floor_index = 8;
   uint32 schedule_start_time = 15;
@@ -51,79 +43,29 @@ message TowerBriefDataNotify {
 }
 
 message TowerFloorRecordChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2498;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   bool is_finished_entrance_floor = 11;
   repeated TowerFloorRecord tower_floor_record_list = 8;
 }
 
 message TowerCurLevelRecordChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2412;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   TowerCurLevelRecord cur_level_record = 10;
 }
 
 message TowerDailyRewardProgressChangeNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2435;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 daily_floor_id = 15;
   uint32 daily_level_index = 9;
 }
 
 message TowerTeamSelectReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2421;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   repeated TowerTeam tower_team_list = 11;
   uint32 floor_id = 10;
 }
 
 message TowerTeamSelectRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2403;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 8;
 }
 
 message TowerAllDataReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2490;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   bool is_interact = 2;
 }
 
@@ -135,14 +77,6 @@ message TowerMonthlyBrief {
 }
 
 message TowerAllDataRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2473;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 tower_schedule_id = 10;
   uint32 daily_level_index = 9;
   map<uint32, uint32> skip_floor_granted_reward_item_map = 12;
@@ -163,27 +97,10 @@ message TowerAllDataRsp {
 }
 
 message TowerEnterLevelReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2431;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 enter_point_id = 3;
 }
 
 message TowerEnterLevelRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2475;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 tower_buff_id_list = 10;
   int32 retcode = 1;
   uint32 level_index = 14;
@@ -191,89 +108,31 @@ message TowerEnterLevelRsp {
 }
 
 message TowerBuffSelectReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2448;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 tower_buff_id = 5;
 }
 
 message TowerBuffSelectRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2497;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   uint32 tower_buff_id = 13;
 }
 
 message TowerSurrenderReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2422;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message TowerSurrenderRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2465;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 9;
 }
 
 message TowerGetFloorStarRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2404;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 floor_id = 15;
 }
 
 message TowerGetFloorStarRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2493;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   uint32 floor_id = 9;
 }
 
 message TowerLevelEndNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2495;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum ContinueStateType {
     CONTINUE_STATE_CAN_NOT_CONTINUE = 0;
     CONTINUE_STATE_CAN_ENTER_NEXT_LEVEL = 1;
@@ -295,27 +154,12 @@ message TowerLevelStarCondData {
 }
 
 message TowerLevelStarCondNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2406;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 level_index = 14;
   uint32 floor_id = 11;
   repeated TowerLevelStarCondData cond_data_list = 9;
 }
 
 message TowerMiddleLevelChangeTeamNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2434;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
 }
 
 message TowerFightRecordPair {
@@ -338,25 +182,9 @@ message TowerMonthlyDetail {
 }
 
 message TowerRecordHandbookReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2450;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message TowerRecordHandbookRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2443;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 7;
   repeated TowerMonthlyDetail monthly_detail_list = 14;
 }

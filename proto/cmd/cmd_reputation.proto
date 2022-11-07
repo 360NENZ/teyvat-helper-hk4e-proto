@@ -48,55 +48,21 @@ message CityReputationInfo {
 }
 
 message GetCityReputationInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2872;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 city_id = 7;
 }
 
 message GetCityReputationInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2898;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 city_id = 1;
   int32 retcode = 4;
   CityReputationInfo city_reputation_info = 9;
 }
 
 message TakeCityReputationLevelRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2812;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 level = 11;
   uint32 city_id = 1;
 }
 
 message TakeCityReputationLevelRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2835;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 city_id = 15;
   int32 retcode = 11;
   repeated ItemParam item_list = 13;
@@ -104,42 +70,16 @@ message TakeCityReputationLevelRewardRsp {
 }
 
 message CityReputationLevelupNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2807;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 city_id = 12;
   uint32 level = 15;
 }
 
 message TakeCityReputationParentQuestReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2821;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 city_id = 1;
   repeated uint32 parent_quest_list = 6;
 }
 
 message TakeCityReputationParentQuestRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2803;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   int32 retcode = 7;
   uint32 city_id = 14;
   repeated uint32 parent_quest_list = 9;
@@ -147,81 +87,31 @@ message TakeCityReputationParentQuestRsp {
 }
 
 message AcceptCityReputationRequestReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2890;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 city_id = 14;
   uint32 request_id = 5;
 }
 
 message AcceptCityReputationRequestRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2873;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 request_id = 5;
   uint32 city_id = 13;
   int32 retcode = 2;
 }
 
 message CancelCityReputationRequestReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2899;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 request_id = 10;
   uint32 city_id = 6;
 }
 
 message CancelCityReputationRequestRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2831;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 city_id = 3;
   int32 retcode = 2;
   uint32 request_id = 12;
 }
 
 message GetCityReputationMapInfoReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2875;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
 }
 
 message GetCityReputationMapInfoRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2848;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   int32 retcode = 11;
   bool is_new_hunting = 10;
   bool is_new_request = 2;
@@ -230,28 +120,11 @@ message GetCityReputationMapInfoRsp {
 }
 
 message TakeCityReputationExploreRewardReq {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2897;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-    IS_ALLOW_CLIENT = 1;
-  }
-
   uint32 city_id = 15;
   repeated uint32 explore_id_list = 12;
 }
 
 message TakeCityReputationExploreRewardRsp {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2881;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated uint32 explore_id_list = 8;
   repeated ItemParam item_list = 12;
   int32 retcode = 6;
@@ -264,13 +137,5 @@ message CityReputationSimpleInfo {
 }
 
 message CityReputationDataNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 2805;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   repeated CityReputationSimpleInfo simple_info_list = 7;
 }

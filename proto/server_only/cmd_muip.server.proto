@@ -12,18 +12,9 @@ enum PlayerMemDataType {
 }
 
 message OnlinePlayerNumReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10272;
-  }
 }
 
 message OnlinePlayerNumRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10298;
-  }
-
   int32 retcode = 1;
   uint32 online_player_num = 2;
   map<uint32, uint32> gameserver_player_num_map = 3;
@@ -31,30 +22,15 @@ message OnlinePlayerNumRsp {
 }
 
 message KickoutPlayerNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10212;
-  }
-
   uint32 reason = 1;
 }
 
 message CheckOnlinePlayerReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10235;
-  }
-
   uint32 gameserver_id = 1;
   uint32 ns_gameserver_id = 2;
 }
 
 message CheckOnlinePlayerRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10207;
-  }
-
   message NodeStatus {
     uint32 gameserver_id = 1;
     uint32 nodeserver_id = 2;
@@ -73,29 +49,15 @@ message CheckOnlinePlayerRsp {
 }
 
 message PlayerCombatForceReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10221;
-  }
 }
 
 message PlayerCombatForceRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10203;
-  }
-
   int32 retcode = 1;
   float player_combat_force = 2;
   map<uint32, float> player_combat_force_map = 3;
 }
 
 message CheckGameVersionReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10290;
-  }
-
   uint32 server_version = 1;
   uint32 client_version = 2;
   uint32 client_silence_version = 3;
@@ -110,11 +72,6 @@ message GameVersionResult {
 }
 
 message CheckGameVersionRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10273;
-  }
-
   int32 retcode = 1;
   uint32 total_game = 2;
   GameVersionResult server_version_result = 3;
@@ -125,18 +82,9 @@ message CheckGameVersionRsp {
 }
 
 message PlatformPlayerNumReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10299;
-  }
 }
 
 message PlatformPlayerNumRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10231;
-  }
-
   int32 retcode = 1;
   uint32 online_player_num = 2;
   map<uint32, uint32> platform_player_num_map = 3;
@@ -174,21 +122,11 @@ message PlayerMemH5ActivityDataResult {
 }
 
 message QueryPlayerMemDataByMuipReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10275;
-  }
-
   uint32 data_type = 1;
   repeated uint32 param_list = 2;
 }
 
 message QueryPlayerMemDataByMuipRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10248;
-  }
-
   int32 retcode = 1;
   oneof detail {
     PlayerMemBasicData basic_data = 2;
@@ -197,103 +135,51 @@ message QueryPlayerMemDataByMuipRsp {
 }
 
 message BindGmUidNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10297;
-  }
-
   uint32 gm_uid = 1;
   uint32 player_uid = 2;
 }
 
 message UnbindGmUidNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10281;
-  }
-
   uint32 gm_uid = 1;
 }
 
 message GetBindGmUidReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10205;
-  }
 }
 
 message GetBindGmUidRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10282;
-  }
-
   int32 retcode = 1;
   map<uint32, uint32> gm_uid_map = 2;
 }
 
 message PlatformAntiAddictNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10247;
-  }
-
   int32 msg_type = 2;
   string msg = 3;
   string level = 4;
 }
 
 message PlayerLoginPerSecondReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10239;
-  }
 }
 
 message PlayerLoginPerSecondRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10253;
-  }
-
   int32 retcode = 1;
   uint32 player_login_per_second = 2;
 }
 
 message FineGrainedPlayerNumReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10222;
-  }
 }
 
 message FineGrainedPlayerNumRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10265;
-  }
-
   int32 retcode = 1;
   uint32 online_player_num = 2;
   map<string, uint32> fine_grained_player_num_map = 3;
 }
 
 message CheckGameCrcVersionReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10204;
-  }
-
   uint32 platform = 1;
   string client_version_str = 2;
 }
 
 message CheckGameCrcVersionRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10293;
-  }
-
   int32 retcode = 1;
   uint32 total_game = 2;
   uint32 platform = 3;
@@ -303,50 +189,25 @@ message CheckGameCrcVersionRsp {
 }
 
 message UpdateRedPointByMuipNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10227;
-  }
-
   repeated RedPointData red_point_list = 1;
 }
 
 message SendConcertProductReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10294;
-  }
-
   string ticket = 1;
   uint32 config_id = 2;
 }
 
 message SendConcertProductRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10288;
-  }
-
   int32 retcode = 1;
   string ticket = 2;
   uint32 config_id = 3;
 }
 
 message QueryConcertProductInfoReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10226;
-  }
-
   uint32 config_id = 1;
 }
 
 message QueryConcertProductInfoRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10263;
-  }
-
   int32 retcode = 1;
   uint32 config_id = 2;
   uint32 obtain_count = 3;
@@ -354,18 +215,9 @@ message QueryConcertProductInfoRsp {
 }
 
 message PlayerMpModeReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10295;
-  }
 }
 
 message PlayerMpModeRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 10206;
-  }
-
   int32 retcode = 1;
   bool is_mp_mode = 2;
 }

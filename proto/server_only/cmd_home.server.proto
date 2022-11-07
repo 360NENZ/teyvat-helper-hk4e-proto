@@ -16,21 +16,11 @@ enum HomeGetBlueprintBriefReason {
 }
 
 message GetHomeDataReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12072;
-  }
-
   uint32 home_uid = 1;
   uint64 load_rand = 2;
 }
 
 message GetHomeDataRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12098;
-  }
-
   int32 retcode = 1;
   uint32 home_uid = 2;
   uint32 data_version = 3;
@@ -40,30 +30,15 @@ message GetHomeDataRsp {
 }
 
 message SaveHomeDataReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12012;
-  }
-
   HomeData home_data = 1;
 }
 
 message SaveHomeDataRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12035;
-  }
-
   int32 retcode = 1;
   uint32 data_version = 2;
 }
 
 message ServerTryEnterHomeReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12007;
-  }
-
   uint32 source_uid = 1;
   uint32 source_app_id = 2;
   uint64 cur_load_rand = 3;
@@ -73,11 +48,6 @@ message ServerTryEnterHomeReq {
 }
 
 message ServerTryEnterHomeRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12021;
-  }
-
   int32 retcode = 1;
   uint32 target_home_uid = 2;
   uint32 target_app_id = 3;
@@ -85,30 +55,15 @@ message ServerTryEnterHomeRsp {
 }
 
 message ServerBlockHomeNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12003;
-  }
-
   bool is_unlock = 1;
   uint32 end_time = 2;
 }
 
 message ServerGetFriendEnterHomeOptionReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12090;
-  }
-
   uint32 target_uid = 1;
 }
 
 message ServerGetFriendEnterHomeOptionRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12073;
-  }
-
   int32 retcode = 1;
   uint32 target_uid = 2;
   FriendEnterHomeOption friend_enter_home_option = 3;
@@ -140,122 +95,60 @@ message HomeOnlineStatusNotify {
 }
 
 message SendHomeOfflineMsgReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12031;
-  }
-
   HomeOfflineMsgBin msg = 1;
 }
 
 message SendHomeOfflineMsgRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12075;
-  }
-
   int32 retcode = 1;
   string ticket = 2;
 }
 
 message NewHomeOfflineMsgNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12048;
-  }
 }
 
 message GetHomeOfflineMsgReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12097;
-  }
-
   uint32 index = 1;
 }
 
 message GetHomeOfflineMsgRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12081;
-  }
-
   int32 retcode = 1;
   uint32 last_index = 2;
   repeated HomeOfflineMsgBin offline_msg_list = 3;
 }
 
 message RemoveHomeOfflineMsgNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12005;
-  }
-
   uint32 index = 1;
 }
 
 message ClearHomeOfflineMsgNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12082;
-  }
 }
 
 message ServerHomeGetOnlineStatusReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12047;
-  }
 }
 
 message ServerHomeGetOnlineStatusRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12039;
-  }
-
   int32 retcode = 1;
   bool is_online = 2;
   repeated OnlinePlayerInfo player_info_list = 3;
 }
 
 message ServerHomeKickPlayerReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12053;
-  }
-
   bool is_kick_all = 1;
   uint32 target_uid = 2;
 }
 
 message ServerHomeKickPlayerRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12022;
-  }
-
   int32 retcode = 1;
   bool is_kick_all = 2;
   uint32 target_uid = 3;
 }
 
 message ServerHomeGetBlueprintBriefDataReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12065;
-  }
-
   HomeGetBlueprintBriefReason reason = 1;
   repeated string share_code_list = 2;
 }
 
 message ServerHomeGetBlueprintBriefDataRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12004;
-  }
-
   int32 retcode = 1;
   HomeGetBlueprintBriefReason reason = 2;
   repeated string share_code_list = 3;
@@ -263,95 +156,50 @@ message ServerHomeGetBlueprintBriefDataRsp {
 }
 
 message ServerHomeUpdateBlueprintBriefDataReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12093;
-  }
-
   uint32 slot_id = 1;
   HomeBlueprintBriefRedisData brief_data = 2;
 }
 
 message ServerHomeUpdateBlueprintBriefDataRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12027;
-  }
-
   int32 retcode = 1;
   uint32 slot_id = 2;
   HomeBlueprintBriefRedisData brief_data = 3;
 }
 
 message ServerHomeGetBlueprintDetailDataReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12094;
-  }
-
   string share_code = 1;
   uint32 share_owner_uid = 2;
 }
 
 message ServerHomeGetBlueprintDetailDataRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12088;
-  }
-
   int32 retcode = 1;
   uint32 share_owner_uid = 2;
   HomeBlueprintDetailRedisData detail_data = 3;
 }
 
 message ServerHomeSaveBlueprintDataReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12026;
-  }
-
   uint32 slot_id = 1;
   HomeBlueprintBriefRedisData brief_data = 2;
   HomeBlueprintDetailRedisData detail_data = 3;
 }
 
 message ServerHomeSaveBlueprintDataRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12063;
-  }
-
   int32 retcode = 1;
   uint32 slot_id = 2;
   HomeBlueprintBriefRedisData brief_data = 3;
 }
 
 message ServerHomeDeleteBlueprintDataReq {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12095;
-  }
-
   uint32 slot_id = 1;
   string share_code = 2;
 }
 
 message ServerHomeDeleteBlueprintDataRsp {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12006;
-  }
-
   int32 retcode = 1;
   uint32 slot_id = 2;
   string share_code = 3;
 }
 
 message ServerHomeBlueprintCacheInvalidNotify {
-  enum CmdId {
-    NONE = 0;
-    CMD_ID = 12034;
-  }
-
   string share_code = 1;
 }

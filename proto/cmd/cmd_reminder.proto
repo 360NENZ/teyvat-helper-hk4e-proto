@@ -7,14 +7,6 @@ option go_package = "github.com/teyvat-helper/hk4e-proto/pb";
 import "define.proto";
 
 message NormalUidOpNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5726;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 duration = 6;
   repeated uint32 param_list = 4;
   repeated uint32 param_uid_list = 5;
@@ -22,13 +14,5 @@ message NormalUidOpNotify {
 }
 
 message ServerMessageNotify {
-  enum CmdId {
-    option allow_alias = true;
-    NONE = 0;
-    CMD_ID = 5718;
-    ENET_CHANNEL_ID = 0;
-    ENET_IS_RELIABLE = 1;
-  }
-
   uint32 index = 1;
 }
