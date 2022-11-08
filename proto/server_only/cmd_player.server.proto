@@ -32,30 +32,15 @@ message PlayerOnlineStatusInfo {
 }
 
 message PlayerOnlineStatusNotify {
-  enum Enum {
-    NONE = 0;
-    CMD_ID = 10135;
-  }
-
   repeated PlayerOnlineStatusInfo player_info_list = 1;
 }
 
 message ServiceDisconnectNotify {
-  enum Enum {
-    NONE = 0;
-    CMD_ID = 10103;
-  }
-
   ServiceType type = 1;
   uint32 ip = 2;
 }
 
 message PlayerDisconnectNotify {
-  enum Enum {
-    NONE = 0;
-    CMD_ID = 10190;
-  }
-
   uint32 data = 1;
 }
 

@@ -1,6 +1,7 @@
 .idea/
 .vscode/
 schema.proto
+*.schema.proto
 
 # Binaries for programs and plugins
 *.exe

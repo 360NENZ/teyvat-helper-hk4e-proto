@@ -31,15 +31,6 @@ message PacketHead {
 }
 
 message DebugNotify {
-  enum Enum {
-    option allow_alias = true;
-    ZERO = 0;
-    CMD_ID = 101;
-    TARGET_SERVICE = 101;
-    ENET_CHANNEL_ID = 2;
-    ENET_IS_RELIABLE = 1;
-  }
-
   enum Retcode {
     SUCC = 0;
     FAIL = 1;

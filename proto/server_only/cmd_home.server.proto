@@ -86,11 +86,6 @@ message HomeOnlineStatusInfo {
 }
 
 message HomeOnlineStatusNotify {
-  enum Enum {
-    NONE = 0;
-    CMD_ID = 12099;
-  }
-
   repeated HomeOnlineStatusInfo home_info_list = 1;
 }
 
